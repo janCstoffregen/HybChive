@@ -31,7 +31,7 @@ int main(){
     //3. Parameter for the search algorithm: Define the entry that you'd like to search for:
     int parameterOne=1234;
     //4. Execute the hybchive routine:
-    result=hybchive(A,n*n,algorithm,numberOfParameters-1,parameterOne);
+    hybchive(A,n*n,algorithm,numberOfParameters-1,parameterOne);
     
     
     
