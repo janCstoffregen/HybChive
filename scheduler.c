@@ -15,7 +15,7 @@
 
 double hybchive(double *A, int n, char *function, int numberOfParameters,...){
 	
-	//printf("\n 0.1 Scheduler is executed through user \n");
+	printf("\n 0.1 Scheduler is executed through user \n");
     //printf("\n 0.2 Data arrived in scheduler:\n");
     //printf("\n 0.2.1 First entry of A: %lf\n",A[0]);
     //printf("\n 0.2.2 Name of the algorithm:\n");

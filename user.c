@@ -24,7 +24,7 @@ int main(){
     
     //define HybChive parameters:
     //1. Define name of the HybChive routine that you want to call
-    char algorithm[]="search";
+    char algorithm[]="function";
     //2. define number of parameters AFTER the "numberOfParameters-1" input paramter 
     //of the Hybchive routine:
     int numberOfParameters = 1;
