@@ -13,7 +13,7 @@
 #include "hybchive.h"
 #include <stdarg.h>
 
-void hybchive(double *A, int n, char *function, int numberOfParameters,...){
+void hybchive(char *function, int n, double *A, int numberOfParameters,...){
 	
 	printf("\n 0.1 Scheduler is executed through user \n");
     //printf("\n 0.2 Data arrived in scheduler:\n");

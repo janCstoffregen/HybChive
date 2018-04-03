@@ -24,14 +24,19 @@ int main(){
     
     //define HybChive parameters:
     //1. Define name of the HybChive routine that you want to call
-    char algorithm[]="function";
+    char set[]="function";
     //2. define number of parameters AFTER the "numberOfParameters-1" input paramter 
     //of the Hybchive routine:
     int numberOfParameters = 1;
     //3. Parameter for the search algorithm: Define the entry that you'd like to search for:
     int parameterOne=1234;
     //4. Execute the hybchive routine:
-    hybchive(A,n*n,algorithm,numberOfParameters-1,parameterOne);
+    hybchive(
+	set,
+	n*n,
+	A,
+	numberOfParameters-1,
+	parameterOne);
     
     
     
