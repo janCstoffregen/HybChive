@@ -25,6 +25,8 @@ int main(){
     //define HybChive parameters:
     //1. Define name of the HybChive routine that you want to call
     char set[]="function";
+    char variants[]="all";
+    char optimize[]="performance";
     //2. define number of parameters AFTER the "numberOfParameters-1" input paramter 
     //of the Hybchive routine:
     int numberOfParameters = 1;
@@ -33,9 +35,11 @@ int main(){
     //4. Execute the hybchive routine:
     hybchive(
 	set,
+	variants,
+	optimize,
+	numberOfParameters-1,
 	n*n,
 	A,
-	numberOfParameters-1,
 	parameterOne);
     
     

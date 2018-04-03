@@ -13,7 +13,7 @@
 #include "hybchive.h"
 #include <stdarg.h>
 
-void hybchive(char *function, int n, double *A, int numberOfParameters,...){
+void hybchive(char *function, char *variants, char *optimize, int numberOfParameters, int n, double *A, ...){
 	
 	printf("\n 0.1 Scheduler is executed through user \n");
     //printf("\n 0.2 Data arrived in scheduler:\n");
@@ -82,7 +82,7 @@ void hybchive(char *function, int n, double *A, int numberOfParameters,...){
 	int numvariants=10;
 	int characters=30;
 	int i,j;
-	char variants[100]="";
+	//char variants[100]="";
 	char list2[]="/2.txt";
 	memset(pipecommand,'\0',sizeof(pipecommand));
 	strcat(pipecommand,function);

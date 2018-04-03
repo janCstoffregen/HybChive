@@ -1,1 +1,1 @@
-void hybchive(char *function, int n, double *A, int numberOfParameters,...);
+void hybchive(char *function, char *variants, char *optimize, int numberOfParameters, int n, double *A, ...);
