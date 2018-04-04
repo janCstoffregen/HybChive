@@ -9,34 +9,22 @@
 #include <stdarg.h>
 
 void hybchive(char *function, char *variants, char *optimize, int numberOfParameters, int n, double *A, ...) {
+
+    // start log
 	char startScheduler[]="start scheduler";
     hybchiveLog( startScheduler );
-	printf("\n 0.1 Scheduler is executed through user \n");
-    //printf("\n 0.2 Data arrived in scheduler:\n");
-    //printf("\n 0.2.1 First entry of A: %lf\n",A[0]);
-    //printf("\n 0.2.2 Name of the algorithm:\n");
+
 	double result=0;
 	int sizefunction=sizeof(function);
-    //printf("%s",function);
-    //printf("\n");
 
-    //printf("\n 0.2.3 n: %d\n",n);
-
-	/* begin part one*/
-	//printf("\n1. A function called function is being executed from the user\n");
-	//char function[] = "function";
-
-	//printf("\n2. cd to the folder called function and then list the variants\n");
-	FILE *pipe;
+    //printf("\n2.2 cd to folder and write directory listing to array\n");
+    FILE *pipe;
 	char pipecommand[2000] = "";
 	char cd[]="cd ";
-	//printf("\n2.1 concatenate the two strings: %s\n",pipecommand);
 	strcat(pipecommand,cd);
 	strcat(pipecommand,function);
 	char savedir[]=" && ls -d */ | cut -f1 -d'/' > list.txt && cp list.txt 2.txt";	
 	strcat(pipecommand,savedir);
-
-	//printf("\n2.2 cd to folder and write directory listing to array\n");	
 	pipe=popen(pipecommand,"w");
 	close(pipe);
 
@@ -44,7 +32,6 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 	int numvariants=10;
 	int characters=30;
 	int i,j;
-	//char variants[100]="";
 	char list2[]="/2.txt";
 	memset(pipecommand,'\0',sizeof(pipecommand));
 	strcat(pipecommand,function);
@@ -62,10 +49,12 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 	fclose(pipe);
 
 	//printf("\n3.1 show, that the devices - array got everything \n");
-	//printf("\n");
-	//for(i=0;i<30;i++){
-	//	printf("%c",variants[i]);
-	//}		
+//	printf("\n");
+//	for(i=0;i<30;i++){
+//		printf("%c",variants[i]);
+//	}
+
+
 	//printf("\n3.2 transfer devices to array\n");
 	char variantslist[20][30]={};
 	i=0;
@@ -150,13 +139,14 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 				//printf("%c",pipecommand[j]);
 			}
 			//printf("\n");
-			//printf("\n 4.3 Execute test \n");
+			printf("\n 4.3 Execute test \n");
 			
 			memset(make,'\0',sizeof(make));
 			
 			strcat(make, "cd ");
 			strcat(make,currentdir);
-			//printf("\n Execute varianttest \n");
+            char startVariantTest[]="start variant test";
+            hybchiveLog( startVariantTest );
 			strcat(make," && make test && ./varianttest");
 			pipe=popen(make,"w");
 			close(pipe);
@@ -164,10 +154,11 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 			strcat(wait,currentdir);
 			strcat(wait,"/");
 			strcat(wait,"wait.txt");
+
 			while(fopen(wait,"r")==NULL){
 				//wait, until test procedure is done with testing of the according variant
 			}
-			//printf("\n End execute varianttest \n");
+			printf("\n End execute varianttest \n");
 			memset(wait,'\0',sizeof(wait));
 			strcat(wait,"rm ");
 			strcat(wait,currentdir);

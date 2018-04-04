@@ -10,23 +10,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7de219d-f619-48c7-b35c-2ddc0f33ccb9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change beforePath="$PROJECT_DIR$/compileAndExecute.sh" afterPath="$PROJECT_DIR$/compileAndExecute.sh" />
-      <change beforePath="$PROJECT_DIR$/function/2.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/function/list.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/function/variant5.1/Makefile" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/function/variant5.1/performance.txt" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/function/variant5.1/variant" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/function/variant5.1/variant.c" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/function/variant5.1/varianttest" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/function/variant5.1/varianttest.c" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/hybchive.h" afterPath="$PROJECT_DIR$/hybchive.h" />
-      <change beforePath="$PROJECT_DIR$/log.c" afterPath="$PROJECT_DIR$/hybchiveLog.c" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/function/variant3/Makefile" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/function/variant3/performance.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/function/variant3/variant" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/function/variant3/variant.c" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/function/variant3/varianttest" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/function/variant3/varianttest.c" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/function/variant4/Makefile" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/function/variant4/performance.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/function/variant4/variant" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/function/variant4/variant.c" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/function/variant4/varianttest" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/function/variant4/varianttest.c" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/function/variant5/Makefile" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/function/variant5/performance.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/function/variant5/variant" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/function/variant5/variant.c" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/function/variant5/varianttest" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/function/variant5/varianttest.c" afterPath="" />
       <change beforePath="$PROJECT_DIR$/scheduler.c" afterPath="$PROJECT_DIR$/scheduler.c" />
       <change beforePath="$PROJECT_DIR$/user" afterPath="$PROJECT_DIR$/user" />
-      <change beforePath="$PROJECT_DIR$/userOld.c" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/variant.c" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/varianttest.c" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,8 +55,8 @@
       <file leaf-file-name="scheduler.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scheduler.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="42" lean-forward="false" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+            <state relative-caret-position="249">
+              <caret line="141" column="12" lean-forward="false" selection-start-line="141" selection-start-column="12" selection-end-line="141" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -96,6 +100,7 @@
       <find>myti</find>
       <find>time</find>
       <find>timed</find>
+      <find>printf</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -143,6 +148,17 @@
             <path>
               <item name="HybChive" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="HybChive" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HybChive" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="HybChive" type="462c0819:PsiDirectoryNode" />
+              <item name="function" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HybChive" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="HybChive" type="462c0819:PsiDirectoryNode" />
+              <item name="function" type="462c0819:PsiDirectoryNode" />
+              <item name="variant1" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -301,12 +317,12 @@
       <option name="presentableId" value="Default" />
       <updated>1516810017856</updated>
       <workItem from="1516810019808" duration="1526000" />
-      <workItem from="1522841753353" duration="2135000" />
+      <workItem from="1522841753353" duration="3690000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3661000" />
+    <option name="totallyTimeSpent" value="5216000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -415,8 +431,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scheduler.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="42" lean-forward="false" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
+        <state relative-caret-position="249">
+          <caret line="141" column="12" lean-forward="false" selection-start-line="141" selection-start-column="12" selection-end-line="141" selection-end-column="12" />
           <folding />
         </state>
       </provider>
