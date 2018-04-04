@@ -1,8 +1,3 @@
-//part one  - This program reads the structure of the folders and writes it in an array - done
-//Afterwards, it checks in each folder, if there is performance data - done
-//if there is performance data, it compiles and runs the program (here comes the performance -  optimizing later) - done
-//if there is no performance data, it runs the test program and then runs the program (here comes the performance - optimizing later) - done
-
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -13,9 +8,9 @@
 #include "hybchive.h"
 #include <stdarg.h>
 
-void hybchive(char *function, char *variants, char *optimize, int numberOfParameters, int n, double *A, ...){
-	char startScheduler[]="start";
-	log( startScheduler );	
+void hybchive(char *function, char *variants, char *optimize, int numberOfParameters, int n, double *A, ...) {
+	char startScheduler[]="start scheduler";
+    hybchiveLog( startScheduler );
 	printf("\n 0.1 Scheduler is executed through user \n");
     //printf("\n 0.2 Data arrived in scheduler:\n");
     //printf("\n 0.2.1 First entry of A: %lf\n",A[0]);
@@ -24,43 +19,9 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 	int sizefunction=sizeof(function);
     //printf("%s",function);
     //printf("\n");
-    
+
     //printf("\n 0.2.3 n: %d\n",n);
-	
-	
-	double *secondsarray, *nsecondsarray;
-    double time;
-    // marks the current time and saves it in an array
-    void mytime(int timemark){
-    struct  timespec currenttime;
-    //dynamic memory allocation
-    if(timemark==1){    
-        secondsarray=malloc(sizeof(double));
-        nsecondsarray=malloc(sizeof(double));
-    }
-    else{   
-        secondsarray=(double *)realloc(secondsarray,sizeof(double)*timemark);
-        nsecondsarray=(double *)realloc(nsecondsarray,sizeof(double)*timemark);
-    }
-    clock_gettime(CLOCK_REALTIME, &currenttime);
-    secondsarray[timemark-1]=currenttime.tv_sec;
-    nsecondsarray[timemark-1]=currenttime.tv_nsec;
-    }
- 
-    // gets the time difference of two times marked in the function mytime
-    double timediff(int time2, int time1)
-    {   if ((nsecondsarray[time2-1]-nsecondsarray[time1-1])<0) {
-            time=secondsarray[time2-1]-secondsarray[time1-1];
-            time=time+(1000000000+nsecondsarray[time2-1]-nsecondsarray[time1-1])/1000000000;
-        } else {
-            time=secondsarray[time2-1]-secondsarray[time1-1];
-            time=time+(nsecondsarray[time2-1]-nsecondsarray[time1-1])/1000000000;
-        }
-        return time;
-    }
-	
-	mytime(1);
-	
+
 	/* begin part one*/
 	//printf("\n1. A function called function is being executed from the user\n");
 	//char function[] = "function";
@@ -318,12 +279,10 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 	    */
 	    
 		//printf("\n 8.2 Put data in shared memory space\n");
-        mytime(7);
 		s2=shm2;
 		for(i=0;i<n;i++){
 			s2[i]=A[i];
 		}
-        mytime(8);
 		//printf("\n 8.3 Test Data in shared memory: %lf\n",s2[0]);
 		
 		int begin=0, end=0;
@@ -458,11 +417,9 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 		}
 		
 		//printf("\n 16. scheduler starts sleeping\n");
-        mytime(2);
 		while(s3[0]!=numvariants){
         	sleep(1);
 		}
-        mytime(3);
 		//printf("\n 17. All variants are done\n");
 		
 		//printf("\n 18. Calculcating Result:\n");
@@ -480,13 +437,9 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 	//printf("\n 20. Remove all shared memory\n");
 	pipe=popen("chmod +x kill_ipcs.sh && ./kill_ipcs.sh","w");
 	close(pipe);
-	
-	mytime(4);
-	
-	printf("Time for %d variants copying data: %f sec\n",numvariants,timediff(8,7));
-	
+
 	pipe=fopen("performancev1.txt","a");
-		fprintf(pipe,"%lf \n",timediff(4,1));
+		fprintf(pipe,"test \n");
 	fclose(pipe);
 	
 	//return result;

@@ -6,6 +6,6 @@ void hybchive(
 	int n, 
 	double *A, 
 	...);
-void log(
+void hybchiveLog(
 	char *note
 	);
