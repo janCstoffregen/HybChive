@@ -121,7 +121,7 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 		strcat(pipecommand,variants);
 		strcat(currentdir,variants);
 		strcat(pipecommand,"/");
-		char make[1000]="";
+		char make[3000]="";
 		char execute[1000]="";
 		char wait[1000]="";
 		strcat(pipecommand,performancedata);
@@ -144,17 +144,20 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 			memset(make,'\0',sizeof(make));
 			
 			strcat(make, "cd ");
-			strcat(make,currentdir);
-            char startVariantTest[]="start variant test";
-            hybchiveLog( startVariantTest );
-			strcat(make," && make test && ./varianttest");
+            int length = strlen(currentdir);
+            if (currentdir[length-1] == '\n') {
+                //printf("remove newline");
+                currentdir[length-1]  = '\0';
+            }
+            strcat(make, currentdir);
+
+			strcat(make, " && make test && ./varianttest");
 			pipe=popen(make,"w");
 			close(pipe);
 			memset(wait,'\0',sizeof(wait));
 			strcat(wait,currentdir);
 			strcat(wait,"/");
 			strcat(wait,"wait.txt");
-
 			while(fopen(wait,"r")==NULL){
 				//wait, until test procedure is done with testing of the according variant
 			}
@@ -181,7 +184,7 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 	}
 
 	if(checkallperformance==numvariants){
-		//printf("\n 4.4 All performance files found. \nExecute performance optimizing procedure\n");	
+		printf("\n 4.4 All performance files found. \nExecute performance optimizing procedure\n");
 		char optimize [100]="";
 		memset(optimize,'\0',sizeof(optimize));
 		char cn2[100];
