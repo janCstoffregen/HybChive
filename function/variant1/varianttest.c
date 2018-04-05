@@ -3,40 +3,42 @@
 #include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
- 
-int main(){
-    printf("\n Executing real test procedure variant 2\n");
-    double *secondsarray, *nsecondsarray;
-    double time;
-    // marks the current time and saves it in an array
-    void mytime(int timemark){
+
+double *secondsarray, *nsecondsarray;
+
+// marks the current time and saves it in an array
+void mytime(int timemark) {
     struct  timespec currenttime;
     //dynamic memory allocation
-    if(timemark==1){    
+    if(timemark==1){
         secondsarray=malloc(sizeof(double));
         nsecondsarray=malloc(sizeof(double));
     }
-    else{   
+    else{
         secondsarray=(double *)realloc(secondsarray,sizeof(double)*timemark);
         nsecondsarray=(double *)realloc(nsecondsarray,sizeof(double)*timemark);
     }
     clock_gettime(CLOCK_REALTIME, &currenttime);
     secondsarray[timemark-1]=currenttime.tv_sec;
     nsecondsarray[timemark-1]=currenttime.tv_nsec;
+}
+
+// gets the time difference of two times marked in the function mytime
+double timediff(int time2, int time1)
+{   double time;
+    if ((nsecondsarray[time2-1]-nsecondsarray[time1-1])<0) {
+        time = secondsarray[time2-1]-secondsarray[time1-1];
+        time=time+(1000000000+nsecondsarray[time2-1]-nsecondsarray[time1-1])/1000000000;
+    } else {
+        time=secondsarray[time2-1]-secondsarray[time1-1];
+        time=time+(nsecondsarray[time2-1]-nsecondsarray[time1-1])/1000000000;
     }
+    return time;
+}
  
-    // gets the time difference of two times marked in the function mytime
-    double timediff(int time2, int time1)
-    {   if ((nsecondsarray[time2-1]-nsecondsarray[time1-1])<0) {
-            time=secondsarray[time2-1]-secondsarray[time1-1];
-            time=time+(1000000000+nsecondsarray[time2-1]-nsecondsarray[time1-1])/1000000000;
-        } else {
-            time=secondsarray[time2-1]-secondsarray[time1-1];
-            time=time+(nsecondsarray[time2-1]-nsecondsarray[time1-1])/1000000000;
-        }
-        return time;
-    }
-    
+int main(){
+    printf("\n Executing real test procedure variant 1\n");
+
     int nfinal=900000;
     double A[nfinal];
     int i,j,n;
@@ -46,7 +48,7 @@ int main(){
             
         
         mytime(1);
-        //printf("\n Start calculating\n");
+        printf("\n Start calculating\n");
      
     
 

@@ -4,7 +4,8 @@
 
 
 test:	varianttest.c 
-	gcc varianttest.c -o varianttest -lrt
+	gcc -c varianttest.c -lrt
+	gcc -o varianttest varianttest.o
 
 final: variant.c
 	gcc variant.c -o variant
