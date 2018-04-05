@@ -201,6 +201,7 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 		strcat(optimize,cn2);
 		strcat(optimize," ");
 		strcat(optimize,function);
+        printf(" 4.4.1 Execute optimize procedure");
 		pipe=popen(optimize,"w");
 		close(pipe);
 		while(fopen("wait.txt","r")==NULL){
@@ -209,7 +210,7 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 		pipe=popen("rm wait.txt","w");
 		close(pipe);
 		
-		//printf("\n7.4 Get the splitting information\n");
+		printf("\n7.4 Get the splitting information\n");
 		int shmid;
     	key_t key;
     	int *shm, *s;
