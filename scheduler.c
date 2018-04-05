@@ -119,24 +119,30 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 		strcat(pipecommand,"/");
 		strcat(currentdir,"/");
 		strcat(pipecommand,variants);
+        int length = strlen(pipecommand);
+        if (pipecommand[length-1] == '\n') {
+            printf("remove newline");
+            pipecommand[length-1]  = '\0';
+        }
 		strcat(currentdir,variants);
+//        printf("\n b Check pipecommand, i=%d\n",i);
+//        for(j=0;j<40;j++){
+//            printf("%c",pipecommand[j]);
+//        }
 		strcat(pipecommand,"/");
 		char make[3000]="";
 		char execute[1000]="";
 		char wait[1000]="";
 		strcat(pipecommand,performancedata);
-		//printf("\n b Check pipecommand, i=%d\n",i);
-		/*for(j=0;j<40;j++){
-			printf("%c",pipecommand[j]);
-		}*/
+
 		//printf("\n");
 
 		//printf("\n 4.2 Check, if performance data exists.\n");
 		
 		if(fopen(pipecommand,"r")==NULL){
-			//printf("\nNo performance data found for ");
+			printf("\nNo performance data found for ");
 			for(j=0;j<40;j++){
-				//printf("%c",pipecommand[j]);
+				printf("%c",pipecommand[j]);
 			}
 			//printf("\n");
 			printf("\n 4.3 Execute test \n");
@@ -144,7 +150,7 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 			memset(make,'\0',sizeof(make));
 			
 			strcat(make, "cd ");
-            int length = strlen(currentdir);
+            length = strlen(currentdir);
             if (currentdir[length-1] == '\n') {
                 //printf("remove newline");
                 currentdir[length-1]  = '\0';
