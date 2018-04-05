@@ -39,16 +39,16 @@ double timediff(int time2, int time1)
 int main(){
     printf("\n Executing real test procedure variant 1\n");
 
-    int nfinal=900000;
+    int nfinal=1000;
     double A[nfinal];
     int i,j,n;
     FILE *pipe;
     pipe=fopen("performance.txt","w");
-    for(n=0;n<=nfinal;n=n+100000){
+    for(n=0;n<=nfinal;n=n+100) {
             
         
         mytime(1);
-        printf("\n Start calculating\n");
+        printf("\n Test with n = %d\n", n);
      
     
 
@@ -67,11 +67,11 @@ int main(){
             result+=A[j];
         }
          
-        //printf("\n Result: %lf\n",result);
+        // printf("\n Result: %lf\n",result);
         mytime(2);
      
-        //printf("\n print in performance.txt\n");
-        //printf("%d %f \n",n,timediff(2,1));
+        // printf("\n print in performance.txt\n");
+        // printf("%d %f \n",n,timediff(2,1));
         fprintf (pipe, "%d %f \n", n, timediff(2,1));
     }
     close(pipe);
