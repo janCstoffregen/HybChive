@@ -121,11 +121,11 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 		strcat(pipecommand,variants);
         int length = strlen(pipecommand);
         if (pipecommand[length-1] == '\n') {
-            printf("remove newline");
+            //printf("remove newline");
             pipecommand[length-1]  = '\0';
         }
 		strcat(currentdir,variants);
-        printf("\n b Check pipecommand, i=%d\n",i);
+        //printf("\n b Check pipecommand, i=%d\n",i);
         for(j=0;j<40;j++){
             printf("%c",pipecommand[j]);
         }
@@ -146,7 +146,7 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 			}
 			//printf("\n");
 			printf("\n 4.3 Execute test \n");
-			
+			printf("hier 1");
 			memset(make,'\0',sizeof(make));
 			
 			strcat(make, "cd ");
