@@ -125,10 +125,10 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
             pipecommand[length-1]  = '\0';
         }
 		strcat(currentdir,variants);
-//        printf("\n b Check pipecommand, i=%d\n",i);
-//        for(j=0;j<40;j++){
-//            printf("%c",pipecommand[j]);
-//        }
+        printf("\n b Check pipecommand, i=%d\n",i);
+        for(j=0;j<40;j++){
+            printf("%c",pipecommand[j]);
+        }
 		strcat(pipecommand,"/");
 		char make[3000]="";
 		char execute[1000]="";
@@ -238,9 +238,9 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 	    exit(1);
 	    }
 	    
-	    //printf("\n 7.5 Splitting Data arrived in scheduler\n");
+	    printf("\n 7.5 Splitting Data arrived in scheduler\n");
 	    for(i=0;i<numvariants;i++){
-	    	//printf("\n (in scheduler) Device: %d, n = %d\n",i,shm[i]);
+	    	printf("\n (in scheduler) Device: %d, n = %d\n",i,shm[i]);
 	    }
 		
 		//printf("\n 4.5 Optimizing Procedure has finished. Execute programs\n");

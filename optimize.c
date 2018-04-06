@@ -22,7 +22,7 @@ main(int argc, char *argv[]){
     //printf("\n 5. Starting Optimizing procedure\n");
     FILE *pipe;
     
-    //printf("\n 6. Reading performance files\n");
+    printf("\n 6. Reading performance files\n");
     //printf("\n 6.1 Merging function name and variants to cd to directories like in scheduler\n");
     // later function - name as input of the optimize - program
     //char function[]="function";
@@ -69,7 +69,7 @@ main(int argc, char *argv[]){
 			i=i+1;
 			distance=j+1;
 			help=help+1;
-			//printf("\ndistance: %d\n",distance);
+			printf("\ndistance: %d\n",distance);
 		}
 	}	
 	numvariants=help;
@@ -97,10 +97,10 @@ main(int argc, char *argv[]){
 	int largestPossibleInput[numvariants];
 	for(i=0;i<numvariants;i++){
 		memset(pipecommand,'\0',sizeof(pipecommand));
-		//printf("\n a Check pipecommand, i=%d\n",i);
-		/*for(j=0;j<40;j++){
+		printf("\n a Check pipecommand, i=%d\n",i);
+		for(j=0;j<40;j++){
 			printf("%c",pipecommand[j]);
-		}*/
+		}
 		memset(variants,'\0',sizeof(variants));
 		for(k=0;k<20;k++){
 			if(variantslist[i][k]!='\0'){
@@ -121,7 +121,7 @@ main(int argc, char *argv[]){
 		char wait[1000]="";
 		strcat(pipecommand,performancedata);
 		
-		//printf("\n 6.2 reading performance files for variant %d\n",i);
+		printf("\n 6.2 reading performance files for variant %d\n",i);
 		//printf("\n Check pipecommand, i=%d\n",i);
 		for(j=0;j<40;j++){
 			printf("%c",pipecommand[j]);
@@ -179,7 +179,7 @@ main(int argc, char *argv[]){
 
 	}
 
-	//printf("\n 7. Run Optimizing Algorithm\n");
+	printf("\n 7. Run Optimizing Algorithm\n");
 	//n spaeter als input, jetzt ersteinmal vorgegeben.
 	
 	int largestPossibleInputSum = 0;
@@ -188,7 +188,7 @@ main(int argc, char *argv[]){
 		largestPossibleInputSum += largestPossibleInput[i] * largestPossibleInput[i];
 	}
 	
-	//printf("\n 7.0.1 Largest possible input for given problem and sum of devices: %d\n",largestPossibleInputSum);
+	printf("\n 7.0.1 Largest possible input for given problem and sum of devices: %d\n",largestPossibleInputSum);
 	
 	int splittable[numvariants];
 	//int splithelp[numvariants];
@@ -205,17 +205,18 @@ main(int argc, char *argv[]){
 	for(i=0;i<numvariants;i++){
 		checkSplitability[i]=0;
 	}
-	
+
+	printf("next: it does not work if performance.txt already exists.");
 	if(n>largestPossibleInputSum){
-		//printf("\n 7.0.2 Problem too big for given devices, no tiling possible yet. Will be implemented in the next step. Please abort program\n");
+		printf("\n 7.0.2 Problem too big for given devices, no tiling possible yet. Will be implemented in the next step. Please abort program\n");
 		exit(1);
 	}
 	else{
-		//printf("\n 7.0.3 Check, if data can be split evenly\n");
+		printf("\n 7.0.3 Check, if data can be split evenly\n");
 
 		for(i=0;i<numvariants;i++){
 			if(n>largestPossibleInput[i]*largestPossibleInput[i]){
-				//printf("\n 7.0.4 Input too big for device %i\n",i);
+				printf("\n 7.0.4 Input too big for device %i\n",i);
 				checkSplitability[i]=-1;
 			}
 			
@@ -228,7 +229,7 @@ main(int argc, char *argv[]){
 		}
 
 		if(whichOptimisingAlgorithm==0){
-			//printf("\n 7.0.5 Data evenly splitable\n");
+			printf("\n 7.0.5 Data evenly splitable\n");
 			for(i=0;i<numvariants-1;i++){
 				splittable[i]=n/numvariants;
 				total+=n/numvariants;
@@ -272,7 +273,7 @@ main(int argc, char *argv[]){
 	
 
 	
-	//printf("\n 7.2 Create shared memory space for input.\n");
+	printf("\n 7.2 Create shared memory space for input.\n");
 	  /*
     * We'll name our shared memory segment
     * "5678".
@@ -305,7 +306,7 @@ main(int argc, char *argv[]){
     * other process to read.
     */
     
-	//printf("\n 7.3 Put splittable in shared memory space\n");
+	printf("\n 7.3 Put splittable in shared memory space\n");
 	s=shm;
 	
 	int c;
