@@ -12,7 +12,7 @@ gcc -o user user.o scheduler.o -lrt
 int main(){
     
     //create input data
-    int n=1000; // 1000000 is biggest possible input.    
+    int n=100; // 1000000 is biggest possible input.
     double A[n*n];
     double result=0;
     int i;
@@ -20,7 +20,7 @@ int main(){
     for(i=0;i<n*n;i++){
         A[i]=0;
     } 
-    A[999*n+999]=1234;
+    A[9*n+9]=1234;
     
     //define HybChive parameters:
     //1. Define name of the HybChive routine that you want to call
