@@ -11,8 +11,7 @@
 void hybchive(char *function, char *variants, char *optimize, int numberOfParameters, int n, double *A, ...) {
 
     // start log
-	char startScheduler[]="start scheduler";
-    hybchiveLog( startScheduler );
+    hybchiveLog( "scheduler | start scheduler" );
 
 	double result=0;
 	int sizefunction=sizeof(function);
@@ -126,9 +125,9 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
         }
 		strcat(currentdir,variants);
         //printf("\n b Check pipecommand, i=%d\n",i);
-        for(j=0;j<40;j++){
-            printf("%c",pipecommand[j]);
-        }
+//        for(j=0;j<40;j++){
+//            printf("%c",pipecommand[j]);
+//        }
 		strcat(pipecommand,"/");
 		char make[3000]="";
 		char execute[1000]="";
@@ -140,10 +139,11 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 		//printf("\n 4.2 Check, if performance data exists.\n");
 		
 		if(fopen(pipecommand,"r")==NULL){
-			printf("\nNo performance data found for ");
-			for(j=0;j<40;j++){
-				printf("%c",pipecommand[j]);
-			}
+            hybchiveLog( "scheduler | No performance data found" );
+//			printf("\n ");
+//			for(j=0;j<40;j++){
+//				printf("%c",pipecommand[j]);
+//			}
 			//printf("\n");
 			printf("\n 4.3 Execute test \n");
 			printf("hier 1");
@@ -167,7 +167,7 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 			while(fopen(wait,"r")==NULL){
 				//wait, until test procedure is done with testing of the according variant
 			}
-			printf("\n End execute varianttest");
+            hybchiveLog( "scheduler | End execute varianttest" );
 			memset(wait,'\0',sizeof(wait));
 			strcat(wait,"rm ");
 			strcat(wait,currentdir);
@@ -190,18 +190,18 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 	}
 
 	if(checkallperformance==numvariants){
-		printf("\nscheduler |  4.4 All performance files found. Execute performance optimizing procedure \n");
+        hybchiveLog( "scheduler | 4.4 All performance files found. Execute performance optimizing procedure" );
 		char optimize [100]="";
 		memset(optimize,'\0',sizeof(optimize));
 		char cn2[100];
 		memset(cn2,'\0',sizeof(cn2));
 		sprintf(cn2,"%d",n);
-		strcat(optimize,"gcc optimize.c -o optimize && ./optimize");
+		strcat(optimize,"gcc optimize.c -o optimize hybchiveLog.o && ./optimize");
 		strcat(optimize," ");
 		strcat(optimize,cn2);
 		strcat(optimize," ");
 		strcat(optimize,function);
-        printf("\nscheduler | 4.4.1 Execute optimize procedure");
+        //printf("\nscheduler | 4.4.1 Execute optimize procedure");
 		pipe=popen(optimize,"w");
 		close(pipe);
 		while(fopen("wait.txt","r")==NULL){
@@ -209,8 +209,7 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 		}
 		pipe=popen("rm wait.txt","w");
 		close(pipe);
-		
-		printf("\nscheduler | 7.4 Get the splitting information");
+        //hybchiveLog( "scheduler | 7.4 Get the splitting information" );
 		int shmid;
     	key_t key;
     	int *shm, *s;
@@ -232,15 +231,14 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 	    perror("shmat");
 	    exit(1);
 	    }
-	    
-	    printf("\nscheduler | 7.5 Splitting Data arrived in scheduler");
+        hybchiveLog( "scheduler | 7.5 Splitting Data arrived in scheduler" );
 	    for(i=0;i<numvariants;i++){
 	    	printf("\nscheduler | 7.6 Device: %d, n = %d",i,shm[i]);
 	    }
 		
 		printf("\nscheduler | 4.5 Optimizing Procedure has finished. Execute programs");
 		
-		printf("\nscheduler | 8. Create data for programs (later as user - input)");
+		//printf("\nscheduler | 8. Create data for programs (later as user - input)");
 		/*double A[n];
 		for(i=0;i<n;i++){
 			A[i]=1;
@@ -259,7 +257,7 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
     	perror("shmget");
     	exit(1);
     	}
-        printf("scheduler | 8.1.0 Segment created");
+        //printf("\nscheduler | 8.1.0 Segment created");
  
     	/*
     	* Now we attach the segment to our data space.
@@ -274,15 +272,11 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 	    * other process to read.
 	    */
 	    
-		printf("\nscheduler | 8.2 Put data in shared memory space");
-
-        printf("\n scheduler | hier jetzt memcpy implementieren \n");
+		//printf("\nscheduler | 8.2 Put data in shared memory space");
 
 		s2=shm2;
-		for(i=0;i<n;i++){
-			s2[i]=A[i];
-		}
-		//printf("\n 8.3 Test Data in shared memory: %lf\n",s2[0]);
+        memcpy(s2, A, n);
+		//printf("\n 8.3 Test Data in shared memory: %lf",s2[0]);
 		
 		int begin=0, end=0;
 		
@@ -307,7 +301,7 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 			strcat(currentdir,"/");
 			strcat(currentdir,variants);
 			
-			printf("\nscheduler | 8.6 Converting inputs for programs into strings");
+			//printf("\nscheduler | 8.6 Converting inputs for programs into strings");
 			char cbegin[100]; 
 			char cend[100];
 			char ckey[100];
@@ -319,18 +313,7 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 			sprintf(cn,"%d",n);
 			sprintf(ci,"%d",i);
 			sprintf(cnumvariants,"%d",numvariants);
-
-			//printf("\n 8.6.1 Check, if it works: %s, %s\n",cbegin,cend);
-			
-			//printf("\n 8.6.2 Convert key_t in char\n");
 			sprintf(ckey,"%d",key2);
-			//printf("\n 8.6.2 Check, if it works: %s\n",ckey);
-			
-			/*printf("\n 4.5.1 Print current directory\n");
-			for(j=0;j<40;j++){
-				printf("%c",currentdir[j]);
-			}
-			printf("\n");*/
 			
 			//printf("\n 14. Create Shared memory for result\n");
 			int shmid3;
@@ -369,10 +352,10 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
             }
 			strcat(make,currentdir);
 			strcat(make," && make final && ./variant");
-            printf("\nscheduler | 9.1 Print make and execute command");
-            for(j=0;j<120;j++){
-                printf("%c",make[j]);
-            }
+//            printf("\nscheduler | 9.1 Print make and execute command");
+//            for(j=0;j<120;j++){
+//                printf("%c",make[j]);
+//            }
 			strcat(make," ");
 			strcat(make,ckey);
 			strcat(make," ");
@@ -429,20 +412,19 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 		for(i=1;i<numvariants+1;i++){		//1, because 0 is for communication with scheduler
 			result=result+s3[i];
 		}
-		printf("\n 19. Result: %lf\n",result);
+		printf("\nscheduler | 19. Result: %lf\n",result);
 		
 		
 		
 		
 		
 	}//end if(numvariants==all there)
-	printf("\nscheduler | 20. Remove all shared memory");
+	//printf("\nscheduler | 20. Remove all shared memory");
 	pipe=popen("chmod +x kill_ipcs.sh && ./kill_ipcs.sh","w");
 	close(pipe);
 
-	pipe=fopen("performancev1.txt","a");
-		fprintf(pipe,"test \n");
-	fclose(pipe);
+//
+
 	
 	//return result;
 	

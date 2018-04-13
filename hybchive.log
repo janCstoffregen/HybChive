@@ -1,0 +1,6 @@
+1523631648.850892, optimize | 6. Reading performance files
+1523631648.864114, optimize | 7. Run Optimizing Algorithm
+1523631648.864155, optimize | 7.1.2 End Optimizing Routine
+1523631648.772065, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1523631648.868955, scheduler | 7.5 Splitting Data arrived in scheduler
+1523631649.875712, user | end HybChive Function

@@ -5,9 +5,7 @@
 #include <sys/shm.h>
 
 int main(int argc, char *argv[]){
-	printf("\nExecuting variant 2\n");
-	
-		printf("\n 10 Check, if input has arrived\n");
+    printf("\nvariant | 10. Check, if input has arrived");
 	
 	/* Conversion string into int */
 	int begin,end,ikey,n,variantid,numvariants;
@@ -19,9 +17,9 @@ int main(int argc, char *argv[]){
     numvariants = atoi(argv[6]);
     int ikey3 = atoi(argv[7]);
     
-    printf("\n 10.1 key: %d, begin: %d, end: %d, n: %d\n",ikey,begin,end,n);
+    printf("\nvariant | 10.1 key: %d, begin: %d, end: %d, n: %d",ikey,begin,end,n);
     
-    printf("\n 11. Attach shared memory space\n");
+    //printf("\n 11. Attach shared memory space\n");
     int shmid;
     key_t key;
     double *shm, *s;
@@ -45,9 +43,9 @@ int main(int argc, char *argv[]){
     exit(1);
     }
     
-    printf("\n 12. Check shared memory: %lf\n",shm[0]);
+    printf("\nvariant | 12. Check shared memory: %lf",shm[0]);
     
-    printf("\n 13. Begin of the algorithm\n");
+    printf("\nvariant | 13. Begin of the algorithm");
         //printf("\n Divide each member 100 times by 1.1\n");
     int i,j;
     for(i=0;i<10000;i++){
@@ -61,15 +59,15 @@ int main(int argc, char *argv[]){
     for(j=begin;j<end;j++){
         result+=shm[j];
     }
-    printf("\n Result (begin: %d, end: %d) : %.5lf\n",begin,end,result);
+    printf("\nvariant | Result (begin: %d, end: %d) : %.5lf",begin,end,result);
 
-    printf("\n 15. Write result in shared memory\n");
+    printf("\nvariant | 15. Write result in shared memory");
     int shmid2;
     key_t key2;
     double *shm2, *s2;
     int size2=sizeof(double)*numvariants+1;
     
-    key2=ikey3; //spaeter als input, hab ich gerade keine lust zu
+    key2=ikey3;
 
     /*
     * Locate the segment.
@@ -90,8 +88,6 @@ int main(int argc, char *argv[]){
     shm2[variantid+1]=result;
     shm2[0]=shm2[0]+1;
 
-    printf("\n 13.1 End of the algorithm\n");
+    printf("\nvariant | 13.1 End of the algorithm");
     
-
-
 }

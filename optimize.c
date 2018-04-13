@@ -10,6 +10,7 @@
 #include <sys/types.h>
 #include <sys/ipc.h>
 #include <sys/shm.h>
+#include "hybchive.h"
 
 main(int argc, char *argv[]){
 	
@@ -21,8 +22,7 @@ main(int argc, char *argv[]){
 	
     //printf("\n 5. Starting Optimizing procedure\n");
     FILE *pipe;
-    
-    printf("\noptimize | 6. Reading performance files");
+    hybchiveLog( "optimize | 6. Reading performance files" );
     //printf("\n 6.1 Merging function name and variants to cd to directories like in scheduler\n");
     // later function - name as input of the optimize - program
     //char function[]="function";
@@ -69,7 +69,7 @@ main(int argc, char *argv[]){
 			i=i+1;
 			distance=j+1;
 			help=help+1;
-			printf("\noptimize | distance: %d",distance);
+			//printf("\noptimize | distance: %d",distance);
 		}
 	}	
 	numvariants=help;
@@ -97,10 +97,10 @@ main(int argc, char *argv[]){
 	int largestPossibleInput[numvariants];
 	for(i=0;i<numvariants;i++){
 		memset(pipecommand,'\0',sizeof(pipecommand));
-		printf("\noptimize | a Check pipecommand, i=%d",i);
-		for(j=0;j<40;j++){
-			printf("%c",pipecommand[j]);
-		}
+//		printf("\noptimize | a Check pipecommand, i=%d",i);
+//		for(j=0;j<40;j++){
+//			printf("%c",pipecommand[j]);
+//		}
 		memset(variants,'\0',sizeof(variants));
 		for(k=0;k<20;k++){
 			if(variantslist[i][k]!='\0'){
@@ -121,11 +121,11 @@ main(int argc, char *argv[]){
 		char wait[1000]="";
 		strcat(pipecommand,performancedata);
 		
-		printf("\noptimize | 6.2 reading performance files for variant %d",i);
-		//printf("\n Check pipecommand, i=%d\n",i);
-		for(j=0;j<40;j++){
-			printf("%c",pipecommand[j]);
-		}
+//		printf("\noptimize | 6.2 reading performance files for variant %d",i);
+//		//printf("\n Check pipecommand, i=%d\n",i);
+//		for(j=0;j<40;j++){
+//			printf("%c",pipecommand[j]);
+//		}
 		int variables=2; 		//wird spaeter automatisch aus den files abgelesen
 		
 		//float performancedatatable[numvariants][variables];
@@ -178,8 +178,7 @@ main(int argc, char *argv[]){
 		fclose(pipe);
 
 	}
-
-	printf("\noptimize | 7. Run Optimizing Algorithm");
+    hybchiveLog( "optimize | 7. Run Optimizing Algorithm" );
 	//n spaeter als input, jetzt ersteinmal vorgegeben.
 	
 	int largestPossibleInputSum = 0;
@@ -187,7 +186,7 @@ main(int argc, char *argv[]){
 	for (i=0;i<numvariants;i++){
 		largestPossibleInputSum += largestPossibleInput[i] * largestPossibleInput[i];
 	}
-	
+
 	printf("\noptimize | 7.0.1 Largest possible input for given problem and sum of devices: %d",largestPossibleInputSum);
 	
 	int splittable[numvariants];
@@ -229,7 +228,7 @@ main(int argc, char *argv[]){
 		}
 
 		if(whichOptimisingAlgorithm==0){
-			printf("\noptimize | 7.0.5 Data evenly splitable");
+			printf("\noptimize | 7.0.5 Data evenly splitable\n");
 			for(i=0;i<numvariants-1;i++){
 				splittable[i]=n/numvariants;
 				total+=n/numvariants;
@@ -261,9 +260,11 @@ main(int argc, char *argv[]){
 		}
 		
 	
-		for(i=0;i<numvariants;i++){
-				//printf("\n 7.1 Aufteilung Devices %d: %d\n",i,splittable[i]);
-		}
+//		for(i=0;i<numvariants;i++){
+//				//printf("\n 7.1 Aufteilung Devices %d: %d\n",i,splittable[i]);
+//		}
+
+        hybchiveLog( "optimize | 7.1.2 End Optimizing Routine" );
 
 
 	}
@@ -306,7 +307,7 @@ main(int argc, char *argv[]){
     * other process to read.
     */
     
-	printf("\noptimise | 7.3 Put splittable in shared memory space");
+	printf("\noptimise | 7.3 Put splittable in shared memory space\n");
 	s=shm;
 	
 	int c;

@@ -7,5 +7,9 @@ void hybchiveLog(char *note) {
     clock_gettime(CLOCK_REALTIME, &currenttime);
     double seconds = currenttime.tv_sec;
     double nanoseconds = currenttime.tv_nsec;
-    printf("%s, %f", note, seconds + nanoseconds / 1000000000);
+    FILE *pipe;
+    pipe=fopen("hybchive.log","a");
+    fprintf (pipe, "%f, %s\n", seconds + nanoseconds / 1000000000, note);
+    close(pipe);
+    printf("%f, %s\n", seconds + nanoseconds / 1000000000, note);
 }

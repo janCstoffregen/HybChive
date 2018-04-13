@@ -32,7 +32,25 @@ int main(){
     int numberOfParameters = 1;
     //3. Parameter for the search algorithm: Define the entry that you'd like to search for:
     int parameterOne=1234;
+
     //4. Execute the hybchive routine:
+
+    if(fopen("hybchive.log","r")!=NULL){
+
+        FILE *pipe;
+        pipe=popen("rm hybchive.log","w");
+        close(pipe);
+
+        while(fopen(hybchive.log,"r")!=NULL){
+            //wait, until log file has been removed
+        }
+
+    }
+
+
+
+    hybchiveLog( "user | execute HybChive Function" );
+
     hybchive(
 	set,
 	variants,
@@ -41,10 +59,13 @@ int main(){
 	n*n,
 	A,
 	parameterOne);
+
+    hybchiveLog( "user | end HybChive Function" );
     
-    
-    
-    printf("\n 0.3 Result in program of user: Found in A[%d][%d]\n",((int) result)/n,((int)result) % n); 
+
+    printf("\nuser | 0.3 Result in program of user: Found in A[%d][%d]\n",((int) result)/n,((int)result) % n);
+
+    printf("\n next: order hybchive log");
 
 
 }
