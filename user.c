@@ -35,20 +35,6 @@ int main(){
 
     //4. Execute the hybchive routine:
 
-    if(fopen("hybchive.log","r")!=NULL){
-
-        FILE *pipe;
-        pipe=popen("rm hybchive.log","w");
-        close(pipe);
-
-        while(fopen(hybchive.log,"r")!=NULL){
-            //wait, until log file has been removed
-        }
-
-    }
-
-
-
     hybchiveLog( "user | execute HybChive Function" );
 
     hybchive(
@@ -60,12 +46,10 @@ int main(){
 	A,
 	parameterOne);
 
-    hybchiveLog( "user | end HybChive Function" );
+    hybchiveLog( "user | end HybChive Function - order timemarks yourself" );
     
 
     printf("\nuser | 0.3 Result in program of user: Found in A[%d][%d]\n",((int) result)/n,((int)result) % n);
-
-    printf("\n next: order hybchive log");
 
 
 }

@@ -59,7 +59,7 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 	i=0;
 	int help=0;
 	int distance=0;
-	for(j=0;j<50;j++){						//Bei Cloud9 darf hier die obergrenze der Iterationen nicht zu hoch sein
+	for(j=0;j<50;j++){
 		if(variants[j]!='\n'){
 			variantslist[i][j-distance]=variants[j];
 		}
@@ -77,10 +77,7 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 		}
 		printf("end of line\n");
 	}*/
-	
-	//printf("\nprint help value  %d\n",help);
 
-	//printf("\n3.3 rm list.txt\n");
 	char cd2[]="cd ";
 	char pipecommand2[2000] = "";
 	strcat(pipecommand2,cd2);
