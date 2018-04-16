@@ -141,11 +141,11 @@ main(int argc, char *argv[]){
 			
 			printf ("\n 6.3.1 Size of input data: n*n = %d\n",n);
 			
-			printf("\n 6.2.1 Check, if Performancedata arrived for variant %d\n",i);
-			for(j=0;j<number_of_lines;j++){
-				printf("%f  %f", performancedatatable[j][0], performancedatatable[j][1]);
-				printf("\n");
-			}
+//			printf("\n 6.2.1 Check, if Performancedata arrived for variant %d\n",i);
+//			for(j=0;j<number_of_lines;j++){
+//				printf("%f  %f", performancedatatable[j][0], performancedatatable[j][1]);
+//				printf("\n");
+//			}
 			
 		
 		fclose(pipe);
@@ -176,7 +176,6 @@ main(int argc, char *argv[]){
 		checkSplitability[i]=0;
 	}
 
-	printf("next: it does not work if performance.txt already exists.");
 	if(n>largestPossibleInputSum){
 		printf("\noptimize | 7.0.2 Problem too big for given devices, no tiling possible yet. Will be implemented in the next step. Please abort program");
 		exit(1);
@@ -198,8 +197,8 @@ main(int argc, char *argv[]){
 			}			
 		}
 
-		if(whichOptimisingAlgorithm==0){
-			printf("\noptimize | 7.0.5 Data evenly splitable\n");
+		if(whichOptimisingAlgorithm==0) {
+			printf("\noptimize | 7.0.5 Data evenly splitable - Hier weiter: Finalise optimise.c - Adjust performance.txt manually to change algorithm\n");
 			for(i=0;i<numvariants-1;i++){
 				splittable[i]=n/numvariants;
 				total+=n/numvariants;
@@ -231,9 +230,13 @@ main(int argc, char *argv[]){
 		}
 		
 	
-//		for(i=0;i<numvariants;i++){
-//				//printf("\n 7.1 Aufteilung Devices %d: %d\n",i,splittable[i]);
-//		}
+		for(i=0;i<numvariants;i++){
+				//printf("\n 7.1 Aufteilung Devices %d: %d\n",i,splittable[i]);
+		}
+
+        while(fopen("wait.txt","r")==NULL){
+            //wait, until test procedure is done with testing of the according variant
+        }
 
         hybchiveLog( "optimize | 7.1.2 End Optimizing Routine" );
 

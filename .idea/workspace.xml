@@ -10,11 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7de219d-f619-48c7-b35c-2ddc0f33ccb9" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/function/variant2/Makefile" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/function/variant2/variant" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/function/variant2/variant.c" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/function/variant2/varianttest" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/function/variant2/varianttest.c" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/function/variant3/Makefile" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/function/variant3/performance.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/function/variant3/variant" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/function/variant3/variant.c" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/function/variant3/varianttest" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/function/variant3/varianttest.c" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/function/variant1/performance.txt" afterPath="" />
       <change beforePath="$PROJECT_DIR$/hybchive.log" afterPath="$PROJECT_DIR$/hybchive.log" />
@@ -33,11 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="scheduler.c" pinned="false" current-in-tab="true">
+      <file leaf-file-name="scheduler.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scheduler.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="156" column="32" lean-forward="false" selection-start-line="156" selection-start-column="32" selection-end-line="156" selection-end-column="32" />
+            <state relative-caret-position="206">
+              <caret line="221" column="0" lean-forward="false" selection-start-line="221" selection-start-column="0" selection-end-line="223" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -73,11 +74,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="optimize.c" pinned="false" current-in-tab="false">
+      <file leaf-file-name="optimize.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/optimize.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="163" column="32" lean-forward="false" selection-start-line="163" selection-start-column="32" selection-end-line="163" selection-end-column="32" />
+            <state relative-caret-position="530">
+              <caret line="200" column="149" lean-forward="false" selection-start-line="200" selection-start-column="149" selection-end-line="200" selection-end-column="149" />
               <folding />
             </state>
           </provider>
@@ -102,9 +103,14 @@
       <find>printf</find>
       <find>7.3</find>
       <find>check</find>
-      <find>while</find>
       <find>performancedata</find>
+      <find>function</find>
+      <find>sizefunction</find>
+      <find>while</find>
     </findStrings>
+    <replaceStrings>
+      <replace>hybChiveSetName</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -121,8 +127,8 @@
         <option value="$PROJECT_DIR$/hybchiveLog.c" />
         <option value="$PROJECT_DIR$/hybchive.log" />
         <option value="$PROJECT_DIR$/user.c" />
-        <option value="$PROJECT_DIR$/optimize.c" />
         <option value="$PROJECT_DIR$/scheduler.c" />
+        <option value="$PROJECT_DIR$/optimize.c" />
       </list>
     </option>
   </component>
@@ -169,7 +175,7 @@
               <item name="HybChive" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="HybChive" type="462c0819:PsiDirectoryNode" />
               <item name="function" type="462c0819:PsiDirectoryNode" />
-              <item name="variant2" type="462c0819:PsiDirectoryNode" />
+              <item name="variant3" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -222,12 +228,12 @@
       <workItem from="1523608318280" duration="48000" />
       <workItem from="1523628336088" duration="3356000" />
       <workItem from="1523632461787" duration="835000" />
-      <workItem from="1523883582475" duration="3115000" />
+      <workItem from="1523883582475" duration="4785000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24482000" />
+    <option name="totallyTimeSpent" value="26152000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1496" y="-261" width="1664" height="1094" extended-state="0" />
@@ -631,18 +637,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/optimize.c">
+    <entry file="file://$PROJECT_DIR$/scheduler.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="163" column="32" lean-forward="false" selection-start-line="163" selection-start-column="32" selection-end-line="163" selection-end-column="32" />
+        <state relative-caret-position="206">
+          <caret line="221" column="0" lean-forward="false" selection-start-line="221" selection-start-column="0" selection-end-line="223" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scheduler.c">
+    <entry file="file://$PROJECT_DIR$/optimize.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="156" column="32" lean-forward="false" selection-start-line="156" selection-start-column="32" selection-end-line="156" selection-end-column="32" />
+        <state relative-caret-position="530">
+          <caret line="200" column="149" lean-forward="false" selection-start-line="200" selection-start-column="149" selection-end-line="200" selection-end-column="149" />
           <folding />
         </state>
       </provider>

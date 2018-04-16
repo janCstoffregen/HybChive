@@ -8,43 +8,63 @@
 #include "hybchive.h"
 #include <stdarg.h>
 
-void hybchive(char *function, char *variants, char *optimize, int numberOfParameters, int n, double *A, ...) {
+int checkallperformance=0;
+int numvariants=10;
+int characters=30;
+int i,j;
+int k,l;
+int help=0;
+int distance=0;
+
+double result=0;
+
+char savedir[]=" && ls -d */ | cut -f1 -d'/' > list.txt && cp list.txt 2.txt";
+char pipecommand[2000] = "";
+char cd[]="cd ";
+char list2[]="/2.txt";
+char variantslist[20][30]={};
+char list[]="/list.txt";
+char performancedata[]="performance.txt";
+char cd2[]="cd ";
+char pipecommand2[2000] = "";
+char removedir[]=" && rm list.txt && rm 2.txt";
+char currentdir[1000]="";
+char make[3000]="";
+char execute[1000]="";
+char wait[1000]="";
+char optimize [100]="";
+
+FILE *pipe;
+FILE *pipe2;
+
+
+
+void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberOfParameters, int n, double *A, ...) {
 
     // start log
     hybchiveLog( "scheduler | start scheduler" );
 
-	double result=0;
-	int sizefunction=sizeof(function);
 
     //printf("\n2.2 cd to folder and write directory listing to array\n");
-    FILE *pipe;
-	char pipecommand[2000] = "";
-	char cd[]="cd ";
 	strcat(pipecommand,cd);
-	strcat(pipecommand,function);
-	char savedir[]=" && ls -d */ | cut -f1 -d'/' > list.txt && cp list.txt 2.txt";	
+	strcat(pipecommand,hybChiveSetName);
 	strcat(pipecommand,savedir);
 	pipe=popen(pipecommand,"w");
 	close(pipe);
 
 	//printf("\n3. Read the list.txt file in an array\n");
-	int numvariants=10;
-	int characters=30;
-	int i,j;
-	char list2[]="/2.txt";
 	memset(pipecommand,'\0',sizeof(pipecommand));
-	strcat(pipecommand,function);
+	strcat(pipecommand,hybChiveSetName);
 	strcat(pipecommand,list2);
 	while(fopen(pipecommand,"r")==NULL){
-						}
-	char list[]="/list.txt";
+    }
 	memset(pipecommand,'\0',sizeof(pipecommand));
-	strcat(pipecommand,function);
+	strcat(pipecommand,hybChiveSetName);
 	strcat(pipecommand,list);
 	pipe=fopen(pipecommand,"r");
-		for(i=0;i<numvariants*characters;i++){
-			fscanf(pipe,"%c",&variants[i]);
-		}
+    for(i=0;i<numvariants*characters;i++){
+        fscanf(pipe,"%c",&variants[i]);
+    }
 	fclose(pipe);
 
 	//printf("\n3.1 show, that the devices - array got everything \n");
@@ -55,10 +75,9 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 
 
 	//printf("\n3.2 transfer devices to array\n");
-	char variantslist[20][30]={};
+
 	i=0;
-	int help=0;
-	int distance=0;
+
 	for(j=0;j<50;j++){
 		if(variants[j]!='\n'){
 			variantslist[i][j-distance]=variants[j];
@@ -78,11 +97,10 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 		printf("\n");
 	}
 
-	char cd2[]="cd ";
-	char pipecommand2[2000] = "";
+
 	strcat(pipecommand2,cd2);
-	strcat(pipecommand2,function);
-	char removedir[]=" && rm list.txt && rm 2.txt";
+	strcat(pipecommand2,hybChiveSetName);
+
 	strcat(pipecommand2,removedir);
 	pipe=popen(pipecommand2,"w");
 	close(pipe);
@@ -92,10 +110,8 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 	/*begin part two*/
 	//printf("\n4. cd to every variant and check, if there is performance data\n");
 	//printf("\n4.1 merge variant list and cd - command\n");
-	char performancedata[]="performance.txt";
-	int k,l;
-	FILE *pipe2;
-	int checkallperformance=0;
+
+
 	for(i=0;i<numvariants;i++) {
 		memset(pipecommand,'\0',sizeof(pipecommand));
 		printf("\n a Check pipecommand - should be empty, i=%d\n",i);
@@ -108,10 +124,10 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 				variants[k]=variantslist[i][k];
 			}
 		}
-		char currentdir[1000]="";
+
 		memset(currentdir,'\0',sizeof(currentdir));
-		strcat(pipecommand,function);
-		strcat(currentdir,function);
+		strcat(pipecommand,hybChiveSetName);
+		strcat(currentdir,hybChiveSetName);
 		strcat(pipecommand,"/");
 		strcat(currentdir,"/");
 		strcat(pipecommand,variantslist[i]);
@@ -120,11 +136,9 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
             printf("remove newline");
             pipecommand[length-1]  = '\0';
         }
-		strcat(currentdir,variants);
+		strcat(currentdir,variantslist[i]);
 
-		char make[3000]="";
-		char execute[1000]="";
-		char wait[1000]="";
+
 		strcat(pipecommand,"/");
 		strcat(pipecommand,performancedata);
 
@@ -153,13 +167,11 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 			strcat(make, " && make test && ./varianttest");
 
 			printf("\n b Check pipecommand - should be set name and variant name, i=%d\n",i);
-			for(j=0;j<50;j++){
-				printf("%c",make[j]);
+			for(j=0;j<70;j++) {
+				printf("%c",currentdir[j]);
 			}
+            printf("\nCurrentdir not working!");
 
-			printf("\n My debugger: \n");
-			while(fopen("wait.txt","r")==NULL){
-			}
 
 			pipe=popen(make,"w");
 			close(pipe);
@@ -194,7 +206,7 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 
 	if(checkallperformance==numvariants){
         hybchiveLog( "scheduler | 4.4 All performance files found. Execute performance optimizing procedure" );
-		char optimize [100]="";
+
 		memset(optimize,'\0',sizeof(optimize));
 		char cn2[100];
 		memset(cn2,'\0',sizeof(cn2));
@@ -203,7 +215,7 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 		strcat(optimize," ");
 		strcat(optimize,cn2);
 		strcat(optimize," ");
-		strcat(optimize,function);
+		strcat(optimize,hybChiveSetName);
         //printf("\nscheduler | 4.4.1 Execute optimize procedure");
 		pipe=popen(optimize,"w");
 		close(pipe);
@@ -300,7 +312,7 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 			}
 			char currentdir[1000]="";
 			memset(currentdir,'\0',sizeof(currentdir));
-			strcat(currentdir,function);
+			strcat(currentdir,hybChiveSetName);
 			strcat(currentdir,"/");
 			strcat(currentdir,variants);
 			
