@@ -17,15 +17,8 @@ main(int argc, char *argv[]){
 	//n;
 	int n=atoi(argv[1]);
 	char *function = argv[2];
-	
-	//printf("\n 5.-1 Function arrived in optimize.c: %s \n",function);
-	
-    //printf("\n 5. Starting Optimizing procedure\n");
     FILE *pipe;
     hybchiveLog( "optimize | 6. Reading performance files" );
-    //printf("\n 6.1 Merging function name and variants to cd to directories like in scheduler\n");
-    // later function - name as input of the optimize - program
-    //char function[]="function";
     char pipecommand[2000] = "";
 	char cd[]="cd ";
 	strcat(pipecommand,cd);
@@ -34,10 +27,9 @@ main(int argc, char *argv[]){
 	strcat(pipecommand,savedir);
 	pipe=popen(pipecommand,"w");
 	close(pipe);
-    //printf("\n3. Read the list.txt file in an array\n");
-    
 
-    
+
+    //printf("\n3. Read the list.txt file in an array\n");
 	int numvariants=10;
 	int characters=30;
 	int i,j,k;
@@ -61,7 +53,7 @@ main(int argc, char *argv[]){
 	i=0;
 	int help=0;
 	int distance=0;
-	for(j=0;j<50;j++){						//Bei Cloud9 darf hier die obergrenze der Iterationen nicht zu hoch sein
+	for(j=0;j<50;j++){
 		if(variants[j]!='\n'){
 			variantslist[i][j-distance]=variants[j];
 		}
@@ -69,7 +61,6 @@ main(int argc, char *argv[]){
 			i=i+1;
 			distance=j+1;
 			help=help+1;
-			//printf("\noptimize | distance: %d",distance);
 		}
 	}	
 	numvariants=help;
@@ -86,7 +77,7 @@ main(int argc, char *argv[]){
 	int checkallperformance=0;
 	memset(pipecommand,'\0',sizeof(pipecommand));
 	
-	float performancedatatable[numvariants][1000][2]; // derzeit angenommen: nicht mehr als 1000 performance.txt zeilen und nur 2 variablen.
+	float performancedatatable[numvariants][1000][2];
 	for (i=0;i<numvariants;i++){
 		for (j=0;j<1000;j++){
 			for(k=0;k<2;k++){
@@ -95,12 +86,8 @@ main(int argc, char *argv[]){
 		}
 	}
 	int largestPossibleInput[numvariants];
-	for(i=0;i<numvariants;i++){
+	for(i=0;i<numvariants;i++) {
 		memset(pipecommand,'\0',sizeof(pipecommand));
-//		printf("\noptimize | a Check pipecommand, i=%d",i);
-//		for(j=0;j<40;j++){
-//			printf("%c",pipecommand[j]);
-//		}
 		memset(variants,'\0',sizeof(variants));
 		for(k=0;k<20;k++){
 			if(variantslist[i][k]!='\0'){
@@ -120,66 +107,51 @@ main(int argc, char *argv[]){
 		char execute[1000]="";
 		char wait[1000]="";
 		strcat(pipecommand,performancedata);
-		
-//		printf("\noptimize | 6.2 reading performance files for variant %d",i);
-//		//printf("\n Check pipecommand, i=%d\n",i);
-//		for(j=0;j<40;j++){
-//			printf("%c",pipecommand[j]);
-//		}
+
 		int variables=2; 		//wird spaeter automatisch aus den files abgelesen
-		
-		//float performancedatatable[numvariants][variables];
+
 		int ch, number_of_lines = 0;
 
 		pipe=fopen(pipecommand,"r");
-			//anzahl der Zeilen in dem Performance - File herausfinden
 			do{
     			ch = fgetc(pipe);
     			if(ch == '\n')
     			number_of_lines++;
 			} while (ch != EOF);
 
-		
 
-			// last line doesn't end with a new line!
-			// but there has to be a line at least before the last line
-			/*if(ch != '\n' && number_of_lines != 0){ 
-    			number_of_lines++;
-			}*/
 		fclose(pipe);
 		pipe=fopen(pipecommand,"r");
 			float performancehelp[variables];
-			//printf("\nnumber of lines with performance data in performance.txt = %d\n", number_of_lines);
 			
 			
 			
 			for(j=0;j<=number_of_lines;j++){
 				fscanf(pipe,"%f %f", &performancehelp[0], &performancehelp[1]);
-				//printf("\nPerformancehelp: %f, %f\n",performancehelp[0], performancehelp[1]);
+				printf("\nPerformancehelp: %f, %f\n",performancehelp[0], performancehelp[1]);
 				performancedatatable[i][j][0]=performancehelp[0];
 				performancedatatable[i][j][1]=performancehelp[1];
 			}
 			
 			largestPossibleInput[i]=performancedatatable[i][number_of_lines][0];
 			
-			//printf("\n 6.3 Largest possible input for variant %d: n= %d\n",i,largestPossibleInput[i]);
+			printf("\n 6.3 Largest possible input for variant %d: n= %d\n",i,largestPossibleInput[i]);
 			
 			
 			
-			//printf ("\n 6.3.1 Size of input data: n*n = %d\n",n);
+			printf ("\n 6.3.1 Size of input data: n*n = %d\n",n);
 			
-			/*printf("\n 6.2.1 Check, if Performancedata arrived for variant %d\n",i);
+			printf("\n 6.2.1 Check, if Performancedata arrived for variant %d\n",i);
 			for(j=0;j<number_of_lines;j++){
 				printf("%f  %f", performancedatatable[j][0], performancedatatable[j][1]);
 				printf("\n");
-			}*/
+			}
 			
 		
 		fclose(pipe);
 
 	}
     hybchiveLog( "optimize | 7. Run Optimizing Algorithm" );
-	//n spaeter als input, jetzt ersteinmal vorgegeben.
 	
 	int largestPossibleInputSum = 0;
 	
@@ -190,7 +162,6 @@ main(int argc, char *argv[]){
 	printf("\noptimize | 7.0.1 Largest possible input for given problem and sum of devices: %d",largestPossibleInputSum);
 	
 	int splittable[numvariants];
-	//int splithelp[numvariants];
 	int total=0;
 	
 	int numberOfDevicesWhereStorageIsNotBigEnough = 0;

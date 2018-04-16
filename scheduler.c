@@ -71,12 +71,12 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 		}
 	}	
 	numvariants=help;
-	/*for(i=0;i<numvariants;i++){
+	for(i=0;i<numvariants;i++) {
 		for(j=0;j<30;j++){
 				printf("%c",variantslist[i][j]);
 		}
-		printf("end of line\n");
-	}*/
+		printf("\n");
+	}
 
 	char cd2[]="cd ";
 	char pipecommand2[2000] = "";
@@ -96,12 +96,12 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 	int k,l;
 	FILE *pipe2;
 	int checkallperformance=0;
-	memset(pipecommand,'\0',sizeof(pipecommand));
-	for(i=0;i<numvariants;i++){
-		//printf("\n a Check pipecommand, i=%d\n",i);
-		/*for(j=0;j<40;j++){
+	for(i=0;i<numvariants;i++) {
+		memset(pipecommand,'\0',sizeof(pipecommand));
+		printf("\n a Check pipecommand - should be empty, i=%d\n",i);
+		for(j=0;j<40;j++){
 			printf("%c",pipecommand[j]);
-		}*/
+		}
 		memset(variants,'\0',sizeof(variants));
 		for(k=0;k<20;k++){
 			if(variantslist[i][k]!='\0'){
@@ -114,38 +114,34 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 		strcat(currentdir,function);
 		strcat(pipecommand,"/");
 		strcat(currentdir,"/");
-		strcat(pipecommand,variants);
+		strcat(pipecommand,variantslist[i]);
         int length = strlen(pipecommand);
         if (pipecommand[length-1] == '\n') {
-            //printf("remove newline");
+            printf("remove newline");
             pipecommand[length-1]  = '\0';
         }
 		strcat(currentdir,variants);
-        //printf("\n b Check pipecommand, i=%d\n",i);
-//        for(j=0;j<40;j++){
-//            printf("%c",pipecommand[j]);
-//        }
-		strcat(pipecommand,"/");
+
 		char make[3000]="";
 		char execute[1000]="";
 		char wait[1000]="";
+		strcat(pipecommand,"/");
 		strcat(pipecommand,performancedata);
 
-		//printf("\n");
 
-		//printf("\n 4.2 Check, if performance data exists.\n");
-		
 		if(fopen(pipecommand,"r")==NULL){
-            hybchiveLog( "scheduler | No performance data found" );
-//			printf("\n ");
-//			for(j=0;j<40;j++){
-//				printf("%c",pipecommand[j]);
-//			}
-			//printf("\n");
-			printf("\n 4.3 Execute test \n");
-			printf("hier 1");
+            hybchiveLog( "scheduler | No performance data found for" );
+			printf("\n ");
+			for(j=0;j<40;j++){
+				printf("%c",pipecommand[j]);
+			}
+
+
+
+			printf("\n");
+			printf("\nscheduler | 4.3 Execute test \n");
 			memset(make,'\0',sizeof(make));
-			
+
 			strcat(make, "cd ");
             length = strlen(currentdir);
             if (currentdir[length-1] == '\n') {
@@ -155,6 +151,16 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
             strcat(make, currentdir);
 
 			strcat(make, " && make test && ./varianttest");
+
+			printf("\n b Check pipecommand - should be set name and variant name, i=%d\n",i);
+			for(j=0;j<50;j++){
+				printf("%c",make[j]);
+			}
+
+			printf("\n My debugger: \n");
+			while(fopen("wait.txt","r")==NULL){
+			}
+
 			pipe=popen(make,"w");
 			close(pipe);
 			memset(wait,'\0',sizeof(wait));
@@ -172,14 +178,14 @@ void hybchive(char *function, char *variants, char *optimize, int numberOfParame
 			strcat(wait,"wait.txt");
 			pipe=popen(wait,"w");
 			close(pipe);
-			
+
 		}
 		if(pipe=fopen(pipecommand,"r")){
 			checkallperformance=checkallperformance+1;
 			fclose(pipe);
-			//printf("\nPerformance data found for ");
+			printf("\nPerformance data found for ");
 			for(j=0;j<40;j++){
-				//printf("%c",pipecommand[j]);
+				printf("%c",pipecommand[j]);
 			}
 		}
 		memset(pipecommand,'\0',sizeof(pipecommand));
