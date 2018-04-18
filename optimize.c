@@ -192,13 +192,13 @@ main(int argc, char *argv[]){
 		}
 
 		for(i=0;i<numvariants;i++){
-			if(checkSplitability[i]==-1){
+			if(checkSplitability[i]==-1) {
 				whichOptimisingAlgorithm=1;
 			}			
 		}
 
 		if(whichOptimisingAlgorithm==0) {
-			printf("\noptimize | 7.0.5 Data evenly splitable - Hier weiter: Finalise optimise.c - Adjust performance.txt manually to change algorithm\n");
+			printf("\noptimize | 7.0.5 Data evenly splitable\n");
 			for(i=0;i<numvariants-1;i++){
 				splittable[i]=n/numvariants;
 				total+=n/numvariants;
@@ -233,10 +233,6 @@ main(int argc, char *argv[]){
 		for(i=0;i<numvariants;i++){
 				//printf("\n 7.1 Aufteilung Devices %d: %d\n",i,splittable[i]);
 		}
-
-        while(fopen("wait.txt","r")==NULL){
-            //wait, until test procedure is done with testing of the according variant
-        }
 
         hybchiveLog( "optimize | 7.1.2 End Optimizing Routine" );
 

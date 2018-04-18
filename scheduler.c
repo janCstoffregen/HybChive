@@ -31,8 +31,8 @@ char removedir[]=" && rm list.txt && rm 2.txt";
 char currentdir[1000]="";
 char make[3000]="";
 char execute[1000]="";
-char wait[1000]="";
-char optimize [100]="";
+char Wait[1000]="";
+char optimizeCommand[1000]="";
 
 FILE *pipe;
 FILE *pipe2;
@@ -88,7 +88,7 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 			help=help+1;
 			//printf("\ndistance: %d\n",distance);
 		}
-	}	
+	}
 	numvariants=help;
 	for(i=0;i<numvariants;i++) {
 		for(j=0;j<30;j++){
@@ -175,20 +175,20 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 
 			pipe=popen(make,"w");
 			close(pipe);
-			memset(wait,'\0',sizeof(wait));
-			strcat(wait,currentdir);
-			strcat(wait,"/");
-			strcat(wait,"wait.txt");
-			while(fopen(wait,"r")==NULL){
-				//wait, until test procedure is done with testing of the according variant
+			memset(Wait,'\0',sizeof(Wait));
+			strcat(Wait,currentdir);
+			strcat(Wait,"/");
+			strcat(Wait,"Wait.txt");
+			while(fopen(Wait,"r")==NULL){
+				//Wait, until test procedure is done with testing of the according variant
 			}
             hybchiveLog( "scheduler | End execute varianttest" );
-			memset(wait,'\0',sizeof(wait));
-			strcat(wait,"rm ");
-			strcat(wait,currentdir);
-			strcat(wait,"/");
-			strcat(wait,"wait.txt");
-			pipe=popen(wait,"w");
+			memset(Wait,'\0',sizeof(Wait));
+			strcat(Wait,"rm ");
+			strcat(Wait,currentdir);
+			strcat(Wait,"/");
+			strcat(Wait,"Wait.txt");
+			pipe=popen(Wait,"w");
 			close(pipe);
 
 		}
@@ -204,27 +204,26 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 
 	}
 
-	if(checkallperformance==numvariants){
+	if( checkallperformance == numvariants ) {
         hybchiveLog( "scheduler | 4.4 All performance files found. Execute performance optimizing procedure" );
-
-		memset(optimize,'\0',sizeof(optimize));
+		memset(optimizeCommand,'\0',sizeof(optimize));
 		char cn2[100];
 		memset(cn2,'\0',sizeof(cn2));
 		sprintf(cn2,"%d",n);
-		strcat(optimize,"gcc optimize.c -o optimize hybchiveLog.o && ./optimize");
-		strcat(optimize," ");
-		strcat(optimize,cn2);
-		strcat(optimize," ");
-		strcat(optimize,hybChiveSetName);
+		strcat(optimizeCommand,"gcc optimize.c -o optimize hybchiveLog.o && ./optimize");
+		strcat(optimizeCommand," ");
+		strcat(optimizeCommand,cn2);
+		strcat(optimizeCommand," ");
+		strcat(optimizeCommand,hybChiveSetName);
         //printf("\nscheduler | 4.4.1 Execute optimize procedure");
-		pipe=popen(optimize,"w");
+		pipe=popen(optimizeCommand,"w");
 		close(pipe);
-		while(fopen("wait.txt","r")==NULL){
-			//wait, until test procedure is done with testing of the according variant
+		while(fopen("Wait.txt","r")==NULL){
+			//Wait, until test procedure is done with testing of the according variant
 		}
-		pipe=popen("rm wait.txt","w");
+		pipe=popen("rm Wait.txt","w");
 		close(pipe);
-        //hybchiveLog( "scheduler | 7.4 Get the splitting information" );
+        hybchiveLog( "scheduler | 7.4 Get the splitting information" );
 		int shmid;
     	key_t key;
     	int *shm, *s;
