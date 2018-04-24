@@ -46,39 +46,54 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 
 
     //printf("\n2.2 cd to folder and write directory listing to array\n");
-
-    char *myTest = "";
-    myTest = concatenate(3, cd, hybChiveSetName, savedir);
-//    for(i=0;i< sizeof( myTest ); i++ ) {
-//        printf("%c", myTest[ i ] );
-//    }
-
-	strcat(pipecommand,cd);
-	strcat(pipecommand,hybChiveSetName);
-	strcat(pipecommand,savedir);
-	pipe=popen(pipecommand,"w");
+	pipe=popen(
+            concatenate(
+                    3,
+                    sizeof( cd ),
+                    cd,
+                    sizeof( hybChiveSetName ),
+                    hybChiveSetName,
+                    sizeof( savedir ),
+                    savedir
+            )
+            ,"w");
 	close(pipe);
 
 	//printf("\n3. Read the list.txt file in an array\n");
-	memset(pipecommand,'\0',sizeof(pipecommand));
-	strcat(pipecommand,hybChiveSetName);
-	strcat(pipecommand,list2);
-	while(fopen(pipecommand,"r")==NULL){
+	while(
+            fopen(
+            concatenate(
+                    2,
+                    sizeof( hybChiveSetName ),
+                    hybChiveSetName,
+                    sizeof( list2 ),
+                    list2
+            )
+            ,"r")==NULL
+            ){
+
     }
-	memset(pipecommand,'\0',sizeof(pipecommand));
-	strcat(pipecommand,hybChiveSetName);
-	strcat(pipecommand,list);
-	pipe=fopen(pipecommand,"r");
-    for(i=0;i<numvariants*characters;i++){
+
+
+	pipe=fopen(
+            concatenate(
+                    2,
+                    sizeof( hybChiveSetName ),
+                    hybChiveSetName,
+                    sizeof( list ),
+                    list
+            )
+            ,"r");
+    for( i = 0; i < numvariants * characters; i++ ) {
         fscanf(pipe,"%c",&variants[i]);
     }
 	fclose(pipe);
 
-	//printf("\n3.1 show, that the devices - array got everything \n");
-//	printf("\n");
-//	for(i=0;i<30;i++){
-//		printf("%c",variants[i]);
-//	}
+	printf("\n3.1 show, that the devices - array got everything \n");
+	printf("\n");
+	for(i=0;i<30;i++){
+		printf("%c",variants[i]);
+	}
 
 
 	//printf("\n3.2 transfer devices to array\n");
@@ -104,12 +119,17 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 		printf("\n");
 	}
 
-
-	strcat(pipecommand2,cd2);
-	strcat(pipecommand2,hybChiveSetName);
-
-	strcat(pipecommand2,removedir);
-	pipe=popen(pipecommand2,"w");
+    pipe=popen(
+            concatenate(
+                    3,
+                    sizeof( cd2 ),
+                    cd2,
+                    sizeof( hybChiveSetName ),
+                    hybChiveSetName,
+                    sizeof( removedir ),
+                    removedir
+            )
+            ,"w");
 	close(pipe);
 
 	/*end part one*/
@@ -120,41 +140,48 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 
 
 	for(i=0;i<numvariants;i++) {
+
+        memset(currentdir,'\0',sizeof(currentdir));
 		memset(pipecommand,'\0',sizeof(pipecommand));
+        memset(variants,'\0',sizeof(variants));
+
 		printf("\n a Check pipecommand - should be empty, i=%d\n",i);
 		for(j=0;j<40;j++){
 			printf("%c",pipecommand[j]);
 		}
-		memset(variants,'\0',sizeof(variants));
+
 		for(k=0;k<20;k++){
 			if(variantslist[i][k]!='\0'){
 				variants[k]=variantslist[i][k];
 			}
 		}
 
-		memset(currentdir,'\0',sizeof(currentdir));
-		strcat(pipecommand,hybChiveSetName);
+
 		strcat(currentdir,hybChiveSetName);
-		strcat(pipecommand,"/");
 		strcat(currentdir,"/");
-		strcat(pipecommand,variantslist[i]);
-        int length = strlen(pipecommand);
-        if (pipecommand[length-1] == '\n') {
-            printf("remove newline");
-            pipecommand[length-1]  = '\0';
-        }
-		strcat(currentdir,variantslist[i]);
+        strcat(currentdir,variantslist[i]);
 
 
-		strcat(pipecommand,"/");
-		strcat(pipecommand,performancedata);
 
-
-		if(fopen(pipecommand,"r")==NULL){
+        if(fopen(
+                concatenate(
+                        5,
+                        sizeof( hybChiveSetName ),
+                        hybChiveSetName,
+                        sizeof( "/" ),
+                        "/",
+                        sizeof( variantslist[i] ),
+                        variantslist[i],
+                        sizeof( "/" ),
+                        "/",
+                        sizeof( performancedata ),
+                        performancedata
+                )
+                ,"r")==NULL){
             hybchiveLog( "scheduler | No performance data found for" );
 			printf("\n ");
 			for(j=0;j<40;j++){
-				printf("%c",pipecommand[j]);
+				printf("%c",variantslist[i][j]);
 			}
 
 
@@ -164,7 +191,7 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 			memset(make,'\0',sizeof(make));
 
 			strcat(make, "cd ");
-            length = strlen(currentdir);
+            int length = strlen(currentdir);
             if (currentdir[length-1] == '\n') {
                 //printf("remove newline");
                 currentdir[length-1]  = '\0';
@@ -199,13 +226,28 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 			close(pipe);
 
 		}
-		if(pipe=fopen(pipecommand,"r")){
+		if(pipe=fopen(
+                concatenate(
+                        5,
+                        sizeof( hybChiveSetName ),
+                        hybChiveSetName,
+                        sizeof( "/" ),
+                        "/",
+                        sizeof( variantslist[i] ),
+                        variantslist[i],
+                        sizeof( "/" ),
+                        "/",
+                        sizeof( performancedata ),
+                        performancedata
+                )
+                ,"r")){
 			checkallperformance=checkallperformance+1;
 			fclose(pipe);
-			printf("\nPerformance data found for ");
-			for(j=0;j<40;j++){
-				printf("%c",pipecommand[j]);
-			}
+//			printf("\nPerformance data found for ");
+//			for(j=0;j<40;j++){
+//				printf("%c",variantslist[i][j]);
+//			}
+//            printf("\n");
 		}
 		memset(pipecommand,'\0',sizeof(pipecommand));
 
@@ -213,21 +255,33 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 
 	if( checkallperformance == numvariants ) {
         hybchiveLog( "scheduler | 4.4 All performance files found. Execute performance optimizing procedure" );
-		memset(optimizeCommand,'\0',sizeof(optimize));
+
+
+
 		char cn2[100];
 		memset(cn2,'\0',sizeof(cn2));
 		sprintf(cn2,"%d",n);
-		strcat(optimizeCommand,"gcc optimize.c -o optimize hybchiveLog.o && ./optimize");
-		strcat(optimizeCommand," ");
-		strcat(optimizeCommand,cn2);
-		strcat(optimizeCommand," ");
-		strcat(optimizeCommand,hybChiveSetName);
-        //printf("\nscheduler | 4.4.1 Execute optimize procedure");
-		pipe=popen(optimizeCommand,"w");
+		pipe=popen(
+                concatenate(
+                        5,
+                        sizeof( "gcc optimize.c -o optimize hybchiveLog.o && ./optimize" ),
+                        "gcc optimize.c -o optimize hybchiveLog.o && ./optimize",
+                        sizeof( " " ),
+                        " ",
+                        sizeof( cn2 ),
+                        cn2,
+                        sizeof( " " ),
+                        " ",
+                        sizeof( hybChiveSetName ),
+                        hybChiveSetName
+                )
+                ,"w");
 		close(pipe);
+
 		while(fopen("Wait.txt","r")==NULL){
 			//Wait, until test procedure is done with testing of the according variant
 		}
+
 		pipe=popen("rm Wait.txt","w");
 		close(pipe);
         hybchiveLog( "scheduler | 7.4 Get the splitting information" );

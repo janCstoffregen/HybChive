@@ -128,7 +128,7 @@ main(int argc, char *argv[]){
 			
 			for(j=0;j<=number_of_lines;j++){
 				fscanf(pipe,"%f %f", &performancehelp[0], &performancehelp[1]);
-				printf("\nPerformancehelp: %f, %f\n",performancehelp[0], performancehelp[1]);
+				// printf("\nPerformancehelp: %f, %f\n",performancehelp[0], performancehelp[1]);
 				performancedatatable[i][j][0]=performancehelp[0];
 				performancedatatable[i][j][1]=performancehelp[1];
 			}

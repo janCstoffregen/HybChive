@@ -4,30 +4,30 @@
 
 char *concatenate( int numberOfParameters, ... ) {
 
-    printf("\n NumberOfParameters to Concatenate: %d\n ", numberOfParameters);
+    //printf("\n NumberOfParameters to Concatenate: %d\n ", numberOfParameters);
 
     va_list valist;
-
     va_start(valist, numberOfParameters);
-    int j, i;
-    char *testVaList = "";
-    for( j = 0; j < numberOfParameters; j++ ) {
-        testVaList = va_arg(valist, char *);
-        printf("\n Size of the valist: %d \n", sizeof( testVaList ));
-        for(i=0;i< sizeof( testVaList ); i++ ) {
-            printf("%c", testVaList[ i ] );
+    int j, i, size;
+    char *inputString = "";
+
+    char allInputStringsConcatenated[ 3000 ] = "";
+
+    for( j = 0; j < numberOfParameters * 2; j += 2 ) {
+        size = va_arg(valist, int );
+        inputString = va_arg(valist, char *);
+        //printf("\n Size of argument %d:, %d  \n", j, size);
+        if ( inputString[ size - 1 ] == '\n') {
+            //printf("remove newline");
+            inputString[ size - 1 ]  = '\0';
         }
-        printf("\n");
+        strcat( allInputStringsConcatenated, inputString);
     }
     va_end(valist);
 
-    printf("end concatenate");
+//    for( j = 0; j < sizeof( allInputStringsConcatenated ); j++ ) {
+//        printf("%c", allInputStringsConcatenated[ j ] );
+//    }
 
-    while(fopen("wait.dummy","r")==NULL){
-        //Wait, until test procedure is done with testing of the according variant
-    }
-
-
-    char *test = "test";
-    return test;
+    return allInputStringsConcatenated;
 }
