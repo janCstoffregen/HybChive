@@ -52,9 +52,6 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 //    for(i=0;i< sizeof( myTest ); i++ ) {
 //        printf("%c", myTest[ i ] );
 //    }
-    while(fopen("wait.dummy","r")==NULL){
-        //Wait, until test procedure is done with testing of the according variant
-    }
 
 	strcat(pipecommand,cd);
 	strcat(pipecommand,hybChiveSetName);
