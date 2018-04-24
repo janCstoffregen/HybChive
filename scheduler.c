@@ -15,9 +15,7 @@ int i,j;
 int k,l;
 int help=0;
 int distance=0;
-
 double result=0;
-
 char savedir[]=" && ls -d */ | cut -f1 -d'/' > list.txt && cp list.txt 2.txt";
 char pipecommand[2000] = "";
 char cd[]="cd ";
@@ -39,7 +37,7 @@ FILE *pipe2;
 
 
 
-void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberOfParameters, int n, double *A, ...) {
+void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberOfParameters, ...) {
 
     // start log
     hybchiveLog( "scheduler | start scheduler" );
@@ -258,6 +256,7 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 
 
 
+        int n = 100;
 		char cn2[100];
 		memset(cn2,'\0',sizeof(cn2));
 		sprintf(cn2,"%d",n);
@@ -312,48 +311,36 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 	    }
 		
 		printf("\nscheduler | 4.5 Optimizing Procedure has finished. Execute programs");
-		
-		//printf("\nscheduler | 8. Create data for programs (later as user - input)");
-		/*double A[n];
-		for(i=0;i<n;i++){
-			A[i]=1;
-		}*/
-		
-		printf("\nscheduler | 8.1 Create shared memory for variants");
-		int shmid2;
-    	key_t key2 = 1111;
-    	double *shm2, *s2;
-    	int size2 = sizeof( double ) * n;
-    	
-    	/*
-    	* Create the segment.
-    	*/
-    	if ((shmid2 = shmget(key2, size2, IPC_CREAT | 0666)) < 0) {
-    	perror("shmget");
-    	exit(1);
-    	}
-        printf("\nscheduler | 8.1.0 Segment created");
- 
-    	/*
-    	* Now we attach the segment to our data space.
-    	*/
-    	if ((shm2 = shmat(shmid2, NULL, 0)) == (double *) -1) {
-    	perror("shmat");
-    	exit(1);
-    	}
- 
-	    /*
-	    * Now put some things into the memory for the
-	    * other process to read.
-	    */
-	    
-		printf("\nscheduler | 8.2 Put data in shared memory space");
 
-        A[ 0 ] = 1;
-		s2=shm2;
-        memcpy(s2, A, n);
-		printf("\n 8.3 Test Data in shared memory: %lf, %lf", s2[ 0 ], A[ 0 ] );
-		
+		printf("\n Next: Create the output of the sharedmemorycreationfunction with the keys of the segments\n");
+
+		/*
+		 * This function will create a shared memory segment for each HybChive specific argument
+		 * It returns a model where
+		 * int sharedMemoryKeys[ i ] is the shared memory key for the ith hybchive specific argument.
+		 * */
+
+		va_list valist;
+        va_start(valist, numberOfParameters);
+        char *type="";
+        int size3;
+        for ( i = 0; i < numberOfParameters; i++) {
+            size3 = va_arg(valist, int );
+            type = va_arg(valist, char * );
+
+            if( type == "double" ) {
+                double *argument = va_arg(valist, double * );
+                createSharedMemorySegmentsandKeys( size, type, argument );
+            }
+
+        }
+        va_end(valist);
+
+        while(fopen("wait.dummy","r")==NULL){
+            //Wait, until test procedure is done with testing of the according variant
+        }
+
+
 		int begin=0, end=0;
 		
 		double *shm3, *s3;
@@ -389,15 +376,11 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 			sprintf(cn,"%d",n);
 			sprintf(ci,"%d",i);
 			sprintf(cnumvariants,"%d",numvariants);
-			sprintf(ckey,"%d",key2);
+			//sprintf(ckey,"%d",key2);
 			
 			printf("\n 14. Create Shared memory for result\n");
 
-            printf("\n Next: Create Shared memory segments for each set - specific parameter \n");
 
-            while(fopen("wait.dummy","r")==NULL){
-                //Wait, until test procedure is done with testing of the according variant
-            }
 
 			int shmid3;
 	    	key_t key3;
@@ -459,8 +442,7 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 			printf("\n9.05 Attach parameters to the make command\n");
 			
 			//printf("\n9.05.02 Show number of Parameters:\n");
-			
-			va_list valist;
+
 			va_start(valist, numberOfParameters);
 			
 			int parameters;

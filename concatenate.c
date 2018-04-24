@@ -4,7 +4,7 @@
 
 char *concatenate( int numberOfParameters, ... ) {
 
-    //printf("\n NumberOfParameters to Concatenate: %d\n ", numberOfParameters);
+    // printf("\n NumberOfParameters to Concatenate: %d\n ", numberOfParameters);
 
     va_list valist;
     va_start(valist, numberOfParameters);

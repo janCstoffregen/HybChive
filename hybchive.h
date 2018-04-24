@@ -3,9 +3,8 @@ void hybchive(
 		char *variants,
 		char *optimize,
 		int numberOfParameters,
-		int n,
-		double *A,
-		...);
+		...
+);
 
 void hybchiveLog(
 		char *note
@@ -14,4 +13,10 @@ void hybchiveLog(
 char *concatenate(
 		int numberOfParameters,
 		...
+);
+
+void *createSharedMemorySegmentsandKeys(
+        int size,
+        char *type,
+        ...
 );

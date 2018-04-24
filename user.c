@@ -21,13 +21,13 @@ int main(){
         A[i]=0;
     } 
     A[9*n+9]=1234;
-    
+
     //define HybChive parameters:
     //1. Define name of the HybChive routine that you want to call
     char set[]="function";
     char variants[]="all";
     char optimize[]="performance";
-    //2. define number of parameters AFTER the "numberOfParameters-1" input paramter 
+    //2. define number of parameters AFTER the "numberOfParameters-1" input paramter
     //of the Hybchive routine:
     int numberOfParameters = 1;
     //3. Parameter for the search algorithm: Define the entry that you'd like to search for:
@@ -38,13 +38,14 @@ int main(){
     hybchiveLog( "user | execute HybChive Function" );
 
     hybchive(
-	set,
-	variants,
-	optimize,
-	numberOfParameters-1,
-	n*n,
-	A,
-	parameterOne);
+        set,
+        variants,
+        optimize,
+        numberOfParameters,
+        sizeof( A ),
+        "double",
+        A
+    );
 
     hybchiveLog( "user | end HybChive Function - order timemarks yourself" );
     
