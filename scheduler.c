@@ -271,7 +271,7 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
     	perror("shmget");
     	exit(1);
     	}
-        //printf("\nscheduler | 8.1.0 Segment created");
+        printf("\nscheduler | 8.1.0 Segment created");
  
     	/*
     	* Now we attach the segment to our data space.
@@ -286,17 +286,18 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 	    * other process to read.
 	    */
 	    
-		//printf("\nscheduler | 8.2 Put data in shared memory space");
+		printf("\nscheduler | 8.2 Put data in shared memory space");
 
+        A[ 0 ] = 1;
 		s2=shm2;
         memcpy(s2, A, n);
-		//printf("\n 8.3 Test Data in shared memory: %lf",s2[0]);
+		printf("\n 8.3 Test Data in shared memory: %lf, %lf", s2[ 0 ], A[ 0 ] );
 		
 		int begin=0, end=0;
 		
 		double *shm3, *s3;
 		for(i=0;i<numvariants;i++){
-			//printf("\n 8.4 Calculate begin and end of each variant\n");
+			printf("\n 8.4 Calculate begin and end of each variant\n");
 			end=end-1;
 			begin=end+1;
 			end=end+1;
@@ -315,7 +316,7 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 			strcat(currentdir,"/");
 			strcat(currentdir,variants);
 			
-			//printf("\nscheduler | 8.6 Converting inputs for programs into strings");
+			printf("\nscheduler | 8.6 Converting inputs for programs into strings");
 			char cbegin[100]; 
 			char cend[100];
 			char ckey[100];
@@ -329,14 +330,21 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 			sprintf(cnumvariants,"%d",numvariants);
 			sprintf(ckey,"%d",key2);
 			
-			//printf("\n 14. Create Shared memory for result\n");
+			printf("\n 14. Create Shared memory for result\n");
+
+            printf("\n Next: Create Shared memory segments for each set - specific parameter \n");
+
+            while(fopen("wait.dummy","r")==NULL){
+                //Wait, until test procedure is done with testing of the according variant
+            }
+
 			int shmid3;
 	    	key_t key3;
-	    	
+
 	    	key3 = 2222;
 	    	char ckey3[100];
 	    	sprintf(ckey3,"%d",key3);
-	    	int size3=sizeof(double)*(numvariants+1);	//the first entry is used by the variants to show that the variants are done.
+	    	int size3=sizeof(double)*(numvariants+1);
 	    	/*
 	    	* Create the segment.
 	    	*/
@@ -344,7 +352,7 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 	    	perror("shmget");
 	    	exit(1);
 	    	}
-	 
+
 	    	/*
 	    	* Now we attach the segment to our data space.
 	    	*/
@@ -366,10 +374,10 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
             }
 			strcat(make,currentdir);
 			strcat(make," && make final && ./variant");
-//            printf("\nscheduler | 9.1 Print make and execute command");
-//            for(j=0;j<120;j++){
-//                printf("%c",make[j]);
-//            }
+            printf("\nscheduler | 9.1 Print make and execute command");
+            for(j=0;j<120;j++){
+                printf("%c",make[j]);
+            }
 			strcat(make," ");
 			strcat(make,ckey);
 			strcat(make," ");
@@ -387,7 +395,7 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 
 
 			
-			//printf("\n9.05 Attach parameters to the make command\n");
+			printf("\n9.05 Attach parameters to the make command\n");
 			
 			//printf("\n9.05.02 Show number of Parameters:\n");
 			
