@@ -46,6 +46,16 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 
 
     //printf("\n2.2 cd to folder and write directory listing to array\n");
+
+    char *myTest = "";
+    myTest = concatenate(3, cd, hybChiveSetName, savedir);
+//    for(i=0;i< sizeof( myTest ); i++ ) {
+//        printf("%c", myTest[ i ] );
+//    }
+    while(fopen("wait.dummy","r")==NULL){
+        //Wait, until test procedure is done with testing of the according variant
+    }
+
 	strcat(pipecommand,cd);
 	strcat(pipecommand,hybChiveSetName);
 	strcat(pipecommand,savedir);
@@ -410,7 +420,7 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 				
 				memset(parameterList[j],'\0',sizeof(parameterList));
 				sprintf(parameterList[j],"%d",parameters);
-				//printf("\n Parameter number %d %s \n",j,parameterList[j]);
+				printf("\n Parameter number %d %s \n",j,parameterList[j]);
 				
 				strcat(make," ");
 				strcat(make,parameterList[j]);
