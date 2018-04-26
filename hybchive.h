@@ -15,7 +15,7 @@ char *concatenate(
 		...
 );
 
-void *createSharedMemorySegmentsandKeys(
+int *createSharedMemorySegmentsandKeys(
         int size,
         char *type,
         ...

@@ -312,7 +312,7 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 		
 		printf("\nscheduler | 4.5 Optimizing Procedure has finished. Execute programs");
 
-		printf("\n Next: Create the output of the sharedmemorycreationfunction with the keys of the segments\n");
+		printf("\nscheduler | Next: Create the output of the sharedmemorycreationfunction with the keys of the segments and their sizes\n");
 
 		/*
 		 * This function will create a shared memory segment for each HybChive specific argument
@@ -324,15 +324,17 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
         va_start(valist, numberOfParameters);
         char *type="";
         int size3;
+		int *sharedMemoryKeyAndSize = { 0 };
+        int *sharedMemoryKeys = { 0 };
+        int *sharedMemorySizes = { 0 };
         for ( i = 0; i < numberOfParameters; i++) {
             size3 = va_arg(valist, int );
             type = va_arg(valist, char * );
 
             if( type == "double" ) {
                 double *argument = va_arg(valist, double * );
-                createSharedMemorySegmentsandKeys( size, type, argument );
+				sharedMemoryKeyAndSize = createSharedMemorySegmentsandKeys( size, type, argument );
             }
-
         }
         va_end(valist);
 
