@@ -312,8 +312,6 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 		
 		printf("\nscheduler | 4.5 Optimizing Procedure has finished. Execute programs");
 
-		printf("\nscheduler | Next: Create the output of the sharedmemorycreationfunction with the keys of the segments and their sizes\n");
-
 		/*
 		 * This function will create a shared memory segment for each HybChive specific argument
 		 * It returns a model where
@@ -338,9 +336,7 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
         }
         va_end(valist);
 
-        while(fopen("wait.dummy","r")==NULL){
-            //Wait, until test procedure is done with testing of the according variant
-        }
+
 
 
 		int begin=0, end=0;
@@ -352,8 +348,16 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 			begin=end+1;
 			end=end+1;
 			end=end+shm[i];
-			//printf("\n 8.5 Execute variant %d\n",i);
-			//printf("\n Begin: %d, end: %d\n",begin,end);
+			printf("\n 8.5 Execute variant %d\n",i);
+			printf("\n Begin: %d, end: %d\n",begin,end);
+
+            printf("\n scheduler | Next: Variant number and data distribution pattern should be input for variants - \n"
+                           "Write Thesis until the inputs of variants and prepare inputs for variants afterwards here!\n");
+
+            while(fopen("wait.dummy","r")==NULL){
+                //Wait, until test procedure is done with testing of the according variant
+            }
+
 			memset(variants,'\0',sizeof(variants));
 			for(k=0;k<20;k++){
 				if(variantslist[i][k]!='\0'){
