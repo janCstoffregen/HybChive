@@ -12,7 +12,7 @@ gcc -o user user.o scheduler.o -lrt
 int main(){
     
     //create input data
-    int n=10; // 1000000 is biggest possible input.
+    int n=100; // 1000000 is biggest possible input.
     double A[n*n];
     double result=0;
     int i;

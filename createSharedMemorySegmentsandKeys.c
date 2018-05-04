@@ -17,7 +17,8 @@ int *createSharedMemorySegmentsandKeys( int size, char *type, ... ) {
 
     int *sharedMemoryKeyAndSize = {
             randomKey,
-            size};
+            size
+    };
 
     int shmid;
     double *shm;
