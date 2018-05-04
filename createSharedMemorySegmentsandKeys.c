@@ -8,7 +8,7 @@
 
 int *createSharedMemorySegmentsandKeys( int size, char *type, ... ) {
 
-    printf("createSharedMemorySegmentandKeys | Size: %d, Type: %s", size, type);
+    printf("\ncreateSharedMemorySegmentandKeys | Size: %d, Type: %s", size, type);
 
     srand( time( NULL ) );   // should only be called once
     int randomKey = rand(), i;
@@ -16,8 +16,7 @@ int *createSharedMemorySegmentsandKeys( int size, char *type, ... ) {
     printf("\ncreateSharedMemorySegmentandKeys | Randomly generated key: %d\n", randomKey);
 
     int *sharedMemoryKeyAndSize = {
-            randomKey,
-            size
+            randomKey
     };
 
     int shmid;

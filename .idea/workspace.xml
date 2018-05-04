@@ -11,9 +11,11 @@
   <component name="ChangeListManager">
     <list default="true" id="f7de219d-f619-48c7-b35c-2ddc0f33ccb9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/createSharedMemorySegmentsandKeys.c" afterPath="$PROJECT_DIR$/createSharedMemorySegmentsandKeys.c" />
       <change beforePath="$PROJECT_DIR$/hybchive.log" afterPath="$PROJECT_DIR$/hybchive.log" />
       <change beforePath="$PROJECT_DIR$/scheduler.c" afterPath="$PROJECT_DIR$/scheduler.c" />
       <change beforePath="$PROJECT_DIR$/user" afterPath="$PROJECT_DIR$/user" />
+      <change beforePath="$PROJECT_DIR$/user.c" afterPath="$PROJECT_DIR$/user.c" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,8 +30,8 @@
       <file leaf-file-name="scheduler.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scheduler.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="353" column="35" lean-forward="false" selection-start-line="353" selection-start-column="35" selection-end-line="353" selection-end-column="35" />
+            <state relative-caret-position="396">
+              <caret line="333" column="75" lean-forward="false" selection-start-line="333" selection-start-column="75" selection-end-line="333" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -38,8 +40,18 @@
       <file leaf-file-name="user.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/user.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="47">
-              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            <state relative-caret-position="29">
+              <caret line="14" column="12" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hybchive.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hybchive.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -48,8 +60,8 @@
       <file leaf-file-name="createSharedMemorySegmentsandKeys.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/createSharedMemorySegmentsandKeys.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="20" column="6" lean-forward="true" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+            <state relative-caret-position="118">
+              <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -59,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/kill_ipcs.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
-              <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+              <caret line="21" column="33" lean-forward="false" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -141,9 +153,9 @@
         <option value="$PROJECT_DIR$/concatenate.c" />
         <option value="$PROJECT_DIR$/compileAndExecute.sh" />
         <option value="$PROJECT_DIR$/hybchive.h" />
+        <option value="$PROJECT_DIR$/kill_ipcs.sh" />
         <option value="$PROJECT_DIR$/user.c" />
         <option value="$PROJECT_DIR$/createSharedMemorySegmentsandKeys.c" />
-        <option value="$PROJECT_DIR$/kill_ipcs.sh" />
         <option value="$PROJECT_DIR$/scheduler.c" />
       </list>
     </option>
@@ -246,12 +258,12 @@
       <workItem from="1524565076628" duration="3209000" />
       <workItem from="1524569570148" duration="5413000" />
       <workItem from="1524729340383" duration="1492000" />
-      <workItem from="1525444149219" duration="1161000" />
+      <workItem from="1525444149219" duration="2064000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46506000" />
+    <option name="totallyTimeSpent" value="47409000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="-300" width="1920" height="1200" extended-state="0" />
@@ -631,6 +643,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/kill_ipcs.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="33" lean-forward="false" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hybchive.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -641,32 +661,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/user.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="47">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        <state relative-caret-position="29">
+          <caret line="14" column="12" lean-forward="false" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/createSharedMemorySegmentsandKeys.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="20" column="6" lean-forward="true" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/kill_ipcs.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="33" lean-forward="true" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+        <state relative-caret-position="118">
+          <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scheduler.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="353" column="35" lean-forward="false" selection-start-line="353" selection-start-column="35" selection-end-line="353" selection-end-column="35" />
+        <state relative-caret-position="396">
+          <caret line="333" column="75" lean-forward="false" selection-start-line="333" selection-start-column="75" selection-end-line="333" selection-end-column="75" />
           <folding />
         </state>
       </provider>

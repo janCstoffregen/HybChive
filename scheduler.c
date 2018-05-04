@@ -323,16 +323,15 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
         char *type="";
         int size3;
 		int *sharedMemoryKeyAndSize = { 0 };
-        int *sharedMemoryKeys = { 0 };
-        int *sharedMemorySizes = { 0 };
         for ( i = 0; i < numberOfParameters; i++) {
             size3 = va_arg(valist, int );
             type = va_arg(valist, char * );
 
             if( type == "double" ) {
                 double *argument = va_arg(valist, double * );
-				sharedMemoryKeyAndSize = createSharedMemorySegmentsandKeys( size, type, argument );
+				sharedMemoryKeyAndSize = createSharedMemorySegmentsandKeys( size3, type, argument );
             }
+            printf("key: %d, size: %d", &sharedMemoryKeyAndSize[ 0 ], size3 );
         }
         va_end(valist);
 
