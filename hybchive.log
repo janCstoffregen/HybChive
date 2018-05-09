@@ -1137,3 +1137,59 @@
 1525890658.316074, optimize | 6. Reading performance files
 1525890658.330718, optimize | 7. Run Optimizing Algorithm
 1525890658.330748, optimize | 7.1.2 End Optimizing Routine
+1525890868.112009, optimize | 6. Reading performance files
+1525890868.127443, optimize | 7. Run Optimizing Algorithm
+1525890868.127500, optimize | 7.1.2 End Optimizing Routine
+1525891193.495306, optimize | 6. Reading performance files
+1525891193.511793, optimize | 7. Run Optimizing Algorithm
+1525891193.511823, optimize | 7.1.2 End Optimizing Routine
+1525891249.732920, optimize | 6. Reading performance files
+1525891249.747882, optimize | 7. Run Optimizing Algorithm
+1525891249.747913, optimize | 7.1.2 End Optimizing Routine
+1525891417.316306, optimize | 6. Reading performance files
+1525891417.335933, optimize | 7. Run Optimizing Algorithm
+1525891417.335966, optimize | 7.1.2 End Optimizing Routine
+1525891450.706161, optimize | 6. Reading performance files
+1525891450.722325, optimize | 7. Run Optimizing Algorithm
+1525891450.722373, optimize | 7.1.2 End Optimizing Routine
+1525891569.498388, optimize | 6. Reading performance files
+1525891569.512178, optimize | 7. Run Optimizing Algorithm
+1525891569.512209, optimize | 7.1.2 End Optimizing Routine
+1525891647.216865, optimize | 6. Reading performance files
+1525891647.234134, optimize | 7. Run Optimizing Algorithm
+1525891647.234164, optimize | 7.1.2 End Optimizing Routine
+1525891681.313597, optimize | 6. Reading performance files
+1525891681.330455, optimize | 7. Run Optimizing Algorithm
+1525891681.330531, optimize | 7.1.2 End Optimizing Routine
+1525891691.601764, optimize | 6. Reading performance files
+1525891691.615181, optimize | 7. Run Optimizing Algorithm
+1525891691.615212, optimize | 7.1.2 End Optimizing Routine
+1525891730.980352, optimize | 6. Reading performance files
+1525891730.995587, optimize | 7. Run Optimizing Algorithm
+1525891730.995616, optimize | 7.1.2 End Optimizing Routine
+1525891754.420953, optimize | 6. Reading performance files
+1525891754.439095, optimize | 7. Run Optimizing Algorithm
+1525891754.439127, optimize | 7.1.2 End Optimizing Routine
+1525891762.001165, optimize | 6. Reading performance files
+1525891762.013396, optimize | 7. Run Optimizing Algorithm
+1525891762.013426, optimize | 7.1.2 End Optimizing Routine
+1525891777.770709, optimize | 6. Reading performance files
+1525891777.784115, optimize | 7. Run Optimizing Algorithm
+1525891777.784145, optimize | 7.1.2 End Optimizing Routine
+1525891777.685242, user | execute HybChive Function
+1525891777.685335, scheduler | start scheduler
+1525891777.695861, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1525891777.788955, scheduler | 7.4 Get the splitting information
+1525891777.789030, scheduler | 7.5 Splitting Data arrived in scheduler
+1525891788.505727, optimize | 6. Reading performance files
+1525891788.519862, optimize | 7. Run Optimizing Algorithm
+1525891788.519892, optimize | 7.1.2 End Optimizing Routine
+1525891950.021463, optimize | 6. Reading performance files
+1525891950.037929, optimize | 7. Run Optimizing Algorithm
+1525891950.037960, optimize | 7.1.2 End Optimizing Routine
+1525892060.386731, optimize | 6. Reading performance files
+1525892060.400485, optimize | 7. Run Optimizing Algorithm
+1525892060.400539, optimize | 7.1.2 End Optimizing Routine
+1525892089.347877, optimize | 6. Reading performance files
+1525892089.368461, optimize | 7. Run Optimizing Algorithm
+1525892089.368491, optimize | 7.1.2 End Optimizing Routine

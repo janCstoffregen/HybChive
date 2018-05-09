@@ -43,7 +43,6 @@ int *createSharedMemorySegmentsandKeys( int size, char *type, ... ) {
         printf("\ncreateSharedMemorySegmentandKeys | Copy input to shared memory segment\n");
         va_list valist;
         va_start( valist, 1 );
-        printf("\ncreateSharedMemorySegmentandKeys | here is the next bug \n");
 
         double *input;
         input = ( double * ) malloc( sizeof( double ) * size );

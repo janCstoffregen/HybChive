@@ -404,12 +404,6 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
                    sizeOfSharedMemorySegment[ 0 ]
             );
 
-            printf("\nscheduler | use concatenate to prepare shell command\n");
-
-            while(fopen("wait.dummy","r")==NULL){
-                //Wait, until test procedure is done with testing of the according variant
-            }
-
 
 			int shmid3;
 	    	key_t key3;
@@ -418,13 +412,13 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 	    	s3[0]=0;
 			
 			char make[1000]="";
+            char *makeThroughConcatenate;
+
+
+
+            makeThroughConcatenate =
 			memset(make,'\0',sizeof(make));
 			strcat(make,"cd ");
-            int length = strlen(currentdir);
-            if (currentdir[length-1] == '\n') {
-                printf("remove newline");
-                currentdir[length-1]  = '\0';
-            }
 			strcat(make,currentdir);
 			strcat(make," && make final && ./variant");
             printf("\nscheduler | 9.1 Print make and execute command");
@@ -444,6 +438,23 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 			strcat(make," ");
 			strcat(make,cnumvariants);
 
+            makeThroughConcatenate = concatenate(
+                    1,
+                    sizeof( "cd " ),
+                    "cd ",
+                    sizeof( currentdir ),
+                    currentdir,
+                    sizeof( " && make final && ./variant" ),
+                    " && make final && ./variant"
+            );
+
+            printf("\n------\n");
+            for( k = 0; k < 100; k++ )
+            {
+                printf("%c", makeThroughConcatenate[ k ]);
+            }
+            printf("\n------");
+
 
 			
 			printf("\n9.05 Attach parameters to the make command\n");
@@ -455,7 +466,7 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 			int parameters;
 			char parameterList[100][100];
 
-			for(j=0;j<=numberOfParameters;j++){
+			for(j=0;j<=numberOfParameters;j++) {
 				parameters = va_arg(valist, int);
 				
 				memset(parameterList[j],'\0',sizeof(parameterList));
@@ -468,6 +479,16 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 			
 			
 			va_end(valist);
+
+            printf("\nscheduler | use concatenate to prepare shell command\n");
+
+            for(j=0;j<120;j++){
+                printf("%c",make[j]);
+            }
+
+            while(fopen("wait.dummy","r")==NULL){
+                //Wait, until test procedure is done with testing of the according variant
+            }
 
 			pipe=popen(make,"w");
 			close(pipe);
