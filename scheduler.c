@@ -39,6 +39,8 @@ FILE *pipe2;
 
 void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberOfParameters, ...) {
 
+    srand( time( NULL ) );   // should only be called once
+
     // start log
     hybchiveLog( "scheduler | start scheduler" );
 
@@ -330,7 +332,10 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 
             if( type == "double" ) {
                 double *argument = va_arg(valist, double * );
-				sharedMemoryKey = createSharedMemorySegmentsandKeys( sizeOfSharedMemorySegment[ i ], type, argument );
+				sharedMemoryKey = createSharedMemorySegmentsandKeys(
+                        sizeOfSharedMemorySegment[ i ],
+                        type,
+                        argument );
                 sharedMemoryKeyArray[ i ] = &sharedMemoryKey[ 0 ];
             }
             printf("key: %d, size: %d", sharedMemoryKeyArray[ i ], sizeOfSharedMemorySegment[ i ] );
@@ -341,22 +346,34 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 
 
 		int begin=0, end=0;
+
+        printf("\n 14. Create Shared memory for Variant communication segment\n");
+
+        //The following type is double because I have not implemented shared memory segment for int yet.
+        int *sharedCommunicationMemoryKey = { 0 };
+        double *communicationBetweenSchedulerAndVariants = { 0 };
+        sharedCommunicationMemoryKey = createSharedMemorySegmentsandKeys(
+                sizeof( communicationBetweenSchedulerAndVariants ),
+                "double",
+                communicationBetweenSchedulerAndVariants
+        );
+
 		
 		double *shm3, *s3;
 		for(i=0;i<numvariants;i++){
 			printf("\n 8.4 Calculate begin and end of each variant\n");
-			end=end-1;
-			begin=end+1;
-			end=end+1;
-			end=end+shm[i];
-			printf("\n 8.5 Execute variant %d\n",i);
-			printf("\n Begin: %d, end: %d\n",begin,end);
+//			end=end-1;
+//			begin=end+1;
+//			end=end+1;
+//			end=end+shm[i];
+//			printf("\n 8.5 Execute variant %d\n",i);
+//			printf("\n Begin: %d, end: %d\n",begin,end);
 
             printf("\n scheduler | Next: Variant number and data distribution pattern should be input for variants - \n"
                            "Write Thesis until the inputs of variants and prepare inputs for variants afterwards here!\n");
 
-			memset(variants,'\0',sizeof(variants));
-			for(k=0;k<20;k++){
+			memset( variants, '\0' , sizeof( variants ) );
+			for( k=0; k<20; k++ ) {
 				if(variantslist[i][k]!='\0'){
 					variants[k]=variantslist[i][k];
 				}
@@ -381,40 +398,21 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 			sprintf(cnumvariants,"%d",numvariants);
 			//sprintf(ckey,"%d",key2);
 
+            printf("\nscheduler | Input for variants: ( for each input ) variant number: %d, key: %d, size: %d\n",
+                   i,
+                   sharedMemoryKeyArray[ 0 ],
+                   sizeOfSharedMemorySegment[ 0 ]
+            );
 
-            printf("\nscheduler | Input for variants: ( for each input ) variant number: %d, key: %d, size: %d\n", i, sharedMemoryKeyArray[ 0 ],sizeOfSharedMemorySegment[ 0 ]);
-
-            printf("\nscheduler |  user concatenate to prepare shell command\n");
+            printf("\nscheduler | use concatenate to prepare shell command\n");
 
             while(fopen("wait.dummy","r")==NULL){
                 //Wait, until test procedure is done with testing of the according variant
             }
 
-			printf("\n 14. Create Shared memory for result\n");
-
 
 			int shmid3;
 	    	key_t key3;
-
-	    	key3 = 2222;
-	    	char ckey3[100];
-	    	sprintf(ckey3,"%d",key3);
-	    	int size3=sizeof(double)*(numvariants+1);
-	    	/*
-	    	* Create the segment.
-	    	*/
-	    	if ((shmid3 = shmget(key3, size3, IPC_CREAT | 0666)) < 0) {
-	    	perror("shmget");
-	    	exit(1);
-	    	}
-
-	    	/*
-	    	* Now we attach the segment to our data space.
-	    	*/
-	    	if ((shm3 = shmat(shmid3, NULL, 0)) == (double *) -1) {
-	    	perror("shmat");
-	    	exit(1);
-	    	}
 	    	
 	    	s3=shm3;
 	    	s3[0]=0;
@@ -445,8 +443,6 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 			strcat(make,ci);
 			strcat(make," ");
 			strcat(make,cnumvariants);
-			strcat(make," ");
-			strcat(make,ckey3);
 
 
 			
