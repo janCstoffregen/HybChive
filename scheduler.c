@@ -321,17 +321,19 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 		va_list valist;
         va_start(valist, numberOfParameters);
         char *type="";
-        int size3;
-		int *sharedMemoryKeyAndSize = { 0 };
+        int sizeOfSharedMemorySegment[ 20 ] = { 0 };
+        int sharedMemoryKeyArray[ 20 ] = { 0 };
+		int *sharedMemoryKey = { 0 };
         for ( i = 0; i < numberOfParameters; i++) {
-            size3 = va_arg(valist, int );
+            sizeOfSharedMemorySegment[ i ] = va_arg(valist, int );
             type = va_arg(valist, char * );
 
             if( type == "double" ) {
                 double *argument = va_arg(valist, double * );
-				sharedMemoryKeyAndSize = createSharedMemorySegmentsandKeys( size3, type, argument );
+				sharedMemoryKey = createSharedMemorySegmentsandKeys( sizeOfSharedMemorySegment[ i ], type, argument );
+                sharedMemoryKeyArray[ i ] = &sharedMemoryKey[ 0 ];
             }
-            printf("key: %d, size: %d", &sharedMemoryKeyAndSize[ 0 ], size3 );
+            printf("key: %d, size: %d", sharedMemoryKeyArray[ i ], sizeOfSharedMemorySegment[ i ] );
         }
         va_end(valist);
 
@@ -352,12 +354,6 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 
             printf("\n scheduler | Next: Variant number and data distribution pattern should be input for variants - \n"
                            "Write Thesis until the inputs of variants and prepare inputs for variants afterwards here!\n");
-
-			printf("\n scheduler | Input for variants: ( for each input ) variant number: %d, key: implement array above, size: implement array above\n", i);
-
-            while(fopen("wait.dummy","r")==NULL){
-                //Wait, until test procedure is done with testing of the according variant
-            }
 
 			memset(variants,'\0',sizeof(variants));
 			for(k=0;k<20;k++){
@@ -384,9 +380,17 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 			sprintf(ci,"%d",i);
 			sprintf(cnumvariants,"%d",numvariants);
 			//sprintf(ckey,"%d",key2);
-			
-			printf("\n 14. Create Shared memory for result\n");
 
+
+            printf("\nscheduler | Input for variants: ( for each input ) variant number: %d, key: %d, size: %d\n", i, sharedMemoryKeyArray[ 0 ],sizeOfSharedMemorySegment[ 0 ]);
+
+            printf("\nscheduler |  user concatenate to prepare shell command\n");
+
+            while(fopen("wait.dummy","r")==NULL){
+                //Wait, until test procedure is done with testing of the according variant
+            }
+
+			printf("\n 14. Create Shared memory for result\n");
 
 
 			int shmid3;
