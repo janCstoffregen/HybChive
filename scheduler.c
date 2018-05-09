@@ -353,6 +353,8 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
             printf("\n scheduler | Next: Variant number and data distribution pattern should be input for variants - \n"
                            "Write Thesis until the inputs of variants and prepare inputs for variants afterwards here!\n");
 
+			printf("\n scheduler | Input for variants: ( for each input ) variant number: %d, key: implement array above, size: implement array above\n", i);
+
             while(fopen("wait.dummy","r")==NULL){
                 //Wait, until test procedure is done with testing of the according variant
             }
