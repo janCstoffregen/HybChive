@@ -13,12 +13,11 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/function/variant1/variant" afterPath="$PROJECT_DIR$/function/variant1/variant" />
       <change beforePath="$PROJECT_DIR$/function/variant1/variant.c" afterPath="$PROJECT_DIR$/function/variant1/variant.c" />
+      <change beforePath="$PROJECT_DIR$/function/variant2/variant" afterPath="$PROJECT_DIR$/function/variant2/variant" />
       <change beforePath="$PROJECT_DIR$/function/variant2/variant.c" afterPath="$PROJECT_DIR$/function/variant2/variant.c" />
       <change beforePath="$PROJECT_DIR$/function/variant3/variant" afterPath="$PROJECT_DIR$/function/variant3/variant" />
       <change beforePath="$PROJECT_DIR$/function/variant3/variant.c" afterPath="$PROJECT_DIR$/function/variant3/variant.c" />
       <change beforePath="$PROJECT_DIR$/hybchive.log" afterPath="$PROJECT_DIR$/hybchive.log" />
-      <change beforePath="$PROJECT_DIR$/scheduler.c" afterPath="$PROJECT_DIR$/scheduler.c" />
-      <change beforePath="$PROJECT_DIR$/user" afterPath="$PROJECT_DIR$/user" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,11 +29,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="scheduler.c" pinned="false" current-in-tab="true">
+      <file leaf-file-name="scheduler.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scheduler.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="429" column="51" lean-forward="false" selection-start-line="429" selection-start-column="51" selection-end-line="429" selection-end-column="51" />
+            <state relative-caret-position="-311">
+              <caret line="413" column="36" lean-forward="false" selection-start-line="413" selection-start-column="36" selection-end-line="413" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="variant.c" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/function/variant1/variant.c">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="274">
+              <caret line="22" column="50" lean-forward="false" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -101,10 +110,10 @@
         <option value="$PROJECT_DIR$/createSharedMemorySegmentsandKeys.c" />
         <option value="$PROJECT_DIR$/hybchive.log" />
         <option value="$PROJECT_DIR$/concatenate.c" />
-        <option value="$PROJECT_DIR$/function/variant1/variant.c" />
+        <option value="$PROJECT_DIR$/scheduler.c" />
         <option value="$PROJECT_DIR$/function/variant2/variant.c" />
         <option value="$PROJECT_DIR$/function/variant3/variant.c" />
-        <option value="$PROJECT_DIR$/scheduler.c" />
+        <option value="$PROJECT_DIR$/function/variant1/variant.c" />
       </list>
     </option>
   </component>
@@ -149,7 +158,7 @@
               <item name="HybChive" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="HybChive" type="462c0819:PsiDirectoryNode" />
               <item name="function" type="462c0819:PsiDirectoryNode" />
-              <item name="variant3" type="462c0819:PsiDirectoryNode" />
+              <item name="variant1" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -222,12 +231,12 @@
       <workItem from="1525869785768" duration="2529000" />
       <workItem from="1525889287952" duration="8430000" />
       <workItem from="1525948463607" duration="1414000" />
-      <workItem from="1525952588317" duration="1372000" />
+      <workItem from="1525952588317" duration="1971000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63178000" />
+    <option name="totallyTimeSpent" value="63777000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -614,34 +623,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scheduler.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-311">
+          <caret line="413" column="36" lean-forward="false" selection-start-line="413" selection-start-column="36" selection-end-line="413" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/function/variant2/variant.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1590">
-          <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+        <state relative-caret-position="443">
+          <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/function/variant3/variant.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1590">
-          <caret line="106" column="0" lean-forward="false" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+        <state relative-caret-position="443">
+          <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/function/variant1/variant.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scheduler.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="429" column="51" lean-forward="false" selection-start-line="429" selection-start-column="51" selection-end-line="429" selection-end-column="51" />
+        <state relative-caret-position="274">
+          <caret line="22" column="50" lean-forward="false" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
           <folding />
         </state>
       </provider>

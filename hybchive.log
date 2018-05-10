@@ -378,3 +378,35 @@
 1525953964.843076, optimize | 6. Reading performance files
 1525953964.857601, optimize | 7. Run Optimizing Algorithm
 1525953964.857631, optimize | 7.1.2 End Optimizing Routine
+1525954106.952517, optimize | 6. Reading performance files
+1525954106.967585, optimize | 7. Run Optimizing Algorithm
+1525954106.967617, optimize | 7.1.2 End Optimizing Routine
+1525954170.793052, optimize | 6. Reading performance files
+1525954170.805780, optimize | 7. Run Optimizing Algorithm
+1525954170.805851, optimize | 7.1.2 End Optimizing Routine
+1525954238.044521, optimize | 6. Reading performance files
+1525954238.058893, optimize | 7. Run Optimizing Algorithm
+1525954238.058926, optimize | 7.1.2 End Optimizing Routine
+1525954257.875063, optimize | 6. Reading performance files
+1525954257.899003, optimize | 7. Run Optimizing Algorithm
+1525954257.899033, optimize | 7.1.2 End Optimizing Routine
+1525954265.180053, optimize | 6. Reading performance files
+1525954265.194018, optimize | 7. Run Optimizing Algorithm
+1525954265.194049, optimize | 7.1.2 End Optimizing Routine
+1525954329.856744, optimize | 6. Reading performance files
+1525954329.880912, optimize | 7. Run Optimizing Algorithm
+1525954329.880977, optimize | 7.1.2 End Optimizing Routine
+1525954329.673373, user | execute HybChive Function
+1525954329.673548, scheduler | start scheduler
+1525954329.704533, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1525954329.891749, scheduler | 7.4 Get the splitting information
+1525954329.894094, scheduler | 7.5 Splitting Data arrived in scheduler
+1525954348.614653, optimize | 6. Reading performance files
+1525954348.628032, optimize | 7. Run Optimizing Algorithm
+1525954348.628062, optimize | 7.1.2 End Optimizing Routine
+1525954358.208527, optimize | 6. Reading performance files
+1525954358.229394, optimize | 7. Run Optimizing Algorithm
+1525954358.229431, optimize | 7.1.2 End Optimizing Routine
+1525954566.384336, optimize | 6. Reading performance files
+1525954566.410068, optimize | 7. Run Optimizing Algorithm
+1525954566.410125, optimize | 7.1.2 End Optimizing Routine
