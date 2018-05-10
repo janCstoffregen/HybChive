@@ -11,7 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f7de219d-f619-48c7-b35c-2ddc0f33ccb9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/createSharedMemorySegmentsandKeys.c" afterPath="$PROJECT_DIR$/createSharedMemorySegmentsandKeys.c" />
+      <change beforePath="$PROJECT_DIR$/concatenate.c" afterPath="$PROJECT_DIR$/concatenate.c" />
       <change beforePath="$PROJECT_DIR$/hybchive.log" afterPath="$PROJECT_DIR$/hybchive.log" />
       <change beforePath="$PROJECT_DIR$/scheduler.c" afterPath="$PROJECT_DIR$/scheduler.c" />
       <change beforePath="$PROJECT_DIR$/user" afterPath="$PROJECT_DIR$/user" />
@@ -29,8 +29,8 @@
       <file leaf-file-name="scheduler.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scheduler.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="468" column="47" lean-forward="false" selection-start-line="468" selection-start-column="47" selection-end-line="468" selection-end-column="47" />
+            <state relative-caret-position="276">
+              <caret line="493" column="40" lean-forward="true" selection-start-line="493" selection-start-column="40" selection-end-line="493" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -39,18 +39,8 @@
       <file leaf-file-name="concatenate.c" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/concatenate.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="createSharedMemorySegmentsandKeys.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/createSharedMemorySegmentsandKeys.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="44" column="30" lean-forward="false" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
+            <state relative-caret-position="90">
+              <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -60,13 +50,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>myti</find>
-      <find>time</find>
-      <find>timed</find>
-      <find>make</find>
-      <find>result</find>
-      <find>7.6</find>
-      <find>create the</find>
       <find>popen</find>
       <find>10 C</find>
       <find>gcc</find>
@@ -89,12 +72,21 @@
       <find>wait</find>
       <find>valist</find>
       <find>numvariants</find>
+      <find>currentdir</find>
+      <find>variants</find>
       <find>shm</find>
+      <find>dataSplittingPattern</find>
+      <find>cDataSplittingPattern</find>
+      <find>end</find>
+      <find>makeThroughConcatenate</find>
+      <find>cDataSplittingPatternForChosenVariant</find>
     </findStrings>
     <replaceStrings>
       <replace>hybChiveSetName</replace>
       <replace>waitForFile</replace>
       <replace>Wait</replace>
+      <replace>dataSplittingPattern</replace>
+      <replace>makeCommandWithoutInputs</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -108,14 +100,14 @@
         <option value="$PROJECT_DIR$/function/variant1/varianttest.c" />
         <option value="$PROJECT_DIR$/function/variant1/variant.c" />
         <option value="$PROJECT_DIR$/hybchiveLog.c" />
-        <option value="$PROJECT_DIR$/hybchive.log" />
         <option value="$PROJECT_DIR$/optimize.c" />
-        <option value="$PROJECT_DIR$/concatenate.c" />
         <option value="$PROJECT_DIR$/compileAndExecute.sh" />
         <option value="$PROJECT_DIR$/hybchive.h" />
         <option value="$PROJECT_DIR$/kill_ipcs.sh" />
         <option value="$PROJECT_DIR$/user.c" />
         <option value="$PROJECT_DIR$/createSharedMemorySegmentsandKeys.c" />
+        <option value="$PROJECT_DIR$/hybchive.log" />
+        <option value="$PROJECT_DIR$/concatenate.c" />
         <option value="$PROJECT_DIR$/scheduler.c" />
       </list>
     </option>
@@ -151,6 +143,11 @@
             <path>
               <item name="HybChive" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="HybChive" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HybChive" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="HybChive" type="462c0819:PsiDirectoryNode" />
+              <item name="function" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -219,18 +216,19 @@
       <workItem from="1525444149219" duration="2117000" />
       <workItem from="1525866281576" duration="1971000" />
       <workItem from="1525869785768" duration="2529000" />
-      <workItem from="1525889287952" duration="2772000" />
+      <workItem from="1525889287952" duration="8430000" />
+      <workItem from="1525948463607" duration="1414000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54734000" />
+    <option name="totallyTimeSpent" value="61806000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14940098" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14869626" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23458283" sideWeight="0.49815693" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38154393" sideWeight="0.5018431" order="7" side_tool="true" content_ui="tabs" />
@@ -546,20 +544,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/function/variant1/performance.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hybchive.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="47" lean-forward="false" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/function/variant1/varianttest.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1110">
@@ -599,7 +583,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -617,26 +600,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/hybchive.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/createSharedMemorySegmentsandKeys.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
+        <state relative-caret-position="128">
           <caret line="44" column="30" lean-forward="false" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/concatenate.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state relative-caret-position="90">
+          <caret line="6" column="4" lean-forward="false" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/function/variant1/performance.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="2" lean-forward="false" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scheduler.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="468" column="47" lean-forward="false" selection-start-line="468" selection-start-column="47" selection-end-line="468" selection-end-column="47" />
+        <state relative-caret-position="276">
+          <caret line="493" column="40" lean-forward="true" selection-start-line="493" selection-start-column="40" selection-end-line="493" selection-end-column="40" />
           <folding />
         </state>
       </provider>
