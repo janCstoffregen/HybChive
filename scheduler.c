@@ -427,7 +427,7 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
                     " "
             );
 
-            char *myDummy = malloc( sizeof( makeCommandWithoutInputs ) );
+            char *myDummy = malloc( sizeof( myDummy ) );
             memset(myDummy,'\0',sizeof(myDummy));
             strcpy(myDummy, makeCommandWithoutInputs);
 
@@ -491,21 +491,7 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 
 			printf("\n9.05 Attach parameters to the make command\n");
 
-			va_start(valist, numberOfParameters);
-
-			int parameters;
 			char parameterList[100][100];
-
-			for(j=0;j<=numberOfParameters;j++) {
-				parameters = va_arg(valist, int);
-
-				memset(parameterList[j],'\0',sizeof(parameterList));
-				sprintf(parameterList[j],"%d",parameters);
-				printf("\n Parameter number %d %s \n",j,parameterList[j]);
-
-				strcat(make," ");
-				strcat(make,parameterList[j]);
-			}
 
 
 			va_end(valist);
@@ -516,12 +502,13 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
                 printf("%c",make[j]);
             }
 
-            while(fopen("wait.dummy","r")==NULL){
-                //Wait, until test procedure is done with testing of the according variant
-            }
-
-			pipe=popen(make,"w");
+			pipe=popen(myDummy,"w");
 			close(pipe);
+
+		}
+
+		while(fopen("wait.dummy","r")==NULL){
+			//Wait, until test procedure is done with testing of the according variant
 		}
 		
 		//printf("\n 16. scheduler starts sleeping\n");
