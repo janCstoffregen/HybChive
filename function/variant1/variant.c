@@ -3,8 +3,11 @@
 #include <sys/types.h>
 #include <sys/ipc.h>
 #include <sys/shm.h>
+#include <stdarg.h>
 
-int main(int argc, char *argv[]){
+int main(
+        int argc,
+        char *argv[]){
 
 
     /* Conversion string into int */
@@ -12,15 +15,41 @@ int main(int argc, char *argv[]){
             sharedMemoryKey,
             size,
             variantId,
-            numvariants;
+            numvariants,
+            numberOfParameters,
+            maxPossibleInputsForThisVariant = 10,
+            i;
 
     variantId = atoi(
             argv[ 1 ]
     );
 
-    printf("\nHi, I am variant %d and have the following inputs ... ", variantId);
+    numberOfParameters = atoi(
+            argv[ 2 ]
+    );
 
-    printf("\nNext: Number of parameters mitgeben!\n");
+    printf("\nvariant %d | Hello, I have %d input(s):",
+           variantId,
+           numberOfParameters);
+
+    printf("\nvariant %d | Next: Loop through inputs, and get shared memory segments\n",
+           variantId
+    );
+
+    va_list valist;
+    // va_start(valist, numberOfParameters);
+
+    for( i = 0; i < numberOfParameters; i++ )
+    {
+        printf("\nvariant %d | double* = shared memory segment\n",
+               variantId);
+        printf("\nvariant %d | afterwards print the content, then done!\n",
+               variantId);
+    }
+
+    // va_end(valist);
+
+
 
 //    ikey = atoi(argv[1]);
 //    begin = atoi(argv[2]);

@@ -9,19 +9,27 @@ int main(int argc, char *argv[]){
 
     /* Conversion string into int */
     int
-            begin = 0,
-            end = 0,
-            ikey = 0,
-            n = 0,
-            variantid,
-            numvariants = 0,
-            ikey3;
+            sharedMemoryKey,
+            size,
+            variantId,
+            numvariants,
+            numberOfParameters;
 
-    variantid = atoi(
+    variantId = atoi(
             argv[ 1 ]
     );
 
-    printf("\nHi, I am variant %d and have the following inputs ... ", variantid);
+    numberOfParameters = atoi(
+            argv[ 2 ]
+    );
+
+    printf("\nvariant %d | Hello, I have %d input(s):",
+           variantId,
+           numberOfParameters);
+
+    printf("\nvariant %d | Next: Loop through inputs, and get shared memory segments\n",
+           variantId
+    );
 
 //    ikey = atoi(argv[1]);
 //    begin = atoi(argv[2]);

@@ -312,7 +312,7 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 	    	printf("\nscheduler | 7.6 Device: %d, n = %d",i,dataSplittingPattern[i]);
 	    }
 		
-		printf("\nscheduler | 4.5 Optimizing Procedure has finished. Execute programs");
+		// printf("\nscheduler | 4.5 Optimizing Procedure has finished. Execute programs");
 
 		/*
 		 * This function will create a shared memory segment for each HybChive specific argument
@@ -338,7 +338,7 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
                         argument );
                 sharedMemoryKeyArray[ i ] = &sharedMemoryKey[ 0 ];
             }
-            printf("key: %d, size: %d", sharedMemoryKeyArray[ i ], sizeOfSharedMemorySegment[ i ] );
+            // printf("key: %d, size: %d", sharedMemoryKeyArray[ i ], sizeOfSharedMemorySegment[ i ] );
         }
         va_end(valist);
 
@@ -347,7 +347,7 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 
 		int begin=0, end=0;
 
-        printf("\n 14. Create Shared memory for Variant communication segment\n");
+        // printf("\n 14. Create Shared memory for Variant communication segment\n");
 
         //The following type is double because I have not implemented shared memory segment for int yet.
         int *sharedCommunicationMemoryKey = { 0 };
@@ -378,25 +378,21 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 			strcat(currentdir,variantslist[ i ]);
 			
 			printf("\nscheduler | 8.6 Converting inputs for programs into strings");
-			char cbegin[100]; 
-			char cend[100];
-			char ckey[100];
-			char cn[100];
-			char ci[100];
-			char cnumvariants[100];
-			sprintf(cbegin,"%d",begin);
-			sprintf(cend,"%d",end);
-			sprintf(cn,"%d",n);
-			sprintf(ci,"%d",i);
+			char ckey[100] = "";
+
+
+			char cnumvariants[100] = "";
+
+
 			sprintf(cnumvariants,"%d",numvariants);
 
 
-            printf(
-                    "\nscheduler | Input for variants: ( for each input ) variant number: %d, key: %d, size: %d\n",
-                    i,
-                    sharedMemoryKeyArray[ 0 ],
-                    sizeOfSharedMemorySegment[ 0 ]
-            );
+//            printf(
+//                    "\nscheduler | Input for variants: ( for each input ) variant number: %d, key: %d, size: %d\n",
+//                    i,
+//                    sharedMemoryKeyArray[ 0 ],
+//                    sizeOfSharedMemorySegment[ 0 ]
+//            );
 
 
 			int shmid3;
@@ -409,8 +405,14 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
             char *makeCommandWithoutInputs = malloc( sizeof(char) * ( 2000 ) );;
 			memset(make,'\0',sizeof(make));
 
+            char ci[100]="";
+            sprintf(ci,"%d",i);
+
+            char cNumberOfParameters[ 100 ] = "";
+            sprintf(cNumberOfParameters, "%d", numberOfParameters);
+
             makeCommandWithoutInputs = concatenate(
-                    7,
+                    9,
                     sizeof( "cd " ),
                     "cd ",
                     sizeof( hybChiveSetName ),
@@ -424,14 +426,18 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
                     sizeof( ci ),
                     ci,
                     sizeof(" "),
+                    " ",
+                    sizeof( cNumberOfParameters ),
+                    cNumberOfParameters,
+                    sizeof(" "),
                     " "
             );
 
-            char *myDummy = malloc( sizeof( myDummy ) );
+            char *myDummy = malloc( sizeof(char) * ( 1000 ) );
             memset(myDummy,'\0',sizeof(myDummy));
             strcpy(myDummy, makeCommandWithoutInputs);
 
-            printf("\n-- Loop through Key, Size and data splitting pattern\n");
+            // printf("\n-- Loop through Key, Size and data splitting pattern\n");
 
             char *makeDummy = malloc( sizeof(char) * ( 500 ) );
             memset(makeDummy,'\0',sizeof(makeDummy));
@@ -466,11 +472,11 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
                         5,
                         sizeof( keyOfSharedMemoryForCurrentParameter ),
                         keyOfSharedMemoryForCurrentParameter,
-                        sizeof( "" ),
+                        sizeof( " " ),
                         " ",
                         sizeof( sizeOfSharedMemoryForCurrentParameter ),
                         sizeOfSharedMemoryForCurrentParameter,
-                        sizeof( "" ),
+                        sizeof( " " ),
                         " ",
                         sizeof( cDataSplittingPatternForChosenVariant ),
                         cDataSplittingPatternForChosenVariant
@@ -487,20 +493,12 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
             }
             printf("\n------");
 
-
-
-			printf("\n9.05 Attach parameters to the make command\n");
-
 			char parameterList[100][100];
 
 
 			va_end(valist);
 
             printf("\nscheduler | use concatenate to prepare shell command\n");
-
-            for(j=0;j<120;j++){
-                printf("%c",make[j]);
-            }
 
 			pipe=popen(myDummy,"w");
 			close(pipe);
