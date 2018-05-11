@@ -20,3 +20,7 @@ int *createSharedMemorySegmentsandKeys(
         char *type,
         ...
 );
+
+double *attachSharedMemorySegment(
+        int key
+);

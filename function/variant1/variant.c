@@ -4,10 +4,12 @@
 #include <sys/ipc.h>
 #include <sys/shm.h>
 #include <stdarg.h>
+#include "../../hybchive.h"
 
 int main(
         int argc,
-        char *argv[]){
+        char *argv[])
+{
 
 
     /* Conversion string into int */
@@ -28,26 +30,26 @@ int main(
             argv[ 2 ]
     );
 
+    sharedMemoryKey = atoi(
+            argv[ 3 ]
+    );
+
     printf("\nvariant %d | Hello, I have %d input(s):",
            variantId,
            numberOfParameters);
 
-    printf("\nvariant %d | Next: Loop through inputs, and get shared memory segments\n",
+    printf("\nvariant %d | I will show you the first input, in a set you design you should know how many inputs you need.\n",
            variantId
     );
 
-    va_list valist;
-    // va_start(valist, numberOfParameters);
-
     for( i = 0; i < numberOfParameters; i++ )
     {
-        printf("\nvariant %d | double* = shared memory segment\n",
-               variantId);
-        printf("\nvariant %d | afterwards print the content, then done!\n",
+        printf("\nvariant %d | next: implement double* = attachSharedMemorySegment()\n",
                variantId);
     }
 
-    // va_end(valist);
+    double *test;
+    test = attachSharedMemorySegment( sharedMemoryKey );
 
 
 
