@@ -22,5 +22,7 @@ int *createSharedMemorySegmentsandKeys(
 );
 
 double *attachSharedMemorySegment(
-        int key
+        int key,
+        int size,
+        int variantId
 );

@@ -15,8 +15,19 @@
 main(int argc, char *argv[]){
 	
 	//n;
-	int n=atoi(argv[1]);
-	char *function = argv[2];
+	int n=atoi(
+            argv[
+                    1
+            ]
+    );
+	char *function = argv[
+            2
+    ];
+	int sharedMemorySize = atoi(
+			argv[
+					3
+			]
+	);
     FILE *pipe;
     hybchiveLog( "optimize | 6. Reading performance files" );
     char pipecommand[2000] = "";
@@ -254,12 +265,11 @@ main(int argc, char *argv[]){
     key_t key;
     int *shm, *s;
     key = 5678;
-    int size=sizeof(int)*n;
  
     /*
     * Create the segment.
     */
-    if ((shmid = shmget(key, size, IPC_CREAT | 0666)) < 0) {
+    if ((shmid = shmget(key, numvariants, IPC_CREAT | 0666)) < 0) {
     perror("shmget");
     exit(1);
     }
@@ -288,5 +298,7 @@ main(int argc, char *argv[]){
     //show scheduler that optimizing procedure has finished
     pipe=popen("echo '' > wait.txt","w");
     close(pipe);
+
+    return 0;
     
 }

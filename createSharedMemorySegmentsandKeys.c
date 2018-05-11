@@ -44,12 +44,25 @@ int *createSharedMemorySegmentsandKeys( int size, char *type, ... ) {
         va_list valist;
         va_start( valist, 1 );
 
-        double *input;
-        input = ( double * ) malloc( sizeof( double ) * size );
+        double *input = va_arg(valist, double * );
+
+        printf("createSharedMemorySegmentandKeys | input[ 0 ]: %f\n",
+               input[ 0 ]
+        );
+
+        printf("\nSize of shm: %d",
+               sizeof(shm)
+        );
+
+        printf("\nSize of input: %d",
+               sizeof(input)
+        );
 
         memcpy(shm, input, size);
 
-        free( input );
+        printf("\ncreateSharedMemorySegmentandKeys | shm[ 0 ]: %f\n",
+               shm[ 0 ]
+        );
         va_end(valist);
 
     }

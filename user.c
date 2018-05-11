@@ -10,17 +10,16 @@ gcc -o user user.o scheduler.o -lrt
 #include"hybchive.h"
 
 int main(){
-    
-    //create input data
-    int n=10; // 1000000 is biggest possible input.
-    double A[n*n];
-    double result=0;
-    int i;
+
     printf("\n Create input data\n");
-    for(i=0;i<n*n;i++){
-        A[i]=0;
-    } 
-    A[9*n+9]=1234;
+    int n=100;
+    double A[ n * n ];
+    double result=0;
+    int i, j;
+    for( i=0; i < n * n; i++ )
+    {
+        A[ i ] = 4;
+    }
 
     //define HybChive parameters:
     //1. Define name of the HybChive routine that you want to call
@@ -35,6 +34,10 @@ int main(){
 
     //4. Execute the hybchive routine:
 
+    printf("user | A[ 0 ]: %f\n",
+           A[ 0 ]
+    );
+
     hybchiveLog( "user | execute HybChive Function" );
 
     hybchive(
@@ -48,9 +51,19 @@ int main(){
     );
 
     hybchiveLog( "user | end HybChive Function - order timemarks yourself" );
-    
 
-    printf("\nuser | 0.3 Result in program of user: Found in A[%d][%d]\n",((int) result)/n,((int)result) % n);
+    printf("user | matrix after hybchive function call");
+
+//    for( i = 0; i < 4; i++ )
+//    {
+//        for( j = 0; j < 4; j++ )
+//        {
+//            printf("%lf ", A[ i * n + j ]);
+//        }
+//        printf("\n");
+//    }
+
+    // printf("\nuser | 0.3 Result in program of user: Found in A[%d][%d]\n",((int) result)/n,((int)result) % n);
 
 
 }

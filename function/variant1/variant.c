@@ -15,12 +15,12 @@ int main(
     /* Conversion string into int */
     int
             sharedMemoryKey,
-            size,
+            sharedMemorySize,
             variantId,
             numvariants,
             numberOfParameters,
             maxPossibleInputsForThisVariant = 10,
-            i;
+            problemSize;
 
     variantId = atoi(
             argv[ 1 ]
@@ -34,6 +34,10 @@ int main(
             argv[ 3 ]
     );
 
+    sharedMemorySize = atoi(
+            argv[ 4 ]
+    );
+
     printf("\nvariant %d | Hello, I have %d input(s):",
            variantId,
            numberOfParameters);
@@ -42,14 +46,17 @@ int main(
            variantId
     );
 
-    for( i = 0; i < numberOfParameters; i++ )
-    {
-        printf("\nvariant %d | next: implement double* = attachSharedMemorySegment()\n",
-               variantId);
-    }
+    double *inputArgumentOne;
+    inputArgumentOne = attachSharedMemorySegment( sharedMemoryKey, sharedMemorySize, variantId );
 
-    double *test;
-    test = attachSharedMemorySegment( sharedMemoryKey );
+    printf("\nvariant %d | to finalize: printf part of the input!\n",
+           variantId
+    );
+
+    printf("variant %d | A[ 0 ]: %f\n",
+           variantId,
+           inputArgumentOne[ 0 ]
+    );
 
 
 

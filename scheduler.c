@@ -256,15 +256,70 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 	if( checkallperformance == numvariants ) {
         hybchiveLog( "scheduler | 4.4 All performance files found. Execute performance optimizing procedure" );
 
+        /*
+         * This function will create a shared memory segment for each HybChive specific argument
+         * It returns a model where
+         * int sharedMemoryKeys[ i ] is the shared memory key for the ith hybchive specific argument.
+         * */
+
+        va_list valist;
+        va_start(valist, numberOfParameters);
+        char *type="";
+        int sizeOfSharedMemorySegment[ 20 ] = { 0 };
+        int sharedMemoryKeyArray[ 20 ] = { 0 };
+        int *sharedMemoryKey = { 0 };
+        for ( i = 0; i < numberOfParameters; i++) {
+            sizeOfSharedMemorySegment[ i ] = va_arg(valist, int );
+            type = va_arg(valist, char * );
+
+            if( type == "double" ) {
+                double *argument = va_arg(valist, double * );
+                sharedMemoryKey = createSharedMemorySegmentsandKeys(
+                        sizeOfSharedMemorySegment[ i ],
+                        type,
+                        argument );
+                sharedMemoryKeyArray[ i ] = &sharedMemoryKey[ 0 ];
+            }
+            // printf("key: %d, size: %d", sharedMemoryKeyArray[ i ], sizeOfSharedMemorySegment[ i ] );
+        }
+        va_end(valist);
+
+        int n;
+        if( numberOfParameters > 1 )
+        {
+            printf("\n scheduler | Please implement optimise procedure for more than one parameter and abort this program");
+            while(fopen("Wait.dummy","r")==NULL){
+                //Wait, until test procedure is done with testing of the according variant
+            }
+        } else {
+
+            n = sizeOfSharedMemorySegment[ 0 ] / 8;
+        }
 
 
-        int n = 100;
-		char cn2[100];
+        printf("\nscheduler | size of double: %d\n", n );
+
+        char cn2[100];
 		memset(cn2,'\0',sizeof(cn2));
 		sprintf(cn2,"%d",n);
+
+        char csize2[100];
+        memset(
+                csize2,
+                '\0',
+                sizeof( csize2 )
+        );
+        sprintf(
+                csize2,
+                "%d",
+                sizeOfSharedMemorySegment[ 0 ]
+        );
+
+
+
 		pipe=popen(
                 concatenate(
-                        5,
+                        7,
                         sizeof( "gcc optimize.c -o optimize hybchiveLog.o && ./optimize" ),
                         "gcc optimize.c -o optimize hybchiveLog.o && ./optimize",
                         sizeof( " " ),
@@ -274,7 +329,11 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
                         sizeof( " " ),
                         " ",
                         sizeof( hybChiveSetName ),
-                        hybChiveSetName
+                        hybChiveSetName,
+                        sizeof( " " ),
+                        " ",
+                        sizeof( csize2 ),
+                        csize2
                 )
                 ,"w");
 		close(pipe);
@@ -291,15 +350,15 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
     	int *dataSplittingPattern, *s;
     	int size=sizeof(int)*n;
 	    key = 5678;
-	 
+
 	    /*
 	    * Locate the segment.
 	    */
-	    if ((shmid = shmget(key, size, 0666)) < 0) {
+	    if ((shmid = shmget(key, numvariants, 0666)) < 0) {
 	    perror("shmget");
 	    exit(1);
 	    }
-	 
+
 	    /*
 	    * Now we attach the segment to our data space.
 	    */
@@ -314,49 +373,35 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 		
 		// printf("\nscheduler | 4.5 Optimizing Procedure has finished. Execute programs");
 
-		/*
-		 * This function will create a shared memory segment for each HybChive specific argument
-		 * It returns a model where
-		 * int sharedMemoryKeys[ i ] is the shared memory key for the ith hybchive specific argument.
-		 * */
-
-		va_list valist;
-        va_start(valist, numberOfParameters);
-        char *type="";
-        int sizeOfSharedMemorySegment[ 20 ] = { 0 };
-        int sharedMemoryKeyArray[ 20 ] = { 0 };
-		int *sharedMemoryKey = { 0 };
-        for ( i = 0; i < numberOfParameters; i++) {
-            sizeOfSharedMemorySegment[ i ] = va_arg(valist, int );
-            type = va_arg(valist, char * );
-
-            if( type == "double" ) {
-                double *argument = va_arg(valist, double * );
-				sharedMemoryKey = createSharedMemorySegmentsandKeys(
-                        sizeOfSharedMemorySegment[ i ],
-                        type,
-                        argument );
-                sharedMemoryKeyArray[ i ] = &sharedMemoryKey[ 0 ];
-            }
-            // printf("key: %d, size: %d", sharedMemoryKeyArray[ i ], sizeOfSharedMemorySegment[ i ] );
-        }
-        va_end(valist);
-
-
-
-
 		int begin=0, end=0;
+
+
 
         // printf("\n 14. Create Shared memory for Variant communication segment\n");
 
         //The following type is double because I have not implemented shared memory segment for int yet.
         int *sharedCommunicationMemoryKey = { 0 };
-        double *communicationBetweenSchedulerAndVariants = { 0 };
+        double communicationBetweenSchedulerAndVariants[ 1 ];
         sharedCommunicationMemoryKey = createSharedMemorySegmentsandKeys(
                 sizeof( communicationBetweenSchedulerAndVariants ),
                 "double",
                 communicationBetweenSchedulerAndVariants
         );
+
+        double *sharedCommunication;
+        sharedCommunication = attachSharedMemorySegment(
+                &sharedCommunicationMemoryKey[ 0 ],
+                sizeof( communicationBetweenSchedulerAndVariants ),
+                1234
+        );
+        printf("\nscheduler | sharedCommunication[ 0 ]: %f ", sharedCommunication[ 0 ]);
+
+        printf("\nscheduler | next: shared communcation key as input of variants\n");
+        while(fopen("Wait.dummy","r")==NULL){
+            //Wait, until test procedure is done with testing of the according variant
+        }
+
+
 
 		
 		double *shm3, *s3;
@@ -370,14 +415,19 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 //			printf("\n 8.5 Execute variant %d\n",i);
 //			printf("\n Begin: %d, end: %d\n",begin,end);
 
+
 			char currentdir[1000]="";
+
 			memset(currentdir,'\0',sizeof(currentdir));
+
 			strcat(currentdir,hybChiveSetName);
 
 			strcat(currentdir,"/");
+
 			strcat(currentdir,variantslist[ i ]);
-			
+
 			printf("\nscheduler | 8.6 Converting inputs for programs into strings");
+
 			char ckey[100] = "";
 
 
@@ -386,20 +436,6 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 
 			sprintf(cnumvariants,"%d",numvariants);
 
-
-//            printf(
-//                    "\nscheduler | Input for variants: ( for each input ) variant number: %d, key: %d, size: %d\n",
-//                    i,
-//                    sharedMemoryKeyArray[ 0 ],
-//                    sizeOfSharedMemorySegment[ 0 ]
-//            );
-
-
-			int shmid3;
-	    	key_t key3;
-	    	
-	    	s3=shm3;
-	    	s3[0]=0;
 			
 			char make[1000]="";
             char *makeCommandWithoutInputs = malloc( sizeof(char) * ( 2000 ) );;
@@ -504,23 +540,19 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 			close(pipe);
 
 		}
-
-		while(fopen("wait.dummy","r")==NULL){
-			//Wait, until test procedure is done with testing of the according variant
-		}
 		
-		//printf("\n 16. scheduler starts sleeping\n");
-		while(s3[0]!=numvariants){
-        	sleep(1);
-		}
+		printf("\nscheduler | 16. start sleeping\n");
+//		while(s3[0]!=numvariants){
+//        	sleep(1);
+//		}
 		//printf("\n 17. All variants are done\n");
 		
-		printf("\nscheduler | 18. Calculcating Result:");
-		
-		for(i=1;i<numvariants+1;i++){		//1, because 0 is for communication with scheduler
-			result=result+s3[i];
-		}
-		printf("\nscheduler | 19. Result: %lf\n",result);
+//		printf("\nscheduler | 18. Calculcating Result:");
+//
+//		for(i=1;i<numvariants+1;i++){		//1, because 0 is for communication with scheduler
+//			result=result+s3[i];
+//		}
+//		printf("\nscheduler | 19. Result: %lf\n",result);
 		
 		
 		
@@ -528,7 +560,7 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 		
 	}//end if(numvariants==all there)
 	//printf("\nscheduler | 20. Remove all shared memory");
-	pipe=popen("chmod +x kill_ipcs.sh && ./kill_ipcs.sh","w");
+	pipe=popen("sudo chmod +x kill_ipcs.sh && ./kill_ipcs.sh","w");
 	close(pipe);
 
 //
