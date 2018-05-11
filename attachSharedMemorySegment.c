@@ -9,7 +9,7 @@
 
 double *attachSharedMemorySegment( int key, int size, int variantId ) {
 
-    printf( "attachSharedMemorySegment | ( variant %d ) | for key: %d and size: %d", variantId, key, size );
+    printf( "\nattachSharedMemorySegment | ( variant %d ) | for key: %d and size: %d", variantId, key, size );
 
     int shmid;
     double *shm, *s;

@@ -396,10 +396,22 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
         );
         printf("\nscheduler | sharedCommunication[ 0 ]: %f ", sharedCommunication[ 0 ]);
 
-        printf("\nscheduler | next: shared communcation key as input of variants\n");
-        while(fopen("Wait.dummy","r")==NULL){
-            //Wait, until test procedure is done with testing of the according variant
-        }
+        char cSharedMemoryForCommuncation[ 100 ] = "";
+        memset(cSharedMemoryForCommuncation,'\0',sizeof(cSharedMemoryForCommuncation));
+        sprintf(
+                cSharedMemoryForCommuncation,
+                "%d",
+                &sharedCommunicationMemoryKey[ 0 ]
+        );
+        printf("\n scheduler | sharedCommunicationKey: %c", cSharedMemoryForCommuncation[ 0 ]);
+
+
+
+
+//        printf("\nscheduler | next: shared communcation key as input of variants\n");
+//        while(fopen("Wait.dummy","r")==NULL) {
+//            //Wait, until test procedure is done with testing of the according variant
+//        }
 
 
 
@@ -448,7 +460,7 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
             sprintf(cNumberOfParameters, "%d", numberOfParameters);
 
             makeCommandWithoutInputs = concatenate(
-                    9,
+                    11,
                     sizeof( "cd " ),
                     "cd ",
                     sizeof( hybChiveSetName ),
@@ -466,7 +478,12 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
                     sizeof( cNumberOfParameters ),
                     cNumberOfParameters,
                     sizeof(" "),
+                    " ",
+                    sizeof( cSharedMemoryForCommuncation ),
+                    cSharedMemoryForCommuncation,
+                    sizeof(" "),
                     " "
+
             );
 
             char *myDummy = malloc( sizeof(char) * ( 1000 ) );
@@ -542,9 +559,10 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 		}
 		
 		printf("\nscheduler | 16. start sleeping\n");
-//		while(s3[0]!=numvariants){
-//        	sleep(1);
-//		}
+		while(sharedCommunication[ 0 ] != numvariants )
+        {
+        	sleep(1);
+		}
 		//printf("\n 17. All variants are done\n");
 		
 //		printf("\nscheduler | 18. Calculcating Result:");

@@ -1085,3 +1085,306 @@ scheduler | 7.4 Get the splitting information
 1526039236.703839, optimize | 6. Reading performance files
 1526039236.730776, optimize | 7. Run Optimizing Algorithm
 1526039236.730805, optimize | 7.1.2 End Optimizing Routine
+1526039484.115450, optimize | 6. Reading performance files
+1526039484.131281, optimize | 7. Run Optimizing Algorithm
+1526039484.131310, optimize | 7.1.2 End Optimizing Routine
+1526039595.228228, optimize | 6. Reading performance files
+1526039595.245456, optimize | 7. Run Optimizing Algorithm
+1526039595.245486, optimize | 7.1.2 End Optimizing Routine
+1526039665.167267, optimize | 6. Reading performance files
+1526039665.183697, optimize | 7. Run Optimizing Algorithm
+1526039665.183744, optimize | 7.1.2 End Optimizing Routine
+1526039686.652635, optimize | 6. Reading performance files
+1526039686.684099, optimize | 7. Run Optimizing Algorithm
+1526039686.684489, optimize | 7.1.2 End Optimizing Routine
+1526039686.543252, user | execute HybChive Function
+1526039686.543344, scheduler | start scheduler
+1526039686.557304, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526039686.689416, scheduler | 7.4 Get the splitting information
+1526039686.691106, scheduler | 7.5 Splitting Data arrived in scheduler
+1526039686.699330, user | end HybChive Function - order timemarks yourself
+1526039821.282668, optimize | 6. Reading performance files
+1526039821.299660, optimize | 7. Run Optimizing Algorithm
+1526039821.299696, optimize | 7.1.2 End Optimizing Routine
+1526039821.180233, user | execute HybChive Function
+1526039821.180319, scheduler | start scheduler
+1526039821.192499, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526039821.306362, scheduler | 7.4 Get the splitting information
+1526039821.306542, scheduler | 7.5 Splitting Data arrived in scheduler
+1526039821.312910, user | end HybChive Function - order timemarks yourself
+1526039938.307557, optimize | 6. Reading performance files
+1526039938.326699, optimize | 7. Run Optimizing Algorithm
+1526039938.326730, optimize | 7.1.2 End Optimizing Routine
+1526039938.207393, user | execute HybChive Function
+1526039938.207462, scheduler | start scheduler
+1526039938.218462, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526039938.333031, scheduler | 7.4 Get the splitting information
+1526039938.333073, scheduler | 7.5 Splitting Data arrived in scheduler
+1526039938.343400, user | end HybChive Function - order timemarks yourself
+1526039954.483754, optimize | 6. Reading performance files
+1526039954.501637, optimize | 7. Run Optimizing Algorithm
+1526039954.501667, optimize | 7.1.2 End Optimizing Routine
+1526039954.381205, user | execute HybChive Function
+1526039954.381275, scheduler | start scheduler
+1526039954.394242, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526039954.505853, scheduler | 7.4 Get the splitting information
+1526039954.505892, scheduler | 7.5 Splitting Data arrived in scheduler
+1526039954.511681, user | end HybChive Function - order timemarks yourself
+1526040001.067164, optimize | 6. Reading performance files
+1526040001.083033, optimize | 7. Run Optimizing Algorithm
+1526040001.083064, optimize | 7.1.2 End Optimizing Routine
+1526040000.971078, user | execute HybChive Function
+1526040000.971166, scheduler | start scheduler
+1526040000.982708, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526040001.087866, scheduler | 7.4 Get the splitting information
+1526040001.087906, scheduler | 7.5 Splitting Data arrived in scheduler
+1526040001.095442, user | end HybChive Function - order timemarks yourself
+1526040064.938098, optimize | 6. Reading performance files
+1526040064.965077, optimize | 7. Run Optimizing Algorithm
+1526040064.965109, optimize | 7.1.2 End Optimizing Routine
+1526040064.835968, user | execute HybChive Function
+1526040064.836059, scheduler | start scheduler
+1526040064.848567, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526040064.970774, scheduler | 7.4 Get the splitting information
+1526040064.970962, scheduler | 7.5 Splitting Data arrived in scheduler
+1526040064.982954, user | end HybChive Function - order timemarks yourself
+1526040119.746411, optimize | 6. Reading performance files
+1526040119.763089, optimize | 7. Run Optimizing Algorithm
+1526040119.763118, optimize | 7.1.2 End Optimizing Routine
+1526040119.639542, user | execute HybChive Function
+1526040119.639628, scheduler | start scheduler
+1526040119.650350, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526040119.768327, scheduler | 7.4 Get the splitting information
+1526040119.768546, scheduler | 7.5 Splitting Data arrived in scheduler
+1526040119.781855, user | end HybChive Function - order timemarks yourself
+1526040208.661686, optimize | 6. Reading performance files
+1526040208.677918, optimize | 7. Run Optimizing Algorithm
+1526040208.678369, optimize | 7.1.2 End Optimizing Routine
+1526040208.547286, user | execute HybChive Function
+1526040208.547401, scheduler | start scheduler
+1526040208.565613, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526040208.684095, scheduler | 7.4 Get the splitting information
+1526040208.684305, scheduler | 7.5 Splitting Data arrived in scheduler
+1526040208.690850, user | end HybChive Function - order timemarks yourself
+1526040262.752774, optimize | 6. Reading performance files
+1526040262.767242, optimize | 7. Run Optimizing Algorithm
+1526040262.767271, optimize | 7.1.2 End Optimizing Routine
+1526040262.649389, user | execute HybChive Function
+1526040262.649456, scheduler | start scheduler
+1526040262.661613, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526040262.772431, scheduler | 7.4 Get the splitting information
+1526040262.772597, scheduler | 7.5 Splitting Data arrived in scheduler
+1526040262.779406, user | end HybChive Function - order timemarks yourself
+1526040470.421749, optimize | 6. Reading performance files
+1526040470.436636, optimize | 7. Run Optimizing Algorithm
+1526040470.436666, optimize | 7.1.2 End Optimizing Routine
+1526040470.324151, user | execute HybChive Function
+1526040470.324233, scheduler | start scheduler
+1526040470.334971, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526040470.441797, scheduler | 7.4 Get the splitting information
+1526040470.442043, scheduler | 7.5 Splitting Data arrived in scheduler
+1526040470.451895, user | end HybChive Function - order timemarks yourself
+1526040524.913438, optimize | 6. Reading performance files
+1526040524.938099, optimize | 7. Run Optimizing Algorithm
+1526040524.938855, optimize | 7.1.2 End Optimizing Routine
+1526040524.808608, user | execute HybChive Function
+1526040524.808678, scheduler | start scheduler
+1526040524.821453, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526040524.943692, scheduler | 7.4 Get the splitting information
+1526040524.943735, scheduler | 7.5 Splitting Data arrived in scheduler
+1526040524.954347, user | end HybChive Function - order timemarks yourself
+1526040541.950775, optimize | 6. Reading performance files
+1526040541.968806, optimize | 7. Run Optimizing Algorithm
+1526040541.968838, optimize | 7.1.2 End Optimizing Routine
+1526040541.842217, user | execute HybChive Function
+1526040541.842286, scheduler | start scheduler
+1526040541.858025, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526040541.973400, scheduler | 7.4 Get the splitting information
+1526040541.973740, scheduler | 7.5 Splitting Data arrived in scheduler
+1526040541.990203, user | end HybChive Function - order timemarks yourself
+1526040611.502123, optimize | 6. Reading performance files
+1526040611.530030, optimize | 7. Run Optimizing Algorithm
+1526040611.530064, optimize | 7.1.2 End Optimizing Routine
+1526040611.397497, user | execute HybChive Function
+1526040611.397568, scheduler | start scheduler
+1526040611.409412, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526040611.535067, scheduler | 7.4 Get the splitting information
+1526040611.535168, scheduler | 7.5 Splitting Data arrived in scheduler
+1526040611.544685, user | end HybChive Function - order timemarks yourself
+1526040656.923107, optimize | 6. Reading performance files
+1526040656.938433, optimize | 7. Run Optimizing Algorithm
+1526040656.938465, optimize | 7.1.2 End Optimizing Routine
+1526040656.815275, user | execute HybChive Function
+1526040656.815344, scheduler | start scheduler
+1526040656.827133, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526040656.943653, scheduler | 7.4 Get the splitting information
+1526040656.943693, scheduler | 7.5 Splitting Data arrived in scheduler
+1526040656.949050, user | end HybChive Function - order timemarks yourself
+1526040726.167306, optimize | 6. Reading performance files
+1526040726.191320, optimize | 7. Run Optimizing Algorithm
+1526040726.191357, optimize | 7.1.2 End Optimizing Routine
+1526040726.063892, user | execute HybChive Function
+1526040726.063961, scheduler | start scheduler
+1526040726.076614, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526040726.198092, scheduler | 7.4 Get the splitting information
+1526040726.198134, scheduler | 7.5 Splitting Data arrived in scheduler
+1526040726.206722, user | end HybChive Function - order timemarks yourself
+1526040750.348938, optimize | 6. Reading performance files
+1526040750.365634, optimize | 7. Run Optimizing Algorithm
+1526040750.365665, optimize | 7.1.2 End Optimizing Routine
+1526040750.247124, user | execute HybChive Function
+1526040750.247208, scheduler | start scheduler
+1526040750.258157, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526040750.371222, scheduler | 7.4 Get the splitting information
+1526040750.371264, scheduler | 7.5 Splitting Data arrived in scheduler
+1526040750.378504, user | end HybChive Function - order timemarks yourself
+1526040768.313762, optimize | 6. Reading performance files
+1526040768.330505, optimize | 7. Run Optimizing Algorithm
+1526040768.330556, optimize | 7.1.2 End Optimizing Routine
+1526040768.214570, user | execute HybChive Function
+1526040768.214640, scheduler | start scheduler
+1526040768.226339, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526040768.335559, scheduler | 7.4 Get the splitting information
+1526040768.335619, scheduler | 7.5 Splitting Data arrived in scheduler
+1526040768.344530, user | end HybChive Function - order timemarks yourself
+1526040781.214275, optimize | 6. Reading performance files
+1526040781.237951, optimize | 7. Run Optimizing Algorithm
+1526040781.237982, optimize | 7.1.2 End Optimizing Routine
+1526040781.098655, user | execute HybChive Function
+1526040781.098724, scheduler | start scheduler
+1526040781.119539, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526040781.242852, scheduler | 7.4 Get the splitting information
+1526040781.243231, scheduler | 7.5 Splitting Data arrived in scheduler
+1526040781.252943, user | end HybChive Function - order timemarks yourself
+1526040855.212268, optimize | 6. Reading performance files
+1526040855.227630, optimize | 7. Run Optimizing Algorithm
+1526040855.227663, optimize | 7.1.2 End Optimizing Routine
+1526040855.117080, user | execute HybChive Function
+1526040855.117168, scheduler | start scheduler
+1526040855.127670, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526040855.233121, scheduler | 7.4 Get the splitting information
+1526040855.233177, scheduler | 7.5 Splitting Data arrived in scheduler
+1526040855.239406, user | end HybChive Function - order timemarks yourself
+1526040869.059853, optimize | 6. Reading performance files
+1526040869.075945, optimize | 7. Run Optimizing Algorithm
+1526040869.075976, optimize | 7.1.2 End Optimizing Routine
+1526040868.959807, user | execute HybChive Function
+1526040868.959892, scheduler | start scheduler
+1526040868.973406, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526040869.080759, scheduler | 7.4 Get the splitting information
+1526040869.080818, scheduler | 7.5 Splitting Data arrived in scheduler
+1526040869.087769, user | end HybChive Function - order timemarks yourself
+1526040939.334864, optimize | 6. Reading performance files
+1526040939.355644, optimize | 7. Run Optimizing Algorithm
+1526040939.355675, optimize | 7.1.2 End Optimizing Routine
+1526040939.227922, user | execute HybChive Function
+1526040939.227992, scheduler | start scheduler
+1526040939.240600, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526040939.363844, scheduler | 7.4 Get the splitting information
+1526040939.363888, scheduler | 7.5 Splitting Data arrived in scheduler
+1526040939.370798, user | end HybChive Function - order timemarks yourself
+1526041081.448045, optimize | 6. Reading performance files
+1526041081.468877, optimize | 7. Run Optimizing Algorithm
+1526041081.468911, optimize | 7.1.2 End Optimizing Routine
+1526041081.335047, user | execute HybChive Function
+1526041081.335136, scheduler | start scheduler
+1526041081.347560, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526041081.474639, scheduler | 7.4 Get the splitting information
+1526041081.474680, scheduler | 7.5 Splitting Data arrived in scheduler
+1526041081.482054, user | end HybChive Function - order timemarks yourself
+1526041118.649840, optimize | 6. Reading performance files
+1526041118.666830, optimize | 7. Run Optimizing Algorithm
+1526041118.666862, optimize | 7.1.2 End Optimizing Routine
+1526041118.534359, user | execute HybChive Function
+1526041118.534450, scheduler | start scheduler
+1526041118.547761, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526041118.674568, scheduler | 7.4 Get the splitting information
+1526041118.674860, scheduler | 7.5 Splitting Data arrived in scheduler
+1526041118.687824, user | end HybChive Function - order timemarks yourself
+1526041131.185927, optimize | 6. Reading performance files
+1526041131.211838, optimize | 7. Run Optimizing Algorithm
+1526041131.211869, optimize | 7.1.2 End Optimizing Routine
+1526041131.074211, user | execute HybChive Function
+1526041131.074309, scheduler | start scheduler
+1526041131.087726, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526041131.220119, scheduler | 7.4 Get the splitting information
+1526041131.220855, scheduler | 7.5 Splitting Data arrived in scheduler
+1526041131.231987, user | end HybChive Function - order timemarks yourself
+1526041136.803603, optimize | 6. Reading performance files
+1526041136.827813, optimize | 7. Run Optimizing Algorithm
+1526041136.828130, optimize | 7.1.2 End Optimizing Routine
+1526041136.683494, user | execute HybChive Function
+1526041136.683588, scheduler | start scheduler
+1526041136.704790, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526041136.836237, scheduler | 7.4 Get the splitting information
+1526041136.836286, scheduler | 7.5 Splitting Data arrived in scheduler
+1526041136.848191, user | end HybChive Function - order timemarks yourself
+1526041184.427358, optimize | 6. Reading performance files
+1526041184.444110, optimize | 7. Run Optimizing Algorithm
+1526041184.444144, optimize | 7.1.2 End Optimizing Routine
+1526041184.322531, user | execute HybChive Function
+1526041184.322603, scheduler | start scheduler
+1526041184.333902, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526041184.448559, scheduler | 7.4 Get the splitting information
+1526041184.448853, scheduler | 7.5 Splitting Data arrived in scheduler
+1526041184.460039, user | end HybChive Function - order timemarks yourself
+1526041189.941174, optimize | 6. Reading performance files
+1526041189.962058, optimize | 7. Run Optimizing Algorithm
+1526041189.962092, optimize | 7.1.2 End Optimizing Routine
+1526041189.835161, user | execute HybChive Function
+1526041189.835248, scheduler | start scheduler
+1526041189.846930, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526041189.969367, scheduler | 7.4 Get the splitting information
+1526041189.969406, scheduler | 7.5 Splitting Data arrived in scheduler
+1526041189.977133, user | end HybChive Function - order timemarks yourself
+1526041224.360146, optimize | 6. Reading performance files
+1526041224.376155, optimize | 7. Run Optimizing Algorithm
+1526041224.376186, optimize | 7.1.2 End Optimizing Routine
+1526041224.249072, user | execute HybChive Function
+1526041224.249167, scheduler | start scheduler
+1526041224.263174, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526041224.381840, scheduler | 7.4 Get the splitting information
+1526041224.381884, scheduler | 7.5 Splitting Data arrived in scheduler
+1526041224.390502, user | end HybChive Function - order timemarks yourself
+1526041255.646672, optimize | 6. Reading performance files
+1526041255.668508, optimize | 7. Run Optimizing Algorithm
+1526041255.668541, optimize | 7.1.2 End Optimizing Routine
+1526041255.537586, user | execute HybChive Function
+1526041255.537656, scheduler | start scheduler
+1526041255.549438, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526041255.676512, scheduler | 7.4 Get the splitting information
+1526041255.676564, scheduler | 7.5 Splitting Data arrived in scheduler
+1526041255.684391, user | end HybChive Function - order timemarks yourself
+1526041360.009312, optimize | 6. Reading performance files
+1526041360.038280, optimize | 7. Run Optimizing Algorithm
+1526041360.038316, optimize | 7.1.2 End Optimizing Routine
+1526041359.887183, user | execute HybChive Function
+1526041359.887263, scheduler | start scheduler
+1526041359.902945, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526041360.043918, scheduler | 7.4 Get the splitting information
+1526041360.043982, scheduler | 7.5 Splitting Data arrived in scheduler
+1526041360.052289, user | end HybChive Function - order timemarks yourself
+1526041418.053147, optimize | 6. Reading performance files
+1526041418.071517, optimize | 7. Run Optimizing Algorithm
+1526041418.071549, optimize | 7.1.2 End Optimizing Routine
+1526041417.945163, user | execute HybChive Function
+1526041417.945232, scheduler | start scheduler
+1526041417.959754, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526041418.080066, scheduler | 7.4 Get the splitting information
+1526041418.080106, scheduler | 7.5 Splitting Data arrived in scheduler
+1526041418.087692, user | end HybChive Function - order timemarks yourself
+1526041508.594134, optimize | 6. Reading performance files
+1526041508.620939, optimize | 7. Run Optimizing Algorithm
+1526041508.620969, optimize | 7.1.2 End Optimizing Routine
+1526041618.184619, optimize | 6. Reading performance files
+1526041618.198962, optimize | 7. Run Optimizing Algorithm
+1526041618.198994, optimize | 7.1.2 End Optimizing Routine
+1526041637.208958, optimize | 6. Reading performance files
+1526041637.226278, optimize | 7. Run Optimizing Algorithm
+1526041637.226309, optimize | 7.1.2 End Optimizing Routine
+1526041682.901445, optimize | 6. Reading performance files
+1526041682.922869, optimize | 7. Run Optimizing Algorithm
+1526041682.922898, optimize | 7.1.2 End Optimizing Routine
+1526041708.007813, optimize | 6. Reading performance files
+1526041708.026671, optimize | 7. Run Optimizing Algorithm
+1526041708.026703, optimize | 7.1.2 End Optimizing Routine
