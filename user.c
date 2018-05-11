@@ -50,20 +50,18 @@ int main(){
         A
     );
 
-    hybchiveLog( "user | end HybChive Function - order timemarks yourself" );
+    hybchiveLog( "\nuser | end HybChive Function - order timemarks yourself\n" );
 
-    printf("user | matrix after hybchive function call");
+    printf("\nuser | matrix after hybchive function call\n");
 
-//    for( i = 0; i < 4; i++ )
-//    {
-//        for( j = 0; j < 4; j++ )
-//        {
-//            printf("%lf ", A[ i * n + j ]);
-//        }
-//        printf("\n");
-//    }
-
-    // printf("\nuser | 0.3 Result in program of user: Found in A[%d][%d]\n",((int) result)/n,((int)result) % n);
+    for( i = 0; i < 4; i++ )
+    {
+        for( j = 0; j < 4; j++ )
+        {
+            printf("%lf ", A[ i * n + j ]);
+        }
+        printf("\n");
+    }
 
 
 }

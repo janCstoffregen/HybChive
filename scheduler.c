@@ -279,6 +279,11 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
                         type,
                         argument );
                 sharedMemoryKeyArray[ i ] = &sharedMemoryKey[ 0 ];
+
+                // the following statement is only to check if the user gets the changes in the end!
+                // Todo delete this statement
+                argument[ 0 ] += 7654;
+
             }
             // printf("key: %d, size: %d", sharedMemoryKeyArray[ i ], sizeOfSharedMemorySegment[ i ] );
         }
@@ -496,6 +501,7 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
             memset(makeDummy,'\0',sizeof(makeDummy));
             for( j = 0; j < numberOfParameters; j++ )
             {
+
                 char keyOfSharedMemoryForCurrentParameter[ 100 ] = "";
                 memset(keyOfSharedMemoryForCurrentParameter,'\0',sizeof(keyOfSharedMemoryForCurrentParameter));
 
@@ -513,12 +519,12 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
                 sprintf(
                         keyOfSharedMemoryForCurrentParameter,
                         "%d",
-                        sharedMemoryKeyArray[ i ]
+                        sharedMemoryKeyArray[ j ]
                 );
                 sprintf(
                         sizeOfSharedMemoryForCurrentParameter,
                         "%d",
-                        sizeOfSharedMemorySegment[ i ]
+                        sizeOfSharedMemorySegment[ j ]
                 );
 
                 makeDummy = concatenate(
@@ -557,34 +563,16 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 			close(pipe);
 
 		}
+
+
 		
 		printf("\nscheduler | 16. start sleeping\n");
 		while(sharedCommunication[ 0 ] != numvariants )
         {
         	sleep(1);
 		}
-		//printf("\n 17. All variants are done\n");
-		
-//		printf("\nscheduler | 18. Calculcating Result:");
-//
-//		for(i=1;i<numvariants+1;i++){		//1, because 0 is for communication with scheduler
-//			result=result+s3[i];
-//		}
-//		printf("\nscheduler | 19. Result: %lf\n",result);
-		
-		
-		
-		
-		
-	}//end if(numvariants==all there)
-	//printf("\nscheduler | 20. Remove all shared memory");
+
+	}
 	pipe=popen("sudo chmod +x kill_ipcs.sh && ./kill_ipcs.sh","w");
 	close(pipe);
-
-//
-
-	
-	//return result;
-	
-
 }
