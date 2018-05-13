@@ -21,7 +21,10 @@ int main(
             numberOfParameters,
             maxPossibleInputsForThisVariant = 10,
             problemSize,
-            sharedMemoryCommuncation;
+            sharedMemoryCommuncation,
+            i,
+            j,
+            dataSliceForThisVariant;
 
     variantId = atoi(
             argv[ 1 ]
@@ -35,13 +38,23 @@ int main(
             argv[ 3 ]
     );
 
-    sharedMemoryKey = atoi(
+    numvariants = atoi(
             argv[ 4 ]
     );
 
-    sharedMemorySize = atoi(
+    sharedMemoryKey = atoi(
             argv[ 5 ]
     );
+
+    sharedMemorySize = atoi(
+            argv[ 6 ]
+    );
+
+    dataSliceForThisVariant = atoi(
+            argv[ 7 ]
+    );
+
+
 
 
 
@@ -65,6 +78,9 @@ int main(
            inputArgumentOne[ 0 ]
     );
 
+    inputArgumentOne[ 0 ] += 1;
+
+
     printf("variant %d | sharedMemoryCommuncationKey: %d\n",
            variantId,
            sharedMemoryCommuncation
@@ -85,7 +101,48 @@ int main(
            sharedMemoryCommunicationPointer[ 0 ]
     );
 
-    printf("\nvariant %d | next: fix key and size input for the other variants\n", variantId);
+    printf("\nvariant %d | dataSlice %d\n",
+           variantId,
+           dataSliceForThisVariant
+    );
+
+    int begin, end;
+
+    /**
+     * The following statement is problem specific.
+     * In a general way, the problem size has to be generated out of the shared memory size,
+     * since the problem size is an implementation specific term.
+     * */
+    problemSize = sharedMemorySize / 8;
+
+    printf("\nvariant %d | problem size %d\n",
+           variantId,
+           problemSize
+    );
+
+    /**
+     * The following generation of the slice for this variant is HybChive - set specific /
+     * optimisation - specific and has to be performed in every variant.
+     * */
+
+    printf("\nvariant %d | number of variants: %d\n",
+           variantId,
+           numvariants
+    );
+
+    begin = problemSize / numvariants * variantId;
+    end = begin + dataSliceForThisVariant;
+
+    printf("\nvariant %d | begin: %d, end: %d\n, ",
+           variantId,
+           begin,
+           end
+    );
+
+    for ( i = begin; i < end; i++ )
+    {
+        inputArgumentOne[ i ] = variantId;
+    }
 
     return 0;
 }

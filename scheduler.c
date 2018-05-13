@@ -37,7 +37,13 @@ FILE *pipe2;
 
 
 
-void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberOfParameters, ...) {
+void hybchive(
+        char *hybChiveSetName,
+        char *variants,
+        char *optimize,
+        int numberOfParameters,
+        ...)
+{
 
     srand( time( NULL ) );   // should only be called once
 
@@ -84,15 +90,24 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
                     list
             )
             ,"r");
-    for( i = 0; i < numvariants * characters; i++ ) {
-        fscanf(pipe,"%c",&variants[i]);
+    for( i = 0; i < numvariants * characters; i++ )
+    {
+        fscanf(
+                pipe,
+                "%c",
+                &variants[i]
+        );
     }
 	fclose(pipe);
 
 	printf("\n3.1 show, that the devices - array got everything \n");
 	printf("\n");
-	for(i=0;i<30;i++){
-		printf("%c",variants[i]);
+	for( i = 0; i < 30; i++ )
+    {
+		printf(
+                "%c",
+                variants[ i ]
+        );
 	}
 
 
@@ -100,21 +115,26 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 
 	i=0;
 
-	for(j=0;j<50;j++){
-		if(variants[j]!='\n'){
-			variantslist[i][j-distance]=variants[j];
-		}
-		else{
-			i=i+1;
-			distance=j+1;
-			help=help+1;
+	for( j = 0; j < 50; j++ )
+    {
+		if( variants[ j ] != '\n' )
+        {
+			variantslist[ i ][ j - distance ] = variants[ j ];
+		} else {
+			i = i + 1;
+			distance = j + 1;
+			help = help + 1;
 			//printf("\ndistance: %d\n",distance);
 		}
 	}
-	numvariants=help;
-	for(i=0;i<numvariants;i++) {
-		for(j=0;j<30;j++){
-				printf("%c",variantslist[i][j]);
+	numvariants = help;
+	for( i = 0; i < numvariants; i++ )
+    {
+		for( j = 0; j < 30; j++ )
+        {
+				printf("%c",
+                       variantslist[ i ][ j ]
+                );
 		}
 		printf("\n");
 	}
@@ -129,41 +149,61 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
                     sizeof( removedir ),
                     removedir
             )
-            ,"w");
-	close(pipe);
+            , "w"
+    );
+	close( pipe );
 
 	/*end part one*/
 
 	/*begin part two*/
-	//printf("\n4. cd to every variant and check, if there is performance data\n");
-	//printf("\n4.1 merge variant list and cd - command\n");
 
 
-	for(i=0;i<numvariants;i++) {
+	for( i = 0; i < numvariants; i++)
+    {
 
-        memset(currentdir,'\0',sizeof(currentdir));
-		memset(pipecommand,'\0',sizeof(pipecommand));
-        memset(variants,'\0',sizeof(variants));
+        memset(
+                currentdir,
+                '\0',
+                sizeof(currentdir)
+        );
+		memset(
+                pipecommand,
+                '\0',
+                sizeof(pipecommand)
+        );
+        memset(
+                variants,
+                '\0',
+                sizeof(variants)
+        );
 
-		printf("\n a Check pipecommand - should be empty, i=%d\n",i);
-		for(j=0;j<40;j++){
-			printf("%c",pipecommand[j]);
+		printf("\n a Check pipecommand - should be empty, i=%d\n",
+               i
+        );
+		for( j = 0; j < 40; j++ )
+        {
+			printf("%c",
+                   pipecommand[ j ]
+            );
 		}
 
-		for(k=0;k<20;k++){
-			if(variantslist[i][k]!='\0'){
+		for( k = 0; k < 20; k++ )
+        {
+			if( variantslist[ i ][ k ] != '\0' )
+            {
 				variants[k]=variantslist[i][k];
 			}
 		}
 
 
-		strcat(currentdir,hybChiveSetName);
-		strcat(currentdir,"/");
-        strcat(currentdir,variantslist[i]);
+		strcat( currentdir, hybChiveSetName );
+		strcat( currentdir, "/" );
+        strcat( currentdir, variantslist[ i ] );
 
 
 
-        if(fopen(
+        if(
+                fopen(
                 concatenate(
                         5,
                         sizeof( hybChiveSetName ),
@@ -177,47 +217,77 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
                         sizeof( performancedata ),
                         performancedata
                 )
-                ,"r")==NULL){
+                , "r" )==NULL)
+        {
             hybchiveLog( "scheduler | No performance data found for" );
 			printf("\n ");
-			for(j=0;j<40;j++){
-				printf("%c",variantslist[i][j]);
+			for( j = 0; j < 40; j++ )
+            {
+				printf("%c",
+                       variantslist[ i ][ j ]
+                );
 			}
 
 
 
 			printf("\n");
 			printf("\nscheduler | 4.3 Execute test \n");
-			memset(make,'\0',sizeof(make));
+			memset(
+                    make,
+                    '\0',
+                    sizeof(make)
+            );
 
-			strcat(make, "cd ");
-            int length = strlen(currentdir);
-            if (currentdir[length-1] == '\n') {
+			strcat(
+                    make,
+                    "cd "
+            );
+            int length = strlen( currentdir );
+            if ( currentdir[ length - 1 ] == '\n' )
+            {
                 //printf("remove newline");
-                currentdir[length-1]  = '\0';
+                currentdir[ length - 1 ]  = '\0';
             }
-            strcat(make, currentdir);
+            strcat( make, currentdir );
 
-			strcat(make, " && make test && ./varianttest");
+			strcat( make, " && make test && ./varianttest" );
 
 			printf("\n b Check pipecommand - should be set name and variant name, i=%d\n",i);
-			for(j=0;j<70;j++) {
-				printf("%c",currentdir[j]);
+			for( j = 0; j < 70; j++ )
+            {
+				printf("%c",
+                       currentdir[ j ]
+                );
 			}
             printf("\nCurrentdir not working!");
 
 
-			pipe=popen(make,"w");
-			close(pipe);
-			memset(Wait,'\0',sizeof(Wait));
-			strcat(Wait,currentdir);
-			strcat(Wait,"/");
-			strcat(Wait,"Wait.txt");
-			while(fopen(Wait,"r")==NULL){
+			pipe=popen(
+                    make,
+                    "w"
+            );
+			close( pipe );
+			memset(
+                    Wait,
+                   '\0',
+                   sizeof(Wait)
+            );
+			strcat(
+                    Wait,
+                    currentdir
+            );
+			strcat( Wait, "/" );
+			strcat( Wait, "Wait.txt" );
+			while( fopen( Wait, "r" ) == NULL )
+            {
 				//Wait, until test procedure is done with testing of the according variant
 			}
             hybchiveLog( "scheduler | End execute varianttest" );
-			memset(Wait,'\0',sizeof(Wait));
+			memset(
+                    Wait,
+                    '\0',
+                    sizeof(Wait)
+            );
 			strcat(Wait,"rm ");
 			strcat(Wait,currentdir);
 			strcat(Wait,"/");
@@ -252,7 +322,9 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 		memset(pipecommand,'\0',sizeof(pipecommand));
 
 	}
-
+    double *inputArgumentOne;
+    double *argument;
+    int sizeOfSharedMemorySegment[ 20 ] = { 0 };
 	if( checkallperformance == numvariants ) {
         hybchiveLog( "scheduler | 4.4 All performance files found. Execute performance optimizing procedure" );
 
@@ -265,7 +337,6 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
         va_list valist;
         va_start(valist, numberOfParameters);
         char *type="";
-        int sizeOfSharedMemorySegment[ 20 ] = { 0 };
         int sharedMemoryKeyArray[ 20 ] = { 0 };
         int *sharedMemoryKey = { 0 };
         for ( i = 0; i < numberOfParameters; i++) {
@@ -273,7 +344,7 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
             type = va_arg(valist, char * );
 
             if( type == "double" ) {
-                double *argument = va_arg(valist, double * );
+                argument = va_arg(valist, double * );
                 sharedMemoryKey = createSharedMemorySegmentsandKeys(
                         sizeOfSharedMemorySegment[ i ],
                         type,
@@ -281,8 +352,11 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
                 sharedMemoryKeyArray[ i ] = &sharedMemoryKey[ 0 ];
 
                 // the following statement is only to check if the user gets the changes in the end!
-                // Todo delete this statement
-                argument[ 0 ] += 7654;
+
+                inputArgumentOne = attachSharedMemorySegment(
+                        sharedMemoryKeyArray[ i ],
+                        sizeOfSharedMemorySegment[ i ],
+                        1234 );
 
             }
             // printf("key: %d, size: %d", sharedMemoryKeyArray[ i ], sizeOfSharedMemorySegment[ i ] );
@@ -341,19 +415,20 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
                         csize2
                 )
                 ,"w");
-		close(pipe);
+		close( pipe );
 
-		while(fopen("Wait.txt","r")==NULL){
+		while( fopen( "Wait.txt", "r" ) == NULL )
+        {
 			//Wait, until test procedure is done with testing of the according variant
 		}
 
-		pipe=popen("rm Wait.txt","w");
-		close(pipe);
+		pipe = popen( "rm Wait.txt","w" );
+		close( pipe );
         hybchiveLog( "scheduler | 7.4 Get the splitting information" );
 		int shmid;
     	key_t key;
     	int *dataSplittingPattern, *s;
-    	int size=sizeof(int)*n;
+    	int size=sizeof( int ) * n;
 	    key = 5678;
 
 	    /*
@@ -385,8 +460,12 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
         // printf("\n 14. Create Shared memory for Variant communication segment\n");
 
         //The following type is double because I have not implemented shared memory segment for int yet.
-        int *sharedCommunicationMemoryKey = { 0 };
-        double communicationBetweenSchedulerAndVariants[ 1 ];
+        int *sharedCommunicationMemoryKey = {
+                0
+        };
+        double communicationBetweenSchedulerAndVariants[
+                1
+        ];
         sharedCommunicationMemoryKey = createSharedMemorySegmentsandKeys(
                 sizeof( communicationBetweenSchedulerAndVariants ),
                 "double",
@@ -399,16 +478,24 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
                 sizeof( communicationBetweenSchedulerAndVariants ),
                 1234
         );
-        printf("\nscheduler | sharedCommunication[ 0 ]: %f ", sharedCommunication[ 0 ]);
+        printf("\nscheduler | sharedCommunication[ 0 ]: %f ",
+               sharedCommunication[ 0 ]
+        );
 
         char cSharedMemoryForCommuncation[ 100 ] = "";
-        memset(cSharedMemoryForCommuncation,'\0',sizeof(cSharedMemoryForCommuncation));
+        memset(
+                cSharedMemoryForCommuncation,
+                '\0',
+                sizeof(cSharedMemoryForCommuncation)
+        );
         sprintf(
                 cSharedMemoryForCommuncation,
                 "%d",
                 &sharedCommunicationMemoryKey[ 0 ]
         );
-        printf("\n scheduler | sharedCommunicationKey: %c", cSharedMemoryForCommuncation[ 0 ]);
+        printf("\n scheduler | sharedCommunicationKey: %c",
+               cSharedMemoryForCommuncation[ 0 ]
+        );
 
 
 
@@ -465,7 +552,7 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
             sprintf(cNumberOfParameters, "%d", numberOfParameters);
 
             makeCommandWithoutInputs = concatenate(
-                    11,
+                    13,
                     sizeof( "cd " ),
                     "cd ",
                     sizeof( hybChiveSetName ),
@@ -486,6 +573,10 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
                     " ",
                     sizeof( cSharedMemoryForCommuncation ),
                     cSharedMemoryForCommuncation,
+                    sizeof(" "),
+                    " ",
+                    sizeof( cnumvariants ),
+                    cnumvariants,
                     sizeof(" "),
                     " "
 
@@ -563,16 +654,17 @@ void hybchive(char *hybChiveSetName, char *variants, char *optimize, int numberO
 			close(pipe);
 
 		}
-
-
-		
 		printf("\nscheduler | 16. start sleeping\n");
 		while(sharedCommunication[ 0 ] != numvariants )
         {
         	sleep(1);
 		}
-
 	}
+
+    // Todo do this for every inpu variable
+    printf("\nscheduler | 17. copy shared memory segment back to input variable\n");
+    memcpy(argument, inputArgumentOne, sizeOfSharedMemorySegment[ 0 ]);
+
 	pipe=popen("sudo chmod +x kill_ipcs.sh && ./kill_ipcs.sh","w");
 	close(pipe);
 }

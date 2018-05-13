@@ -12,7 +12,7 @@ gcc -o user user.o scheduler.o -lrt
 int main(){
 
     printf("\n Create input data\n");
-    int n=100;
+    int n=4;
     double A[ n * n ];
     double result=0;
     int i, j;
