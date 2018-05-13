@@ -94,13 +94,6 @@ int main(
             variantId
     );
 
-    sharedMemoryCommunicationPointer[ 0 ] += 1;
-
-    printf("\nvariant %d | sharedMemoryCommuncationContent before finish: %f\n",
-           variantId,
-           sharedMemoryCommunicationPointer[ 0 ]
-    );
-
     printf("\nvariant %d | dataSlice %d\n",
            variantId,
            dataSliceForThisVariant
@@ -143,6 +136,13 @@ int main(
     {
         inputArgumentOne[ i ] = variantId;
     }
+
+    sharedMemoryCommunicationPointer[ 0 ] += 1;
+
+    printf("\nvariant %d | sharedMemoryCommuncationContent before finish: %f\n",
+           variantId,
+           sharedMemoryCommunicationPointer[ 0 ]
+    );
 
     return 0;
 }
