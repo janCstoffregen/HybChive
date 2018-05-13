@@ -23,7 +23,7 @@ int main(){
 
     //define HybChive parameters:
     //1. Define name of the HybChive routine that you want to call
-    char set[]="function";
+    char set[]="hybChiveC_SetTemplate";
     char variants[]="all";
     char optimize[]="performance";
     //2. define number of parameters AFTER the "numberOfParameters-1" input paramter
