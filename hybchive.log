@@ -1813,3 +1813,14 @@ user | end HybChive Function - order timemarks yourself
 1526280982.756285, 
 user | end HybChive Function - order timemarks yourself
 
+1526284113.577036, optimize | 6. Reading performance files
+1526284113.604160, optimize | 7. Run Optimizing Algorithm
+1526284113.604195, optimize | 7.1.2 End Optimizing Routine
+1526284113.466673, user | execute HybChive Function
+1526284113.466735, scheduler | start scheduler
+1526284113.477637, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1526284113.610405, scheduler | 7.4 Get the splitting information
+1526284113.610447, scheduler | 7.5 Splitting Data arrived in scheduler
+1526284114.624279, 
+user | end HybChive Function - order timemarks yourself
+

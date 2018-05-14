@@ -26,7 +26,7 @@ int main(){
     );
 
 
-    char set[]="hybChiveC_SetTemplate";
+    char set[]="newSetForSecondExperiment";
     char variants[]="all";
     char optimize[]="performance";
     int numberOfParameters = 1;
