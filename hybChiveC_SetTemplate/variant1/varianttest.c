@@ -7,18 +7,29 @@
 double *secondsarray, *nsecondsarray;
 
 // marks the current time and saves it in an array
-void mytime(int timemark) {
+void mytime(int timemark)
+{
     struct  timespec currenttime;
     //dynamic memory allocation
-    if(timemark==1){
+    if(timemark==1)
+    {
         secondsarray=malloc(sizeof(double));
         nsecondsarray=malloc(sizeof(double));
     }
     else{
-        secondsarray=(double *)realloc(secondsarray,sizeof(double)*timemark);
-        nsecondsarray=(double *)realloc(nsecondsarray,sizeof(double)*timemark);
+        secondsarray=(double *)realloc(
+                secondsarray,
+                sizeof(double)*timemark
+        );
+        nsecondsarray=(double *)realloc(
+                nsecondsarray,
+                sizeof(double)*timemark
+        );
     }
-    clock_gettime(CLOCK_REALTIME, &currenttime);
+    clock_gettime(
+            CLOCK_REALTIME,
+            &currenttime
+    );
     secondsarray[timemark-1]=currenttime.tv_sec;
     nsecondsarray[timemark-1]=currenttime.tv_nsec;
 }
@@ -37,20 +48,30 @@ double timediff(int time2, int time1)
 }
  
 int main(){
-    printf("\n Executing real test procedure variant 1\n");
+    printf("\nvarianttest | Executing real test procedure\n");
 
-    int nfinal=1000;
+    int
+            nfinal=1000,
+            increment = 100;
     double A[nfinal];
     int i,j,n;
     FILE *pipe;
     pipe=fopen("performance.txt","w");
-    for(n=0;n<=nfinal;n=n+100) {
+
+    printf("\nvarianttest | Biggest possible input for this device defined here: %d",
+           nfinal
+    );
+
+    printf("varianttest | increment after each test by: %d",
+           increment
+    );
+
+    for( n = 0; n <= nfinal; n += increment )
+    {
             
         
         mytime(1);
-        printf("\n Test with n = %d\n", n);
-     
-    
+
 
         for(i=0;i<n;i++){
             A[i]=1;
@@ -66,13 +87,20 @@ int main(){
         for(j=0;j<n;j++){
             result+=A[j];
         }
-         
-        // printf("\n Result: %lf\n",result);
+
         mytime(2);
-     
-        // printf("\n print in performance.txt\n");
-        // printf("%d %f \n",n,timediff(2,1));
-        fprintf (pipe, "%d %f \n", n, timediff(2,1));
+
+
+        printf("\n Test with n = %d: time: %f\n",
+               n,
+               timediff( 2, 1 )
+        );
+        fprintf (
+                pipe,
+                "%d %f \n",
+                n,
+                timediff( 2, 1 )
+        );
     }
     close(pipe);
     pipe=popen("echo '' > wait.txt","w");

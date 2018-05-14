@@ -11,24 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f7de219d-f619-48c7-b35c-2ddc0f33ccb9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/function/variant1/Makefile" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant1/Makefile" />
-      <change beforePath="$PROJECT_DIR$/function/variant1/performance.txt" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant1/performance.txt" />
-      <change beforePath="$PROJECT_DIR$/function/variant1/variant" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant1/variant" />
-      <change beforePath="$PROJECT_DIR$/function/variant1/variant.c" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant1/variant.c" />
-      <change beforePath="$PROJECT_DIR$/function/variant1/varianttest" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant1/varianttest" />
-      <change beforePath="$PROJECT_DIR$/function/variant1/varianttest.c" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant1/varianttest.c" />
-      <change beforePath="$PROJECT_DIR$/function/variant2/Makefile" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant2/Makefile" />
-      <change beforePath="$PROJECT_DIR$/function/variant2/performance.txt" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant2/performance.txt" />
-      <change beforePath="$PROJECT_DIR$/function/variant2/variant" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant2/variant" />
-      <change beforePath="$PROJECT_DIR$/function/variant2/variant.c" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant2/variant.c" />
-      <change beforePath="$PROJECT_DIR$/function/variant2/varianttest" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant2/varianttest" />
-      <change beforePath="$PROJECT_DIR$/function/variant2/varianttest.c" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant2/varianttest.c" />
-      <change beforePath="$PROJECT_DIR$/function/variant3/Makefile" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant3/Makefile" />
-      <change beforePath="$PROJECT_DIR$/function/variant3/performance.txt" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant3/performance.txt" />
-      <change beforePath="$PROJECT_DIR$/function/variant3/variant" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant3/variant" />
-      <change beforePath="$PROJECT_DIR$/function/variant3/variant.c" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant3/variant.c" />
-      <change beforePath="$PROJECT_DIR$/function/variant3/varianttest" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant3/varianttest" />
-      <change beforePath="$PROJECT_DIR$/function/variant3/varianttest.c" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant3/varianttest.c" />
+      <change beforePath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant1/performance.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant1/varianttest" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant1/varianttest" />
+      <change beforePath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant1/varianttest.c" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant1/varianttest.c" />
       <change beforePath="$PROJECT_DIR$/hybchive.log" afterPath="$PROJECT_DIR$/hybchive.log" />
       <change beforePath="$PROJECT_DIR$/user" afterPath="$PROJECT_DIR$/user" />
       <change beforePath="$PROJECT_DIR$/user.c" afterPath="$PROJECT_DIR$/user.c" />
@@ -43,21 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="variant.c" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hybChiveC_SetTemplate/variant3/variant.c">
+      <file leaf-file-name="varianttest.c" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hybChiveC_SetTemplate/variant1/varianttest.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.c" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/user.c">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+            <state relative-caret-position="102">
+              <caret line="93" column="45" lean-forward="false" selection-start-line="93" selection-start-column="45" selection-end-line="93" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -131,6 +106,7 @@
         <option value="$PROJECT_DIR$/function/variant2/variant.c" />
         <option value="$PROJECT_DIR$/function/variant3/variant.c" />
         <option value="$PROJECT_DIR$/user.c" />
+        <option value="$PROJECT_DIR$/hybChiveC_SetTemplate/variant1/varianttest.c" />
       </list>
     </option>
   </component>
@@ -165,6 +141,17 @@
             <path>
               <item name="HybChive" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="HybChive" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HybChive" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="HybChive" type="462c0819:PsiDirectoryNode" />
+              <item name="hybChiveC_SetTemplate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="HybChive" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="HybChive" type="462c0819:PsiDirectoryNode" />
+              <item name="hybChiveC_SetTemplate" type="462c0819:PsiDirectoryNode" />
+              <item name="variant1" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -240,12 +227,12 @@
       <workItem from="1525952588317" duration="4609000" />
       <workItem from="1526026112621" duration="13319000" />
       <workItem from="1526042006664" duration="1463000" />
-      <workItem from="1526063670687" duration="4418000" />
+      <workItem from="1526063670687" duration="7143000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85615000" />
+    <option name="totallyTimeSpent" value="88340000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -257,7 +244,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24907847" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40870616" sideWeight="0.49815693" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5296252" sideWeight="0.49815693" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -523,13 +510,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hybChiveC_SetTemplate/variant1/varianttest.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1110">
-          <caret line="74" column="53" lean-forward="false" selection-start-line="74" selection-start-column="53" selection-end-line="74" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hybchiveLog.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -548,13 +528,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hybChiveC_SetTemplate/variant1/performance.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="2" lean-forward="false" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
         </state>
       </provider>
     </entry>
@@ -631,14 +604,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hybChiveC_SetTemplate/variant1/variant.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="144" column="6" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hybChiveC_SetTemplate/variant2/variant.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
@@ -649,16 +614,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hybChiveC_SetTemplate/variant3/variant.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="148" column="0" lean-forward="false" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
+        <state relative-caret-position="155">
+          <caret line="46" column="6" lean-forward="false" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/user.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        <state relative-caret-position="131">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="45" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hybChiveC_SetTemplate/variant1/performance.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="14" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hybChiveC_SetTemplate/variant1/variant.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="135" column="5" lean-forward="true" selection-start-line="135" selection-start-column="5" selection-end-line="135" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hybChiveC_SetTemplate/variant1/varianttest.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="93" column="45" lean-forward="false" selection-start-line="93" selection-start-column="45" selection-end-line="93" selection-end-column="45" />
           <folding />
         </state>
       </provider>

@@ -21,22 +21,17 @@ int main(){
         A[ i ] = 4;
     }
 
-    //define HybChive parameters:
-    //1. Define name of the HybChive routine that you want to call
-    char set[]="hybChiveC_SetTemplate";
-    char variants[]="all";
-    char optimize[]="performance";
-    //2. define number of parameters AFTER the "numberOfParameters-1" input paramter
-    //of the Hybchive routine:
-    int numberOfParameters = 1;
-    //3. Parameter for the search algorithm: Define the entry that you'd like to search for:
-    int parameterOne=1234;
-
-    //4. Execute the hybchive routine:
-
     printf("user | A[ 0 ]: %f\n",
            A[ 0 ]
     );
+
+
+    char set[]="hybChiveC_SetTemplate";
+    char variants[]="all";
+    char optimize[]="performance";
+    int numberOfParameters = 1;
+
+
 
     hybchiveLog( "user | execute HybChive Function" );
 
