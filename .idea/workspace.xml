@@ -10,7 +10,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f7de219d-f619-48c7-b35c-2ddc0f33ccb9" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant4/Makefile" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant4/performance.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant4/variant" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant4/variant.c" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant4/varianttest" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant4/varianttest.c" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant5/Makefile" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant5/performance.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant5/variant" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant5/variant.c" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant5/varianttest" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant5/varianttest.c" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant1/variant" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant1/variant" />
+      <change beforePath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant1/variant.c" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant1/variant.c" />
+      <change beforePath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant2/variant" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant2/variant" />
+      <change beforePath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant2/variant.c" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant2/variant.c" />
+      <change beforePath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant3/variant" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant3/variant" />
+      <change beforePath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant3/variant.c" afterPath="$PROJECT_DIR$/hybChiveC_SetTemplate/variant3/variant.c" />
+      <change beforePath="$PROJECT_DIR$/hybchive.log" afterPath="$PROJECT_DIR$/hybchive.log" />
+      <change beforePath="$PROJECT_DIR$/newSetForSecondExperiment/variant1/Makefile" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/newSetForSecondExperiment/variant1/performance.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/newSetForSecondExperiment/variant1/variant" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/newSetForSecondExperiment/variant1/variant.c" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/newSetForSecondExperiment/variant1/varianttest" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/newSetForSecondExperiment/variant1/varianttest.c" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/newSetForSecondExperiment/variant2/Makefile" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/newSetForSecondExperiment/variant2/performance.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/newSetForSecondExperiment/variant2/variant" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/newSetForSecondExperiment/variant2/variant.c" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/newSetForSecondExperiment/variant2/varianttest" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/newSetForSecondExperiment/variant2/varianttest.c" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/newSetForSecondExperiment/variant3/Makefile" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/newSetForSecondExperiment/variant3/performance.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/newSetForSecondExperiment/variant3/variant" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/newSetForSecondExperiment/variant3/variant.c" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/newSetForSecondExperiment/variant3/varianttest" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/newSetForSecondExperiment/variant3/varianttest.c" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/user" afterPath="$PROJECT_DIR$/user" />
       <change beforePath="$PROJECT_DIR$/user.c" afterPath="$PROJECT_DIR$/user.c" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -26,8 +64,8 @@
       <file leaf-file-name="user.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/user.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="28" column="41" lean-forward="false" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
+            <state relative-caret-position="312">
+              <caret line="55" column="34" lean-forward="false" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -37,7 +75,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>performance data foun</find>
       <find>dummy</find>
       <find>va_</find>
       <find>performanceh</find>
@@ -67,6 +104,7 @@
       <find>parameterOne</find>
       <find>result</find>
       <find>cnumvariants</find>
+      <find>inputArgumentOne</find>
     </findStrings>
     <replaceStrings>
       <replace>hybChiveSetName</replace>
@@ -101,7 +139,11 @@
         <option value="$PROJECT_DIR$/function/variant2/variant.c" />
         <option value="$PROJECT_DIR$/function/variant3/variant.c" />
         <option value="$PROJECT_DIR$/hybChiveC_SetTemplate/variant1/varianttest.c" />
+        <option value="$PROJECT_DIR$/hybChiveC_SetTemplate/variant3/variant.c" />
+        <option value="$PROJECT_DIR$/hybChiveC_SetTemplate/variant2/variant.c" />
+        <option value="$PROJECT_DIR$/hybChiveC_SetTemplate/variant1/variant.c" />
         <option value="$PROJECT_DIR$/user.c" />
+        <option value="$PROJECT_DIR$/hybChiveC_SetTemplate/variant4/variant.c" />
       </list>
     </option>
   </component>
@@ -137,6 +179,11 @@
               <item name="HybChive" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="HybChive" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="HybChive" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="HybChive" type="462c0819:PsiDirectoryNode" />
+              <item name="hybChiveC_SetTemplate" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -148,6 +195,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/hybChiveC_SetTemplate" />
       <recent name="$PROJECT_DIR$/function/variant3" />
       <recent name="$PROJECT_DIR$/function/variant2" />
       <recent name="$PROJECT_DIR$/function" />
@@ -211,25 +259,26 @@
       <workItem from="1525952588317" duration="4609000" />
       <workItem from="1526026112621" duration="13319000" />
       <workItem from="1526042006664" duration="1463000" />
-      <workItem from="1526063670687" duration="7911000" />
+      <workItem from="1526063670687" duration="8018000" />
+      <workItem from="1527055894112" duration="1530000" />
+      <workItem from="1527230892773" duration="185000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="89108000" />
+    <option name="totallyTimeSpent" value="90930000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1564482" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16203144" sideWeight="0.49815693" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31197098" sideWeight="0.49815693" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38154393" sideWeight="0.5018431" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24907847" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5296252" sideWeight="0.49815693" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44860944" sideWeight="0.49815693" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -274,13 +323,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/hybchive.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hybChiveC_SetTemplate/variant1/varianttest.c">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1110">
@@ -306,7 +348,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -328,7 +369,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -350,7 +390,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -372,7 +411,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -387,7 +425,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3630">
           <caret line="242" column="22" lean-forward="true" selection-start-line="242" selection-start-column="22" selection-end-line="242" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -402,7 +439,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -417,7 +453,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -467,7 +502,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2175">
           <caret line="145" column="32" lean-forward="false" selection-start-line="145" selection-start-column="32" selection-end-line="145" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -482,7 +516,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
           <caret line="46" column="5" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="46" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -555,7 +588,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="26" column="21" lean-forward="false" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -577,7 +609,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="206">
           <caret line="353" column="100" lean-forward="false" selection-start-line="353" selection-start-column="100" selection-end-line="353" selection-end-column="100" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -585,23 +616,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
           <caret line="60" column="33" lean-forward="false" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hybChiveC_SetTemplate/variant2/variant.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="148" column="0" lean-forward="true" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hybChiveC_SetTemplate/variant3/variant.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="46" column="6" lean-forward="false" selection-start-line="46" selection-start-column="6" selection-end-line="46" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -609,15 +623,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="14" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="10" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hybChiveC_SetTemplate/variant1/variant.c">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="135" column="5" lean-forward="true" selection-start-line="135" selection-start-column="5" selection-end-line="135" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -625,14 +630,42 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="93" column="45" lean-forward="false" selection-start-line="93" selection-start-column="45" selection-end-line="93" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hybChiveC_SetTemplate/variant1/variant.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="78" column="6" lean-forward="false" selection-start-line="78" selection-start-column="6" selection-end-line="78" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hybChiveC_SetTemplate/variant2/variant.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="78" column="6" lean-forward="false" selection-start-line="78" selection-start-column="6" selection-end-line="78" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hybChiveC_SetTemplate/variant3/variant.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="78" column="6" lean-forward="false" selection-start-line="78" selection-start-column="6" selection-end-line="78" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hybChiveC_SetTemplate/variant4/variant.c">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2040">
+          <caret line="136" column="0" lean-forward="false" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/user.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="28" column="41" lean-forward="false" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
+        <state relative-caret-position="312">
+          <caret line="55" column="34" lean-forward="false" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
           <folding />
         </state>
       </provider>

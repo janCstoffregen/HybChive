@@ -78,8 +78,6 @@ int main(
            inputArgumentOne[ 0 ]
     );
 
-    inputArgumentOne[ 0 ] += 1;
-
 
     printf("variant %d | sharedMemoryCommuncationKey: %d\n",
            variantId,
