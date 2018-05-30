@@ -12,7 +12,7 @@ gcc -o user user.o scheduler.o -lrt
 int main(){
 
     printf("\n Create input data\n");
-    int n = 4;
+    int n = 700;
     double A[ n * n ];
     double result=0;
     int i, j;
@@ -45,7 +45,7 @@ int main(){
         A
     );
 
-    hybchiveLog( "\nuser | end HybChive Function - order timemarks yourself\n" );
+    hybchiveLog( "user | end HybChive Function - order timemarks yourself" );
 
     printf("\nuser | matrix after hybchive function call n = %d\n", n);
 

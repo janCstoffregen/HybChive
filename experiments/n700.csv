@@ -1,0 +1,14 @@
+1527526525.361598, optimize | 6. Reading performance files
+1527526525.374693, optimize | 7. Run Optimizing Algorithm
+1527526525.374724, optimize | 7.1.2 End Optimizing Routine
+1527526525.258150, user | execute HybChive Function
+1527526525.258234, scheduler | start scheduler
+1527526525.270933, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1527526525.270961, scheduler | 4.5 Start copying HybChive - set specific parameters to shared memory segment
+1527526525.274606, scheduler | 4.5.1 End copying HybChive - set specific parameters to shared memory segment
+1527526525.382722, scheduler | 7.4 Get the splitting information
+1527526525.383008, scheduler | 7.5 Splitting Data arrived in scheduler
+1527526525.384205, scheduler | 16.01 All variants started
+1527526526.389569, scheduler | 16.01 All variants ended
+1527526526.389679, scheduler | 17. copy shared memory segment back to input variable
+1527526526.398582, user | end HybChive Function - order timemarks yourself

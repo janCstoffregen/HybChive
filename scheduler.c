@@ -339,6 +339,7 @@ void hybchive(
         char *type="";
         int sharedMemoryKeyArray[ 20 ] = { 0 };
         int *sharedMemoryKey = { 0 };
+        hybchiveLog( "scheduler | 4.5 Start copying HybChive - set specific parameters to shared memory segment" );
         for ( i = 0; i < numberOfParameters; i++) {
             sizeOfSharedMemorySegment[ i ] = va_arg(valist, int );
             type = va_arg(valist, char * );
@@ -362,6 +363,7 @@ void hybchive(
             // printf("key: %d, size: %d", sharedMemoryKeyArray[ i ], sizeOfSharedMemorySegment[ i ] );
         }
         va_end(valist);
+        hybchiveLog( "scheduler | 4.5.1 End copying HybChive - set specific parameters to shared memory segment" );
 
         int n;
         if( numberOfParameters > 1 )
@@ -654,15 +656,17 @@ void hybchive(
 			close(pipe);
 
 		}
+        hybchiveLog( "scheduler | 16.01 All variants started" );
 		printf("\nscheduler | 16. start sleeping\n");
 		while(sharedCommunication[ 0 ] != numvariants )
         {
         	sleep(1);
 		}
+        hybchiveLog( "scheduler | 16.01 All variants ended" );
 	}
 
     // Todo do this for every inpu variable
-    printf("\nscheduler | 17. copy shared memory segment back to input variable\n");
+    hybchiveLog("scheduler | 17. copy shared memory segment back to input variable");
     memcpy(argument, inputArgumentOne, sizeOfSharedMemorySegment[ 0 ]);
 
 	pipe=popen("sudo chmod +x kill_ipcs.sh && ./kill_ipcs.sh","w");
