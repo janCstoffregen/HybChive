@@ -665,10 +665,14 @@ void hybchive(
         hybchiveLog( "scheduler | 16.01 All variants ended" );
 	}
 
-    // Todo do this for every inpu variable
+    // Todo do this for every input variable
     hybchiveLog("scheduler | 17. copy shared memory segment back to input variable");
+    printf("\nSize of argument: %d\n", sizeof(argument));
+    printf("\nSize of inputArgumentOne: %d\n", sizeof(inputArgumentOne));
+    printf("\nIndicated Size: %d\n", sizeof(argument));
+    
     memcpy(argument, inputArgumentOne, sizeOfSharedMemorySegment[ 0 ]);
 
-	pipe=popen("sudo chmod +x kill_ipcs.sh && ./kill_ipcs.sh","w");
+	pipe=popen("chmod +x kill_ipcs.sh && ./kill_ipcs.sh","w");
 	close(pipe);
 }

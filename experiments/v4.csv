@@ -1,0 +1,59 @@
+1527742976.787902, optimize | 6. Reading performance files
+1527742976.801894, optimize | 7. Run Optimizing Algorithm
+1527742976.801926, optimize | 7.1.2 End Optimizing Routine
+1527742976.700981, user | execute HybChive Function
+1527742976.701091, scheduler | start scheduler
+1527742976.711060, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1527742976.711086, scheduler | 4.5 Start copying HybChive - set specific parameters to shared memory segment
+1527742976.713632, scheduler | 4.5.1 End copying HybChive - set specific parameters to shared memory segment
+1527742976.805518, scheduler | 7.4 Get the splitting information
+1527742976.805559, scheduler | 7.5 Splitting Data arrived in scheduler
+1527742976.812119, scheduler | 16.01 All variants started
+1527742977.814969, scheduler | 16.01 All variants ended
+1527742977.815107, scheduler | 17. copy shared memory segment back to input variable
+1527742977.820834, user | end HybChive Function - order timemarks yourself
+
+1527742986.849141, optimize | 6. Reading performance files
+1527742986.865706, optimize | 7. Run Optimizing Algorithm
+1527742986.865738, optimize | 7.1.2 End Optimizing Routine
+1527742986.760281, user | execute HybChive Function
+1527742986.760361, scheduler | start scheduler
+1527742986.770720, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1527742986.770745, scheduler | 4.5 Start copying HybChive - set specific parameters to shared memory segment
+1527742986.773621, scheduler | 4.5.1 End copying HybChive - set specific parameters to shared memory segment
+1527742986.871149, scheduler | 7.4 Get the splitting information
+1527742986.871191, scheduler | 7.5 Splitting Data arrived in scheduler
+1527742986.875397, scheduler | 16.01 All variants started
+1527742987.880745, scheduler | 16.01 All variants ended
+1527742987.880841, scheduler | 17. copy shared memory segment back to input variable
+1527742987.887321, user | end HybChive Function - order timemarks yourself
+
+1527742998.334761, optimize | 6. Reading performance files
+1527742998.348349, optimize | 7. Run Optimizing Algorithm
+1527742998.348380, optimize | 7.1.2 End Optimizing Routine
+1527742998.232614, user | execute HybChive Function
+1527742998.232693, scheduler | start scheduler
+1527742998.243359, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1527742998.243382, scheduler | 4.5 Start copying HybChive - set specific parameters to shared memory segment
+1527742998.245897, scheduler | 4.5.1 End copying HybChive - set specific parameters to shared memory segment
+1527742998.353198, scheduler | 7.4 Get the splitting information
+1527742998.353258, scheduler | 7.5 Splitting Data arrived in scheduler
+1527742998.359083, scheduler | 16.01 All variants started
+1527742999.359337, scheduler | 16.01 All variants ended
+1527742999.359463, scheduler | 17. copy shared memory segment back to input variable
+1527742999.365267, user | end HybChive Function - order timemarks yourself
+
+1527743011.452282, optimize | 6. Reading performance files
+1527743011.466473, optimize | 7. Run Optimizing Algorithm
+1527743011.466504, optimize | 7.1.2 End Optimizing Routine
+1527743011.354168, user | execute HybChive Function
+1527743011.354265, scheduler | start scheduler
+1527743011.371728, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1527743011.371804, scheduler | 4.5 Start copying HybChive - set specific parameters to shared memory segment
+1527743011.376528, scheduler | 4.5.1 End copying HybChive - set specific parameters to shared memory segment
+1527743011.471308, scheduler | 7.4 Get the splitting information
+1527743011.471352, scheduler | 7.5 Splitting Data arrived in scheduler
+1527743011.478115, scheduler | 16.01 All variants started
+1527743012.483393, scheduler | 16.01 All variants ended
+1527743012.483484, scheduler | 17. copy shared memory segment back to input variable
+1527743012.489974, user | end HybChive Function - order timemarks yourself

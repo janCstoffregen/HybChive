@@ -296,7 +296,7 @@ main(int argc, char *argv[]){
 	}
 
     //show scheduler that optimizing procedure has finished
-    pipe=popen("echo '' > wait.txt","w");
+    pipe=popen("echo '' > Wait.txt","w");
     close(pipe);
 
     return 0;
