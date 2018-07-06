@@ -26,7 +26,13 @@ int main(){
     );
 
 
-    char set[]="hybChiveC_SetTemplate";
+    char set[]="";
+    memset(
+        set,
+        '\0',
+        sizeof(set)
+    );
+    set = "search";
     char variants[]="all";
     char optimize[]="performance";
     int numberOfParameters = 1;

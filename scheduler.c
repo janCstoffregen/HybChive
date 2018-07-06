@@ -20,7 +20,8 @@ char savedir[]=" && ls -d */ | cut -f1 -d'/' > list.txt && cp list.txt 2.txt";
 char pipecommand[2000] = "";
 char cd[]="cd ";
 char list2[]="/2.txt";
-char variantslist[20][30]={};
+char variantslist[20][40]={};
+char variants[100]="";
 char list[]="/list.txt";
 char performancedata[]="performance.txt";
 char cd2[]="cd ";
@@ -39,7 +40,7 @@ FILE *pipe2;
 
 void hybchive(
         char *hybChiveSetName,
-        char *variants,
+        char *chosenVariants,
         char *optimize,
         int numberOfParameters,
         ...)
@@ -90,6 +91,7 @@ void hybchive(
                     list
             )
             ,"r");
+    // printf("\n3.0.1 Number of Variants: %d \n ", numvariants);
     for( i = 0; i < numvariants * characters; i++ )
     {
         fscanf(
@@ -102,7 +104,7 @@ void hybchive(
 
 	printf("\n3.1 show, that the devices - array got everything \n");
 	printf("\n");
-	for( i = 0; i < 30; i++ )
+	for( i = 0; i < sizeof(variants); i++ )
     {
 		printf(
                 "%c",
@@ -111,9 +113,9 @@ void hybchive(
 	}
 
 
-	//printf("\n3.2 transfer devices to array\n");
+	printf("\n3.2 transfer devices to array - Something is going wrong here\n");
 
-	i=0;
+      i = 0;
 
 	for( j = 0; j < 50; j++ )
     {
@@ -128,6 +130,7 @@ void hybchive(
 		}
 	}
 	numvariants = help;
+	printf("\n3.2.1 Numvariant: %d\n", numvariants);
 	for( i = 0; i < numvariants; i++ )
     {
 		for( j = 0; j < 30; j++ )
@@ -155,6 +158,18 @@ void hybchive(
 
 	/*end part one*/
 
+	printf("\n 3.2.1.1 nVariantslist: \n", numvariants);
+	for( i = 0; i < numvariants; i++ )
+    {
+		for( j = 0; j < 30; j++ )
+        {
+				printf("%c",
+                       variantslist[ i ][ j ]
+                );
+		}
+		printf("\n");
+	}
+
 	/*begin part two*/
 
 
@@ -177,7 +192,7 @@ void hybchive(
                 sizeof(variants)
         );
 
-		printf("\n a Check pipecommand - should be empty, i=%d\n",
+		printf("\n 3.2.1.1 Check pipecommand - should be empty, i=%d\n",
                i
         );
 		for( j = 0; j < 40; j++ )
@@ -195,10 +210,21 @@ void hybchive(
 			}
 		}
 
-
+		memset(
+                currentdir,
+                '\0',
+                sizeof(currentdir)
+        );
 		strcat( currentdir, hybChiveSetName );
 		strcat( currentdir, "/" );
         strcat( currentdir, variantslist[ i ] );
+        printf("\nCurrentdir - here is the bug: \n");
+        for( j = 0; j < 40; j++ )
+        {
+			printf("%c",
+                   currentdir[ j ]
+            );
+		}
 
 
 
@@ -221,7 +247,7 @@ void hybchive(
         {
             hybchiveLog( "scheduler | No performance data found for" );
 			printf("\n ");
-			for( j = 0; j < 40; j++ )
+			for( j = 0; j < 30; j++ )
             {
 				printf("%c",
                        variantslist[ i ][ j ]
@@ -245,14 +271,14 @@ void hybchive(
             int length = strlen( currentdir );
             if ( currentdir[ length - 1 ] == '\n' )
             {
-                //printf("remove newline");
+                printf("remove newline");
                 currentdir[ length - 1 ]  = '\0';
             }
             strcat( make, currentdir );
 
 			strcat( make, " && make test && ./varianttest" );
 
-			printf("\n b Check pipecommand - should be set name and variant name, i=%d\n",i);
+			printf("\n 4.3.1 Check pipecommand - should be set name and variant name, i=%d\n",i);
 			for( j = 0; j < 70; j++ )
             {
 				printf("%c",
@@ -401,8 +427,8 @@ void hybchive(
 		pipe=popen(
                 concatenate(
                         7,
-                        sizeof( "gcc optimize.c -o optimize hybchiveLog.o && ./optimize" ),
-                        "gcc optimize.c -o optimize hybchiveLog.o && ./optimize",
+                        sizeof( "gcc optimize.c -o optimize hybchiveLog.o -lrt && ./optimize" ),
+                        "gcc optimize.c -o optimize hybchiveLog.o -lrt && ./optimize",
                         sizeof( " " ),
                         " ",
                         sizeof( cn2 ),
@@ -452,9 +478,7 @@ void hybchive(
 	    for(i=0;i<numvariants;i++){
 	    	printf("\nscheduler | 7.6 Device: %d, n = %d",i,dataSplittingPattern[i]);
 	    }
-		
 		// printf("\nscheduler | 4.5 Optimizing Procedure has finished. Execute programs");
-
 		int begin=0, end=0;
 
 
@@ -509,7 +533,6 @@ void hybchive(
 
 
 
-		
 		double *shm3, *s3;
 		for( i=0; i<numvariants; i++ )
         {
@@ -542,7 +565,6 @@ void hybchive(
 
 			sprintf(cnumvariants,"%d",numvariants);
 
-			
 			char make[1000]="";
             char *makeCommandWithoutInputs = malloc( sizeof(char) * ( 2000 ) );;
 			memset(make,'\0',sizeof(make));
@@ -670,8 +692,7 @@ void hybchive(
     printf("\nSize of argument: %d\n", sizeof(argument));
     printf("\nSize of inputArgumentOne: %d\n", sizeof(inputArgumentOne));
     printf("\nIndicated Size: %d\n", sizeof(argument));
-    
-    memcpy(argument, inputArgumentOne, sizeOfSharedMemorySegment[ 0 ]);
+    // memcpy(argument, inputArgumentOne, sizeOfSharedMemorySegment[ 0 ]);
 
 	pipe=popen("chmod +x kill_ipcs.sh && ./kill_ipcs.sh","w");
 	close(pipe);

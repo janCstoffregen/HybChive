@@ -19,4 +19,4 @@ for id in $IPCS_Q; do
   ipcrm -q $id;
 done
 
-for n in `ipcs -b -m | egrep ^m | awk '{ print $2; }'`; do ipcrm -m $n; done
+# for n in `ipcs -b -m | egrep ^m | awk '{ print $2; }'`; do ipcrm -m $n; done
