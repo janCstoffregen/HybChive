@@ -7,4 +7,4 @@ test:	varianttest.c
 	gcc varianttest.c -o varianttest -lrt
 
 final: variant.c
-	gcc variant.c -o variant -lrt -lm
+	gcc variant.c -o variant -lrt -lm ../../attachSharedMemorySegment.o

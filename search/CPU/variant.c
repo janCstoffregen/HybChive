@@ -5,117 +5,152 @@
 #include <sys/shm.h>
 #include <time.h>
 #include <math.h>
+#include "../../hybchive.h"
 
 
 
 
 int main(int argc, char *argv[]){
-    
-	//printf("\n 10 Check, if input has arrived\n");
-	
 	/* Conversion string into int */
-	int begin,end,ikey,n,variantid,numvariants;
-    ikey = atoi(argv[1]);
-    begin = atoi(argv[2]);
-    end = atoi(argv[3]);
-    n = atoi(argv[4]);
+	int		begin,
+			end,
+			ikey,
+			ikey3,
+			n,
+			variantid,
+			variantId,
+			numberOfParameters,
+			sharedMemoryCommuncation,
+			sharedMemoryKey,
+			sharedMemorySize,
+			dataSliceForThisVariant,
+			problemSize,
+			numvariants;
 
-    n = (double) n;
-    n=sqrt(n);
-    n = (int) n;
+	variantId = atoi(
+            argv[ 1 ]
+    );
 
-    variantid = atoi(argv[5]);
-    numvariants = atoi(argv[6]);
-    int ikey3 = atoi(argv[7]);
-    double parameterOne[1];
-    parameterOne[0] = atof(argv[8]);
-    
-    //printf("\n 10.1 key: %d, begin: %d, end: %d, n: %d, parameterOne: %d\n",ikey,begin,end,n,parameterOne[0]);
+    numberOfParameters = atoi(
+            argv[ 2 ]
+    );
 
-    //printf("\n 11. Attach shared memory space\n");
-    int shmid;
-    key_t key;
-    double *A_host, *s;
-    int size=sizeof(double)*n;
-    
-    key=ikey;
+    sharedMemoryCommuncation = atoi(
+            argv[ 3 ]
+    );
 
-    /*
-    * Locate the segment.
-    */
-    if ((shmid = shmget(key, size, 0666)) < 0) {
-    perror("shmget");
-    exit(1);
+    numvariants = atoi(
+            argv[ 4 ]
+    );
+
+    sharedMemoryKey = atoi(
+            argv[ 5 ]
+    );
+
+    sharedMemorySize = atoi(
+            argv[ 6 ]
+    );
+
+    dataSliceForThisVariant = atoi(
+            argv[ 7 ]
+    );
+
+    printf("\nvariant %d | Hello, I have %d input(s).\n",
+       variantId,
+       numberOfParameters
+       );
+
+	printf("\nvariant %d | I will show you the first input, in a set you design you should know how many inputs you need.\n",
+		variantId
+	);
+
+    double *inputArgumentOne;
+    inputArgumentOne = attachSharedMemorySegment( sharedMemoryKey, sharedMemorySize, variantId );
+
+    printf("\nvariant %d | to finalize: printf part of the input!\n",
+           variantId
+    );
+
+    printf("variant %d | A[ 0 ]: %f\n",
+           variantId,
+           inputArgumentOne[ 0 ]
+    );
+
+
+    printf("variant %d | sharedMemoryCommuncationKey: %d\n",
+           variantId,
+           sharedMemoryCommuncation
+    );
+
+   // TODO: size of this as input for variants
+    double *sharedMemoryCommunicationPointer;
+    sharedMemoryCommunicationPointer = attachSharedMemorySegment(
+            sharedMemoryCommuncation,
+            8,
+            variantId
+    );
+
+    printf("\nvariant %d | dataSlice %d\n",
+           variantId,
+           dataSliceForThisVariant
+    );
+
+    /**
+     * The following statement is problem specific.
+     * In a general way, the problem size has to be generated out of the shared memory size,
+     * since the problem size is an implementation specific term.
+     * */
+    problemSize = sharedMemorySize / 8;
+
+    printf("\nvariant %d | problem size %d\n",
+           variantId,
+           problemSize
+    );
+
+    /**
+     * The following generation of the slice for this variant is HybChive - set specific /
+     * optimisation - specific and has to be performed in every variant.
+     * */
+
+    printf("\nvariant %d | number of variants: %d\n",
+           variantId,
+           numvariants
+    );
+
+    begin = problemSize / numvariants * variantId;
+    end = begin + dataSliceForThisVariant;
+
+    printf("\nvariant %d | begin: %d, end: %d\n, ",
+           variantId,
+           begin,
+           end
+    );
+
+
+
+    printf("\nvariant %d | Begin of the algorithm\n");
+
+	printf("\nvariant %d | Search for zero - gravity spot in space\n");
+
+	int i, j;
+    for ( i = begin; i < end; i++ )
+    {
+	    printf(" i: %d, j: %d, input: %.54lf\n", i, j, inputArgumentOne[ i ]);
+	    for (j = i; j < end; j++ )
+	    {
+		    inputArgumentOne[ i ] += inputArgumentOne[ j ] / ( j - i + 1 ) ;
+ 	    }
     }
- 
-    /*
-    * Now we attach the segment to our data space.
-    */
-    if ((A_host = shmat(shmid, NULL, 0)) == (double *) -1) {
-    perror("shmat");
-    exit(1);
-    }
-    
-    //printf("\n 12. Check shared memory: %lf\n",A_host[0]);
-    
-    //printf("\n 13. Begin of the algorithm\n");
-    double result=0; //dummy result, this double variable needs to be used for the ouput.
 
-    
-    int searchResult_host[1];
-    
-    int i, j;
-    searchResult_host[0]=-1;
-    //Put your algorithm here!!
-    for(i=0;i<n;i++){
-        for(j=0;j<n;j++){
-            if ( A_host[i*n+j] == parameterOne[0]){
-                    //printf("\nData found in A[%d][%d]\n",i,j);
-                    searchResult_host[0] = i*n+j;
-                    i=n;
-                    j=n;
-                }
-            }
-        }
-    
-    
-    //End of your algorithm!!
+    printf("\nvariant %d | End of the algorithm\n");
 
-    if(searchResult_host[0]!=-1){
-        result  = searchResult_host[0] + begin;
-    }
-    //printf("\n Result (begin: %d, end: %d) : %.5lf\n",begin,end,result);
 
-    //printf("\n 15. Write result in shared memory\n");
-    int shmid2;
-    key_t key2;
-    double *shm2, *s2;
-    int size2=sizeof(double)*numvariants+1;
-    
-    key2=ikey3; //spaeter als input, hab ich gerade keine lust zu
+    sharedMemoryCommunicationPointer[ 0 ] += 1;
 
-    /*
-    * Locate the segment.
-    */
-    if ((shmid2 = shmget(key2, size2, 0666)) < 0) {
-    perror("shmget");
-    exit(1);
-    }
- 
-    /*
-    * Now we attach the segment to our data space.
-    */
-    if ((shm2 = shmat(shmid2, NULL, 0)) == (double *) -1) {
-    perror("shmat");
-    exit(1);
-    }
-    
-    shm2[variantid+1]=result;
-    shm2[0]=shm2[0]+1;
+    printf("\nvariant %d | sharedMemoryCommuncationContent before finish: %f\n",
+           variantId,
+           sharedMemoryCommunicationPointer[ 0 ]
+    );
 
-    //printf("\n 13.1 End of the algorithm\n");
-
-    
-    
-    
+    return 0;
 }

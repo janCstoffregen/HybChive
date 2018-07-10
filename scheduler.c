@@ -678,7 +678,7 @@ void hybchive(
 			close(pipe);
 
 		}
-        hybchiveLog( "scheduler | 16.01 All variants started" );
+        hybchiveLog( "scheduler | 16.01 All variants started - adjust variant input" );
 		printf("\nscheduler | 16. start sleeping\n");
 		while(sharedCommunication[ 0 ] != numvariants )
         {
