@@ -12,13 +12,13 @@ gcc -o user user.o scheduler.o -lrt
 int main(){
 
     printf("\n Create input data\n");
-    int n = 700;
+    int n = 10;
     double A[ n * n ];
     double result=0;
     int i, j;
     for( i=0; i < n * n; i++ )
     {
-        A[ i ] = -1;
+        A[ i ] = 1;
     }
 
     printf("user | A[ 0 ]: %f\n",
@@ -26,13 +26,7 @@ int main(){
     );
 
 
-    char set[]="";
-    memset(
-        set,
-        '\0',
-        sizeof(set)
-    );
-    set = "search";
+    char set[] = "search";
     char variants[]="all";
     char optimize[]="performance";
     int numberOfParameters = 1;
