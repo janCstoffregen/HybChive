@@ -36,14 +36,9 @@ const char *KernelSource =
 "\n"																									\
 "__kernel void algorithm(\n" 																			\
 "  __global double* A_device, __global int* problemSize_device\n"	\
-"	){int ii=get_global_id(0);int i = 0; \n" 									\
-" for( i = ii; i < problemSize_device; i++ ) { \n"														\
-		"A_device[ ii ] += A_device[ i ] / ( i - ii + 1 ) + 1 ;\n"											\
-"}\n"\
+"	){int ii=get_global_id(0); int i = 0; \n" 									\
+		"  for(i = 0; i < 100000000; i ++) { A_device[ ii ] += 1; }   \n"
 "}\n";
-
-
-
 
 
 
@@ -279,6 +274,13 @@ int main(int argc, char *argv[]){
 
         size_t global_dimensions[] = {globalN};
         size_t local_dimensions[] = {1};
+        err = clEnqueueNDRangeKernel(commands, kernel, 1, NULL, global_dimensions, local_dimensions, 0, NULL, NULL);
+                if (err)
+                {
+                    printf("Tesla C1060 Error: Failed to execute kernel!\n");
+                return EXIT_FAILURE;
+                }
+
 
 		double resultTest[ end - begin ];
          err = clEnqueueReadBuffer(
@@ -287,7 +289,7 @@ int main(int argc, char *argv[]){
          							CL_TRUE,
          							0,
          							sizeof( double  ) * ( end - begin ),
-         							resultTest,
+         							inputArgumentOne,
          							0,
          							NULL,
          							NULL
@@ -319,12 +321,10 @@ int main(int argc, char *argv[]){
     	 }
 
         clReleaseMemObject(A_device);
-
     printf("\nvariant %d | End of the algorithm Tesla C2050 - output:\n", variantId);
 	for( i = 0; i < 4; i++ ) {
-		printf("%f ", resultTest[ i ]);
+		printf("%f ", inputArgumentOne[ i ]);
 	}
-
 
     sharedMemoryCommunicationPointer[ 0 ] += 1;
 

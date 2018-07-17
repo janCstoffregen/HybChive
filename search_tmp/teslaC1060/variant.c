@@ -36,10 +36,8 @@ const char *KernelSource =
 "\n"																									\
 "__kernel void algorithm(\n" 																			\
 "  __global double* A_device, __global int* problemSize_device\n"	\
-"	){int ii=get_global_id(0);int i = 0; \n" 									\
-" for( i = ii; i < problemSize_device; i++ ) { \n"														\
-		"A_device[ ii ] += A_device[ i ] / ( i - ii + 1 ) ;\n"											\
-"}\n"\
+"	){int ii=get_global_id(0); int i = 0; \n" 									\
+		"  for(i = 0; i < 100000000; i ++) { A_device[ ii ] += 1; }   \n"
 "}\n";
 
 
@@ -237,7 +235,7 @@ int main(int argc, char *argv[]){
 
         // Create the input and output arrays in device memory for our calculation
         //
-            A_device = clCreateBuffer(context,  CL_MEM_READ_WRITE,  sizeof(double)*(end-begin), NULL, NULL);
+            A_device = clCreateBuffer(context,  CL_MEM_READ_WRITE,  sizeof(double)*(problemSize-begin), NULL, NULL);
             problemSize_device = clCreateBuffer(context,  CL_MEM_READ_WRITE,  sizeof(int)*1, NULL, NULL);
         // Generate Data
         //
@@ -278,12 +276,12 @@ int main(int argc, char *argv[]){
         size_t global_dimensions[] = {globalN};
         size_t local_dimensions[] = {1};
 
-                err = clEnqueueNDRangeKernel(commands, kernel, 1, NULL, global_dimensions, local_dimensions, 0, NULL, NULL);
-                if (err)
-                {
-                    printf("Tesla C1060 Error: Failed to execute kernel!\n");
-                return EXIT_FAILURE;
-                }
+        err = clEnqueueNDRangeKernel(commands, kernel, 1, NULL, global_dimensions, local_dimensions, 0, NULL, NULL);
+        if (err)
+        {
+            printf("Tesla C2050 Error: Failed to execute kernel!\n");
+			return EXIT_FAILURE;
+        }
 
         clFinish(commands);
          double resultTest[ end - begin ];

@@ -133,11 +133,10 @@ int main(int argc, char *argv[]){
 	int i, j;
     for ( i = begin; i < end; i++ )
     {
-		// printf("\nvariant %d | end: %d, i: %d\n", variantId, end, i);
-	for (j = i; j < end; j++ )
-	    {
-		    inputArgumentOne[ i ] += inputArgumentOne[ j ] / ( j - i + 1 ) ;
- 	    }
+	    // printf("\ni: %d\n",i);
+		for( j = 0; j < 100000000; j++) {
+			inputArgumentOne[ i ] += 1;
+		}
     }
 
     printf("\nvariant %d | End of the algorithm CPU\n");

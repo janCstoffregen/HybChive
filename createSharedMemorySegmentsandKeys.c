@@ -25,7 +25,7 @@ int *createSharedMemorySegmentsandKeys( int size, char *type, ... ) {
         exit(1);
     }
 
-    if( type == "double" ) {
+    // if( type == "double" ) {
         double *shm;
         shm = ( double * ) malloc( sizeof( double ) * size );
         if(shm == NULL)
@@ -65,7 +65,7 @@ int *createSharedMemorySegmentsandKeys( int size, char *type, ... ) {
         );
         va_end(valist);
 
-    }
+    // }
 
     return sharedMemoryKeyAndSize;
 

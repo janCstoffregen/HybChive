@@ -8,6 +8,7 @@ gcc -o user user.o scheduler.o -lrt
 #include<stdlib.h>
 #include<stdio.h>
 #include"hybchive.h"
+#include <math.h>
 
 int main(){
 
@@ -16,9 +17,10 @@ int main(){
     double A[ n * n ];
     double result=0;
     int i, j;
+    srand( time( NULL ) );   // should only be called once
     for( i=0; i < n * n; i++ )
     {
-        A[ i ] = 1;
+        A[ i ] = rand();
     }
 
     printf("user | A[ 0 ]: %f\n",
@@ -35,17 +37,26 @@ int main(){
 
     hybchiveLog( "user | execute HybChive Function" );
 
-    hybchive(
+     hybchive(
         set,
-        variants,
+      variants,
         optimize,
-        numberOfParameters,
-        sizeof( A ),
-        "double",
-        A
-    );
+      numberOfParameters,
+      sizeof( A ),
+      "double",
+      A
+     );
+     hybchiveLog( "user | end HybChive Function - order timemarks yourself" );
+     hybchiveLog( "user | Start Implementation Code from user" );
+    for ( i = 0; i < n * n; i++ )
+    {
+	    // printf("\ni: %d\n",i);
+		for( j = 0; j < 100000000; j++) {
+			A[ i ] += 1;
+		}
+    }
 
-    hybchiveLog( "user | end HybChive Function - order timemarks yourself" );
+    hybchiveLog( "user | End Implementation Code from user" );
 
     printf("\nuser | matrix after hybchive function call n = %d\n", n);
 

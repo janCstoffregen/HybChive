@@ -218,7 +218,6 @@ void hybchive(
 		strcat( currentdir, hybChiveSetName );
 		strcat( currentdir, "/" );
         strcat( currentdir, variantslist[ i ] );
-        printf("\nCurrentdir - here is the bug: \n");
         for( j = 0; j < 40; j++ )
         {
 			printf("%c",
@@ -285,7 +284,6 @@ void hybchive(
                        currentdir[ j ]
                 );
 			}
-            printf("\nCurrentdir not working!");
 
 
 			pipe=popen(
@@ -370,8 +368,9 @@ void hybchive(
             sizeOfSharedMemorySegment[ i ] = va_arg(valist, int );
             type = va_arg(valist, char * );
 
-            if( type == "double" ) {
+            // if( type == "double" ) {
                 argument = va_arg(valist, double * );
+                printf("\nscheduler | argument[ 0 ]: %f\n", argument[ 0 ]);
                 sharedMemoryKey = createSharedMemorySegmentsandKeys(
                         sizeOfSharedMemorySegment[ i ],
                         type,
@@ -385,7 +384,7 @@ void hybchive(
                         sizeOfSharedMemorySegment[ i ],
                         1234 );
 
-            }
+            // }
             // printf("key: %d, size: %d", sharedMemoryKeyArray[ i ], sizeOfSharedMemorySegment[ i ] );
         }
         va_end(valist);
@@ -692,7 +691,7 @@ void hybchive(
     printf("\nSize of argument: %d\n", sizeof(argument));
     printf("\nSize of inputArgumentOne: %d\n", sizeof(inputArgumentOne));
     printf("\nIndicated Size: %d\n", sizeof(argument));
-    // memcpy(argument, inputArgumentOne, sizeOfSharedMemorySegment[ 0 ]);
+    memcpy(argument, inputArgumentOne, sizeOfSharedMemorySegment[ 0 ]);
 
 	pipe=popen("chmod +x kill_ipcs.sh && ./kill_ipcs.sh","w");
 	close(pipe);

@@ -1,98 +1,16 @@
-1527743684.724337, optimize | 6. Reading performance files
-1527743684.740036, optimize | 7. Run Optimizing Algorithm
-1527743684.740070, optimize | 7.1.2 End Optimizing Routine
-1527743684.591196, user | execute HybChive Function
-1527743684.591284, scheduler | start scheduler
-1527743684.608987, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
-1527743684.609022, scheduler | 4.5 Start copying HybChive - set specific parameters to shared memory segment
-1527743684.614319, scheduler | 4.5.1 End copying HybChive - set specific parameters to shared memory segment
-1527743684.746691, scheduler | 7.4 Get the splitting information
-1527743684.746740, scheduler | 7.5 Splitting Data arrived in scheduler
-1527743684.765576, scheduler | 16.01 All variants started
-1527743685.766525, scheduler | 16.01 All variants ended
-1527743685.766615, scheduler | 17. copy shared memory segment back to input variable
-1527743685.772364, user | end HybChive Function - order timemarks yourself
-1528371189.468204, optimize | 6. Reading performance files
-1528371189.480250, optimize | 7. Run Optimizing Algorithm
-1528371189.480284, optimize | 7.1.2 End Optimizing Routine
-1528371189.363351, user | execute HybChive Function
-1528371189.363424, scheduler | start scheduler
-1528371189.372245, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
-1528371189.372274, scheduler | 4.5 Start copying HybChive - set specific parameters to shared memory segment
-1528371189.383272, scheduler | 4.5.1 End copying HybChive - set specific parameters to shared memory segment
-1528371189.485612, scheduler | 7.4 Get the splitting information
-1528371189.485683, scheduler | 7.5 Splitting Data arrived in scheduler
-1528371189.511845, scheduler | 16.01 All variants started
-1528371190.515564, scheduler | 16.01 All variants ended
-1528371190.515664, scheduler | 17. copy shared memory segment back to input variable
-1528371190.520356, user | end HybChive Function - order timemarks yourself
-1530003918.287924, user | execute HybChive Function
-1530003918.287994, scheduler | start scheduler
-1530003918.297990, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
-1530003918.298032, scheduler | 4.5 Start copying HybChive - set specific parameters to shared memory segment
-1530003955.630842, user | execute HybChive Function
-1530003955.630901, scheduler | start scheduler
-1530003955.640167, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
-1530003955.640214, scheduler | 4.5 Start copying HybChive - set specific parameters to shared memory segment
-1530003969.086810, optimize | 6. Reading performance files
-1530003969.097140, optimize | 7. Run Optimizing Algorithm
-1530003969.097176, optimize | 7.1.2 End Optimizing Routine
-1530003969.000486, user | execute HybChive Function
-1530003969.000549, scheduler | start scheduler
-1530003969.010403, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
-1530003969.010429, scheduler | 4.5 Start copying HybChive - set specific parameters to shared memory segment
-1530003969.014260, scheduler | 4.5.1 End copying HybChive - set specific parameters to shared memory segment
-1530003969.100383, scheduler | 7.4 Get the splitting information
-1530003969.100428, scheduler | 7.5 Splitting Data arrived in scheduler
-1530003969.117586, scheduler | 16.01 All variants started
-1530003970.123024, scheduler | 16.01 All variants ended
-1530003970.123130, scheduler | 17. copy shared memory segment back to input variable
-1530003970.124025, user | end HybChive Function - order timemarks yourself
-1530003985.668774, optimize | 6. Reading performance files
-1530003985.678429, optimize | 7. Run Optimizing Algorithm
-1530003985.678460, optimize | 7.1.2 End Optimizing Routine
-1530003985.582743, user | execute HybChive Function
-1530003985.582812, scheduler | start scheduler
-1530003985.590833, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
-1530003985.590864, scheduler | 4.5 Start copying HybChive - set specific parameters to shared memory segment
-1530003985.593592, scheduler | 4.5.1 End copying HybChive - set specific parameters to shared memory segment
-1530003985.681164, scheduler | 7.4 Get the splitting information
-1530003985.681303, scheduler | 7.5 Splitting Data arrived in scheduler
-1530003985.826604, scheduler | 16.01 All variants started
-1530003986.829463, scheduler | 16.01 All variants ended
-1530003986.829591, scheduler | 17. copy shared memory segment back to input variable
-1530003986.835299, user | end HybChive Function - order timemarks yourself
-1530628085.396251, optimize | 7.1.2 End Optimizing Routine
-1530628085.396215, optimize | 7. Run Optimizing Algorithm
-1530628085.389982, optimize | 6. Reading performance files
-1530628207.074154, optimize | 7.1.2 End Optimizing Routine
-1530628207.074119, optimize | 7. Run Optimizing Algorithm
-1530628207.067704, optimize | 6. Reading performance files
-1530628208.077123, user | end HybChive Function - order timemarks yourself
-1530628208.076907, scheduler | 17. copy shared memory segment back to input variable
-1530628208.076856, scheduler | 16.01 All variants ended
-1530628207.076763, scheduler | 16.01 All variants started
-1530628207.076376, scheduler | 7.5 Splitting Data arrived in scheduler
-1530628207.076331, scheduler | 7.4 Get the splitting information
-1530628206.998097, scheduler | 4.5.1 End copying HybChive - set specific parameters to shared memory segment
-1530628206.998086, scheduler | 4.5 Start copying HybChive - set specific parameters to shared memory segment
-1530628206.998067, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
-1530628206.992876, scheduler | start scheduler
-1530628206.992801, user | execute HybChive Function
-1530628233.507365, optimize | 7.1.2 End Optimizing Routine
-1530628233.507315, optimize | 7. Run Optimizing Algorithm
-1530628233.399509, optimize | 6. Reading performance files
-1530628234.657726, user | end HybChive Function - order timemarks yourself
-1530628234.657482, scheduler | 17. copy shared memory segment back to input variable
-1530628234.657396, scheduler | 16.01 All variants ended
-1530628233.657132, scheduler | 16.01 All variants started
-1530628233.656491, scheduler | 7.5 Splitting Data arrived in scheduler
-1530628233.509960, scheduler | 7.4 Get the splitting information
-1530628233.269057, scheduler | 4.5.1 End copying HybChive - set specific parameters to shared memory segment
-1530628233.269012, scheduler | 4.5 Start copying HybChive - set specific parameters to shared memory segment
-1530628233.268957, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
-1530628233.128428, scheduler | start scheduler
-1530628233.127994, user | execute HybChive Function
-1530872297.063949, optimize | 7.1.2 End Optimizing Routine
-1530872297.063916, optimize | 7. Run Optimizing Algorithm
-1530872297.057682, optimize | 6. Reading performance files
+1531825929.356021, optimize | 7.1.2 End Optimizing Routine
+1531825929.355978, optimize | 7. Run Optimizing Algorithm
+1531825929.208335, optimize | 6. Reading performance files
+1531825980.287508, user | End Implementation Code from user
+1531825948.497734, user | Start Implementation Code from user
+1531825948.497668, user | end HybChive Function - order timemarks yourself
+1531825948.497434, scheduler | 17. copy shared memory segment back to input variable
+1531825948.496980, scheduler | 16.01 All variants ended
+1531825929.461174, scheduler | 16.01 All variants started - adjust variant input
+1531825929.405354, scheduler | 7.5 Splitting Data arrived in scheduler
+1531825929.360394, scheduler | 7.4 Get the splitting information
+1531825929.064542, scheduler | 4.5.1 End copying HybChive - set specific parameters to shared memory segment
+1531825929.064399, scheduler | 4.5 Start copying HybChive - set specific parameters to shared memory segment
+1531825929.064325, scheduler | 4.4 All performance files found. Execute performance optimizing procedure
+1531825928.933833, scheduler | start scheduler
+1531825928.933416, user | execute HybChive Function
